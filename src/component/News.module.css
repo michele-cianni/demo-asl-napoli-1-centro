@@ -1,0 +1,248 @@
+/* News + Facilities sections.
+   Breakpoints aligned with responsive.jsx: mobile <768, compact <1024. */
+
+/* ─── News ───────────────────────────────────────────────── */
+
+.news__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 1023.98px) {
+  .news__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767.98px) {
+  .news__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.news__card {
+  background: var(--bi-surface);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--bi-border);
+  display: flex;
+  flex-direction: column;
+  color: var(--bi-ink-900);
+  transition: border-color 0.15s ease;
+}
+
+.news__card:hover {
+  border-color: var(--bi-primary);
+}
+
+.news__cardBody {
+  padding: 28px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 767.98px) {
+  .news__cardBody {
+    padding: 20px;
+  }
+}
+
+.news__cardContent {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.news__cardMeta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.news__cardDate {
+  font-size: 13px;
+  color: var(--bi-ink-500);
+}
+
+.news__cardTitle {
+  margin: 0;
+  font-family: var(--ff-serif);
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.25;
+  color: var(--bi-ink-900);
+  text-wrap: pretty;
+}
+
+@media (max-width: 767.98px) {
+  .news__cardTitle {
+    font-size: 20px;
+  }
+}
+
+.news__cardDesc {
+  margin: 0;
+  color: var(--bi-ink-500);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* ─── Facilities tabs ────────────────────────────────────── */
+
+.fac__tabsRow {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--bi-border);
+  flex-wrap: wrap;
+}
+
+@media (max-width: 1023.98px) {
+  .fac__tabsRow {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+.fac__tab {
+  padding: 14px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--bi-ink-500);
+  border-bottom: 3px solid transparent;
+  margin-bottom: -1px;
+  white-space: nowrap;
+}
+
+@media (max-width: 767.98px) {
+  .fac__tab {
+    padding: 14px 16px;
+  }
+}
+
+.fac__tab--active {
+  color: var(--bi-primary);
+  border-bottom-color: var(--bi-primary);
+}
+
+/* ─── Facilities grid ────────────────────────────────────── */
+
+.fac__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 1023.98px) {
+  .fac__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767.98px) {
+  .fac__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.fac__card {
+  padding: 24px;
+  border-radius: 12px;
+  border: 1px solid var(--bi-border);
+  background: var(--bi-surface);
+  color: var(--bi-ink-900);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: all 0.2s ease;
+}
+
+.fac__card:hover {
+  border-color: var(--bi-primary);
+  background: var(--bi-primary-050);
+}
+
+@media (max-width: 767.98px) {
+  .fac__card {
+    padding: 20px;
+  }
+}
+
+.fac__cardHead {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.fac__icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: var(--bi-primary-050);
+  color: var(--bi-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.fac__cardName {
+  font-family: var(--ff-serif);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.25;
+  margin-bottom: 2px;
+}
+
+.fac__cardCity {
+  font-size: 13px;
+  color: var(--bi-ink-500);
+}
+
+.fac__cardStats {
+  display: flex;
+  gap: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--bi-border);
+  font-size: 13px;
+}
+
+@media (max-width: 767.98px) {
+  .fac__cardStats {
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+}
+
+.fac__statValue {
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--bi-ink-900);
+}
+
+.fac__statLabel {
+  color: var(--bi-ink-500);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.fac__statPhone {
+  flex: 1;
+  text-align: right;
+  align-self: center;
+  font-size: 13px;
+  color: var(--bi-primary);
+  font-weight: 600;
+}
+
+@media (max-width: 767.98px) {
+  .fac__statPhone {
+    min-width: 100%;
+    text-align: left;
+  }
+}

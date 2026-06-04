@@ -1,0 +1,284 @@
+/* Shared UI primitives — CSS Modules
+   Tokens (--bi-*, --ff-*, --r-*) are global, defined in styles.css.
+   Dark mode works through token overrides; never hard-code colors here. */
+
+/* ─── Button ─────────────────────────────────────────────────────────── */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--ff-sans);
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 1.2;
+  padding: 12px 20px;
+  border-radius: 4px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  text-decoration: none;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.button--block {
+  width: 100%;
+}
+
+.button--wrap {
+  white-space: normal;
+}
+
+/* variants */
+.button--primary {
+  background: var(--bi-primary);
+  color: #fff;
+  border-color: var(--bi-primary);
+}
+.button--warm {
+  background: var(--bi-warm);
+  color: #fff;
+  border-color: var(--bi-warm);
+}
+.button--outline {
+  background: transparent;
+  color: var(--bi-primary);
+  border-color: var(--bi-primary);
+}
+.button--ghost {
+  background: transparent;
+  color: var(--bi-primary);
+  border-color: transparent;
+}
+.button--white {
+  background: #fff;
+  color: var(--bi-primary);
+  border-color: #fff;
+}
+.button--outlineWhite {
+  background: transparent;
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.8);
+}
+.button--subtle {
+  background: var(--bi-primary-050);
+  color: var(--bi-primary-800);
+  border-color: transparent;
+}
+
+/* sizes */
+.button--sm {
+  padding: 8px 14px;
+  font-size: 13px;
+}
+.button--md {
+  padding: 12px 20px;
+  font-size: 15px;
+}
+.button--lg {
+  padding: 16px 28px;
+  font-size: 17px;
+}
+.button--xl {
+  padding: 20px 32px;
+  font-size: 18px;
+}
+
+/* ─── Badge ──────────────────────────────────────────────────────────── */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 99px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.4;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.badge--primary {
+  background: var(--bi-primary-100);
+  color: var(--bi-primary-800);
+}
+.badge--teal {
+  background: var(--bi-teal-100);
+  color: var(--bi-teal-700);
+}
+.badge--warm {
+  background: var(--bi-warm-100);
+  color: var(--bi-warm);
+}
+.badge--success {
+  background: #d4ecdd;
+  color: var(--bi-success);
+}
+.badge--warning {
+  background: #faedcc;
+  color: var(--bi-warning);
+}
+.badge--danger {
+  background: #fbdce1;
+  color: var(--bi-danger);
+}
+.badge--neutral {
+  background: var(--bi-ink-100);
+  color: var(--bi-ink-700);
+}
+
+/* ─── ArrowLink ──────────────────────────────────────────────────────── */
+
+.arrowLink {
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+  text-decoration: none;
+}
+
+/* ─── Section ────────────────────────────────────────────────────────── */
+
+.section {
+  padding: 80px 0;
+  position: relative;
+}
+
+@media (max-width: 1024px) {
+  .section {
+    padding: 72px 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 56px 0;
+  }
+}
+
+/* ─── Eyebrow ────────────────────────────────────────────────────────── */
+
+.eyebrow {
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.eyebrow__bar {
+  width: 24px;
+  height: 2px;
+  background: currentColor;
+  display: inline-block;
+}
+
+/* ─── SectionHeading ─────────────────────────────────────────────────── */
+
+.heading {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: flex-end;
+  text-align: left;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.heading--centered {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.heading--compact {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.heading--centered.heading--compact {
+  align-items: center;
+}
+
+.heading__main {
+  max-width: 680px;
+}
+
+.heading--centered .heading__main {
+  max-width: 720px;
+}
+
+.heading__title {
+  font-family: var(--ff-serif);
+  font-weight: 500;
+  font-size: clamp(32px, 3.4vw, 48px);
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+  margin: 0;
+  color: var(--bi-ink-900);
+}
+
+.heading__subtitle {
+  margin: 16px 0 0;
+  color: var(--bi-ink-500);
+  font-size: 18px;
+  line-height: 1.55;
+  max-width: 620px;
+}
+
+.heading--compact .heading__subtitle {
+  font-size: 16px;
+}
+
+.heading__action {
+  width: auto;
+}
+
+.heading--compact .heading__action {
+  width: 100%;
+}
+
+/* ─── Breadcrumb ─────────────────────────────────────────────────────── */
+
+.breadcrumb {
+  background: var(--bi-surface);
+  border-bottom: 1px solid var(--bi-border);
+  padding: 10px 0;
+}
+
+.breadcrumb__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 13px;
+  color: var(--bi-ink-500);
+}
+
+.breadcrumb__item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.breadcrumb__link {
+  color: var(--bi-primary);
+  font-weight: 600;
+}
+
+.breadcrumb__current {
+  color: var(--bi-ink-700);
+  font-weight: 600;
+}

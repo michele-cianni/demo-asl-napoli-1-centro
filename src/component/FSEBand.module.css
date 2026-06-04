@@ -1,0 +1,97 @@
+/* Breakpoints aligned with src/responsive.jsx: mobile <768, compact <1024. */
+
+.band {
+  background: var(--bi-primary);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  padding: 80px 0;
+}
+
+@media (max-width: 767.98px) {
+  .band {
+    padding: 56px 0;
+  }
+}
+
+.band__dots {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 260px;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.18) 1.5px, transparent 1.5px);
+  background-size: 20px 20px;
+  pointer-events: none;
+}
+
+.band__ringLg {
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 320px;
+  height: 320px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+}
+
+.band__ringSm {
+  position: absolute;
+  top: 20px;
+  right: 60px;
+  width: 200px;
+  height: 200px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
+}
+
+.band__slashes {
+  position: absolute;
+  left: 40px;
+  bottom: 20px;
+  width: 80px;
+  height: 80px;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(255, 255, 255, 0.15),
+    rgba(255, 255, 255, 0.15) 2px,
+    transparent 2px,
+    transparent 10px
+  );
+  pointer-events: none;
+}
+
+.band__center {
+  position: relative;
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.band__title {
+  font-family: var(--ff-sans);
+  font-weight: 700;
+  font-size: clamp(26px, 4vw, 40px);
+  line-height: 1.2;
+  margin: 0 0 20px;
+  color: #fff;
+}
+
+.band__intro {
+  font-size: 17px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0 0 32px;
+}
+
+@media (max-width: 767.98px) {
+  .band__intro {
+    font-size: 15px;
+  }
+}
+
+.band__buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}

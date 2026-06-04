@@ -1,0 +1,23 @@
+/* PageHero — shared title strip (h1 + lead) used on top-level content pages. */
+
+.wrap {
+  background: var(--bi-surface);
+  padding: 40px 0 48px;
+}
+
+.title {
+  font-family: var(--ff-serif);
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 500;
+  line-height: 1.1;
+  color: var(--bi-ink-900);
+  margin: 0 0 12px;
+}
+
+.lead {
+  font-size: 18px;
+  color: var(--bi-ink-500);
+  max-width: 680px;
+  line-height: 1.6;
+  margin: 0;
+}

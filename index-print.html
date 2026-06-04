@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title>ASL Napoli 3 Sud — Redesign (Print)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700;900&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  /* Print-friendly adjustments */
+  html, body {
+    background: #fff !important;
+  }
+
+  /* Keep accent palette set to teal (user's current tweak) so print matches preview */
+  :root {
+    --bi-primary: #00798C;
+    --bi-primary-800: #00606E;
+    --bi-primary-100: #CCE4E8;
+    --bi-primary-050: #E6F2F4;
+  }
+
+  /* Force color printing and solid backgrounds */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+
+  /* Disable animation, scrolling, sticky */
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  /* Remove sticky positioning for print */
+  [style*="sticky"] { position: static !important; }
+
+  /* Page container scaling — clamp page to A4 width */
+  #root { background: #fff; }
+
+  /* Prevent breaks inside key blocks */
+  section, article {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  h1, h2, h3, h4 {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  /* Reduce hero padding on print */
+  @media print {
+    @page {
+      size: A4 portrait;
+      margin: 10mm;
+    }
+
+    html, body { width: 190mm; }
+
+    /* Make nav non-sticky */
+    [style*="position: sticky"] { position: static !important; }
+
+    /* Avoid cut-off shadows */
+    section, article, div { box-shadow: none !important; }
+
+    /* Hide tweaks panel if somehow present */
+    [data-tweaks-panel] { display: none !important; }
+  }
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+<script type="module" src="/src/main-print.jsx"></script>
+
+<script>
+// Apply teal primary
+const TEAL = { primary: "#00798C", primary800: "#00606E", primary100: "#CCE4E8", primary050: "#E6F2F4" };
+document.documentElement.style.setProperty("--bi-primary", TEAL.primary);
+document.documentElement.style.setProperty("--bi-primary-800", TEAL.primary800);
+document.documentElement.style.setProperty("--bi-primary-100", TEAL.primary100);
+document.documentElement.style.setProperty("--bi-primary-050", TEAL.primary050);
+</script>
+</body>
+</html>

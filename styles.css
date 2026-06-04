@@ -1,0 +1,251 @@
+/* ASL Napoli 3 Sud — Redesign
+   Base: Bootstrap Italia / Designers Italia tokens
+   https://italia.github.io/bootstrap-italia/
+*/
+
+:root {
+  /* ── Brand palette — unica fonte di verità ──────────────────────────── */
+  --brand-primary:       #50639d;
+  --brand-primary-800:   #3d4e7a;
+  --brand-primary-100:   #d0d7ea;
+  --brand-primary-050:   #eaecf5;
+
+  --brand-secondary:       #52b075;
+  --brand-secondary-800:   #3a7d52;
+  --brand-secondary-100:   #c5e8d2;
+  --brand-secondary-050:   #e2f4e9;
+
+  /* Bootstrap Italia overrides — referenziano il brand palette */
+  --bi-primary:     var(--brand-primary);
+  --bi-primary-800: var(--brand-primary-800);
+  --bi-primary-100: var(--brand-primary-100);
+  --bi-primary-050: var(--brand-primary-050);
+
+  --bi-teal:     var(--brand-secondary);
+  --bi-teal-700: var(--brand-secondary-800);
+  --bi-teal-100: var(--brand-secondary-100);
+
+  --bi-warm: #d14900; /* warm accent for priority CTAs */
+  --bi-warm-100: #fbe8dc;
+
+  --bi-success: #008055;
+  --bi-warning: #a66300;
+  --bi-danger: #d9364f;
+
+  --bi-ink-900: #17324d;
+  --bi-ink-700: #33485f;
+  --bi-ink-500: #5c6f82;
+  --bi-ink-300: #a1b5c9;
+  --bi-ink-100: #e3e9ee;
+
+  --bi-bg: #fafbfc;
+  --bi-bg-alt: #f2f5f8;
+  --bi-surface: #ffffff;
+
+  --bi-border: #d8e2eb;
+
+  /* radius & shadow */
+  --r-sm: 4px;
+  --r-md: 8px;
+  --r-lg: 12px;
+  --r-xl: 20px;
+
+  --shadow-sm: 0 1px 2px rgba(23, 50, 77, 0.06);
+  --shadow-md: 0 4px 12px rgba(23, 50, 77, 0.08), 0 1px 2px rgba(23, 50, 77, 0.04);
+  --shadow-lg: 0 12px 32px rgba(23, 50, 77, 0.1), 0 2px 6px rgba(23, 50, 77, 0.05);
+
+  /* type */
+  --ff-sans: 'Titillium Web', 'Helvetica Neue', Arial, sans-serif;
+  --ff-serif: 'Lora', Georgia, serif;
+  --ff-mono: 'Roboto Mono', ui-monospace, monospace;
+}
+
+[data-theme='dark'] {
+  --bi-primary: #4d9feb;
+  --bi-primary-800: #7ab8f0;
+  --bi-primary-100: #1a2e47;
+  --bi-primary-050: #0e1e30;
+
+  --bi-teal: #33b0bd;
+  --bi-teal-700: #5ec4ce;
+  --bi-teal-100: #0f3b42;
+
+  --bi-warm: #ff7a3a;
+  --bi-warm-100: #3a1e10;
+
+  --bi-ink-900: #f5f8fb;
+  --bi-ink-700: #d5dfea;
+  --bi-ink-500: #94a6b9;
+  --bi-ink-300: #4d6278;
+  --bi-ink-100: #243545;
+
+  --bi-bg: #0a1420;
+  --bi-bg-alt: #10202e;
+  --bi-surface: #14263a;
+
+  --bi-border: #223548;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bi-bg);
+  color: var(--bi-ink-900);
+  font-family: var(--ff-sans);
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: var(--bi-primary);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* utility layout */
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+@media (max-width: 1023px) {
+  .container {
+    padding: 0 24px;
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    padding: 0 16px;
+  }
+}
+
+/* focus ring */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 3px solid var(--bi-primary);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--bi-ink-300);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* placeholder ribbons for images */
+.placeholder-img {
+  background:
+    repeating-linear-gradient(
+      135deg,
+      rgba(0, 102, 204, 0.06),
+      rgba(0, 102, 204, 0.06) 10px,
+      rgba(0, 102, 204, 0.12) 10px,
+      rgba(0, 102, 204, 0.12) 20px
+    ),
+    var(--bi-primary-050);
+  color: var(--bi-primary-800);
+  font-family: var(--ff-mono);
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-radius: var(--r-md);
+}
+
+/* hide scrollbar on horizontal scrollers but keep scroll */
+.h-scroll {
+  overflow-x: auto;
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* subtle noise for hero atmosphere */
+.noise::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.04 0 0 0 0 0.1 0 0 0 0 0.2 0 0 0 0.12 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  opacity: 0.6;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+}
+
+/* keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.7;
+  }
+}
+@keyframes shimmer {
+  0% {
+    background-position: -400px 0;
+  }
+  100% {
+    background-position: 400px 0;
+  }
+}
+
+.animate-in {
+  animation: fadeInUp 0.5s ease both;
+}
+
+/* reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}

@@ -1,0 +1,5 @@
+export { default as DistrictMap } from './DistrictMap'
+export { DEFAULT_DISTRETTO_ID, DISTRETTI, getComuniPreview, getDistrettoById } from './districts-data'
+export type { Distretto } from './districts-data'
+export { getDistrettoIdFromTarget } from './map-helpers'
+export { useDistrictSelection } from './useDistrictSelection'

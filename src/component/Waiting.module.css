@@ -1,0 +1,191 @@
+/* WaitingLists section.
+   Responsive handled via CSS; bar widths stay inline (computed from data). */
+
+/* ─── Container ──────────────────────────────────────────── */
+
+.container {
+  background: var(--bi-surface);
+  border: 1px solid var(--bi-border);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+/* ─── Priority tabs ──────────────────────────────────────── */
+
+.tabs {
+  display: flex;
+  border-bottom: 1px solid var(--bi-border);
+  overflow: hidden;
+}
+
+.tab {
+  flex: 1;
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background: var(--bi-bg-alt);
+  border-bottom: 3px solid transparent;
+  border-right: 1px solid var(--bi-border);
+  text-align: left;
+  transition: background 0.15s ease;
+}
+
+.tab--active {
+  background: var(--bi-surface);
+  border-bottom-color: var(--bi-primary);
+}
+
+.tab__label {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--bi-ink-700);
+}
+
+.tab__label--active {
+  color: var(--bi-primary);
+}
+
+.tab__sub {
+  font-size: 12px;
+  color: var(--bi-ink-500);
+  margin-top: 2px;
+}
+
+/* ─── Table header ───────────────────────────────────────── */
+
+.tableHead {
+  display: grid;
+  grid-template-columns: 2fr 3fr 100px 100px;
+  padding: 14px 28px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--bi-ink-500);
+  border-bottom: 1px solid var(--bi-border);
+  background: var(--bi-bg-alt);
+}
+
+.tableHead__right {
+  text-align: right;
+}
+
+/* ─── Table rows ─────────────────────────────────────────── */
+
+.tableRow {
+  display: grid;
+  grid-template-columns: 2fr 3fr 100px 100px;
+  align-items: center;
+  padding: 18px 28px;
+  border-bottom: 1px solid var(--bi-border);
+  gap: 20px;
+}
+
+.tableRow:last-child {
+  border-bottom: none;
+}
+
+.row__svc {
+  font-weight: 600;
+  color: var(--bi-ink-900);
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.row__barWrap {
+  position: relative;
+  height: 8px;
+  background: var(--bi-ink-100);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.row__barFill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: 4px;
+}
+
+.row__barFill--ok {
+  background: var(--bi-success);
+}
+
+.row__barFill--warn {
+  background: var(--bi-warm);
+}
+
+.row__barThreshold {
+  position: absolute;
+  top: -4px;
+  bottom: -4px;
+  width: 2px;
+  background: var(--bi-ink-700);
+}
+
+.row__avg {
+  text-align: right;
+  font-weight: 700;
+}
+
+.row__avg--ok {
+  color: var(--bi-success);
+}
+
+.row__avg--warn {
+  color: var(--bi-warm);
+}
+
+.row__target {
+  text-align: right;
+  color: var(--bi-ink-500);
+  font-size: 14px;
+}
+
+/* ─── Legend ─────────────────────────────────────────────── */
+
+.legend {
+  padding: 16px 28px;
+  background: var(--bi-bg-alt);
+  border-top: 1px solid var(--bi-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--bi-ink-500);
+}
+
+.legend__items {
+  display: flex;
+  gap: 20px;
+}
+
+.legend__item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.legend__dotSuccess {
+  width: 12px;
+  height: 3px;
+  background: var(--bi-success);
+  border-radius: 2px;
+}
+
+.legend__dotWarn {
+  width: 12px;
+  height: 3px;
+  background: var(--bi-warm);
+  border-radius: 2px;
+}
+
+.legend__dotThreshold {
+  width: 2px;
+  height: 12px;
+  background: var(--bi-ink-700);
+}

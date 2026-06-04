@@ -1,0 +1,659 @@
+/* Header — TopBar, BrandRow, MainNav, QuickActions, StickyHeader.
+   Tokens are global. Responsive logic stays in JSX (selects classes via
+   useResponsive); modifiers below define each visual variant. */
+
+/* ─── StickyHeader ───────────────────────────────────────────────────── */
+
+.sticky {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  box-shadow: var(--shadow-sm);
+}
+
+/* ─── TopBar ─────────────────────────────────────────────────────────── */
+
+.topbar {
+  background: var(--bi-ink-900);
+  color: #fff;
+  font-size: 13px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.topbar__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
+  gap: 24px;
+}
+
+.topbar__row--compact {
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  height: auto;
+  min-height: 40px;
+  padding: 8px 0;
+}
+
+.topbar__row--mobile {
+  align-items: flex-start;
+}
+
+.topbar__group {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.topbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.topbar__actions--compact {
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.topbar__actions--mobile {
+  width: 100%;
+  justify-content: space-between;
+}
+
+.topbar__link {
+  color: rgba(255, 255, 255, 0.85);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+}
+
+.topbar__link--strong {
+  color: #fff;
+  font-weight: 600;
+}
+
+.topbar__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 13px;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.topbar__sep {
+  opacity: 0.2;
+}
+
+/* ─── BrandRow ───────────────────────────────────────────────────────── */
+
+.brandRow {
+  background: var(--bi-surface);
+  border-bottom: 1px solid var(--bi-border);
+}
+
+.brandRow__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 120px;
+  gap: 32px;
+  flex-wrap: nowrap;
+}
+
+.brandRow__inner--compact {
+  min-height: 0;
+  gap: 16px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  text-decoration: none;
+  flex: 1 1 320px;
+  min-width: 0;
+}
+
+.brand--mobile {
+  gap: 12px;
+}
+
+.brand__logo {
+  height: 68px;
+  width: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.brand__logo--compact {
+  height: 56px;
+}
+
+.brand__logo--mobile {
+  height: 48px;
+}
+
+.brand__actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
+  flex-wrap: wrap;
+  flex: 0 0 auto;
+}
+
+.brand__actions--compact {
+  flex: 1 1 100%;
+}
+
+.brand__actions--mobile {
+  width: 100%;
+  justify-content: space-between;
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.social--mobile {
+  flex-wrap: nowrap;
+  gap: 6px;
+}
+
+.social__label {
+  font-size: 13px;
+  color: var(--bi-ink-500);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.social__link {
+  color: var(--bi-ink-500);
+  display: flex;
+  line-height: 1;
+}
+
+.divider {
+  width: 1px;
+  height: 24px;
+  background: var(--bi-border);
+}
+
+.divider--sm {
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.searchBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 18px;
+  height: 40px;
+  border-radius: 20px;
+  border: 1.5px solid var(--brand-primary);
+  background: var(--brand-primary);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.searchBtn--mobile {
+  width: 100%;
+  padding: 0 16px;
+}
+
+/* ─── MainNav ────────────────────────────────────────────────────────── */
+
+.nav {
+  background: var(--brand-primary);
+  color: #fff;
+  position: relative;
+  z-index: 50;
+}
+
+.nav__inner {
+  display: flex;
+  align-items: stretch;
+  flex-direction: row;
+  height: 56px;
+}
+
+.nav__inner--compact {
+  height: auto;
+}
+
+.nav__inner--mobile {
+  flex-direction: column;
+  height: auto;
+}
+
+.nav__list {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  padding: 0;
+  flex: 1 1 auto;
+}
+
+.nav__list--compact {
+  overflow-x: auto;
+}
+
+.nav__ctaGroup {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  padding: 0 0 0 16px;
+}
+
+.nav__ctaGroup--compact {
+  gap: 6px;
+  padding-left: 10px;
+}
+
+.navLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  padding-top: 3px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
+  border-bottom: 3px solid transparent;
+  background: transparent;
+  transition: background 0.15s;
+  white-space: nowrap;
+}
+
+.navLink--compact {
+  padding: 14px 16px;
+}
+
+.navLink:hover {
+  background: rgba(0, 0, 0, 0.12);
+}
+
+.navLink--active,
+.navLink--active:hover {
+  border-bottom-color: #fff;
+  background: transparent;
+}
+
+/* ─── Nav dropdown (desktop) ─────────────────────────────────────────── */
+
+.navItem {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+}
+
+.navTrigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 0 20px;
+  padding-top: 3px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  background: transparent;
+  transition: background 0.15s;
+  white-space: nowrap;
+  cursor: pointer;
+  font-family: var(--ff-sans);
+}
+
+.navTrigger:hover {
+  background: rgba(0, 0, 0, 0.12);
+}
+
+.navDropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 220px;
+  background: var(--bi-surface);
+  border: 1px solid var(--bi-border);
+  border-top: none;
+  box-shadow: var(--shadow-md);
+  border-radius: 0 0 var(--r-md) var(--r-md);
+  padding: 6px 0;
+  z-index: 60;
+}
+
+.navDropdown__link {
+  display: block;
+  padding: 10px 18px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--bi-ink-900);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.12s;
+}
+
+.navDropdown__link:hover {
+  background: var(--bi-bg-alt);
+  color: var(--bi-primary);
+}
+
+/* ─── Mobile sub-items ───────────────────────────────────────────────── */
+
+.mobileSubList {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 4px 0 4px 12px;
+}
+
+.mobileSubLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 12px 16px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.04);
+  transition: background 0.15s;
+}
+
+.mobileSubLink:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* ─── MobileMainNav ──────────────────────────────────────────────────── */
+
+.mobileBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 56px;
+  padding: 8px 0;
+}
+
+.mobileBar__labels {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.mobileBar__eyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.mobileBar__title {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.mobileBar__toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 112px;
+  height: 40px;
+  padding: 0 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  background: rgba(0, 0, 0, 0.08);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.mobileBar__toggle--open {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.mobilePanel {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: auto;
+  z-index: 35;
+  background: var(--brand-primary);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 14px 16px;
+  padding-bottom: env(safe-area-inset-bottom, 16px);
+}
+
+.mobileNavLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 14px 16px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.06);
+  transition: background 0.15s;
+  white-space: nowrap;
+}
+
+.mobileNavLink--active {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+/* ─── TopBar mobile pills ────────────────────────────────────────────── */
+
+.topbar__mobilePills {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.topbar__pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  font-family: var(--ff-sans);
+}
+
+.topbar__pill--strong {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.38);
+  color: #fff;
+  font-weight: 700;
+}
+
+/* ─── QuickActions — CTA buttons ────────────────────────────────────── */
+
+.quick {
+  background: var(--bi-surface);
+  border-top: 2px solid var(--bi-primary);
+  border-bottom: 1px solid var(--bi-border);
+}
+
+.quick__row {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 12px;
+  padding: 10px 0;
+}
+
+.quick__row--compact {
+  gap: 8px;
+}
+
+.quick__row--mobile {
+  flex-direction: column;
+  gap: 8px;
+  padding: 8px 0;
+}
+
+.quickCta--full {
+  width: 100%;
+  justify-content: center;
+}
+
+.quickCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 18px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    opacity 0.15s,
+    box-shadow 0.15s;
+  cursor: pointer;
+}
+
+.quickCta:hover {
+  opacity: 0.88;
+  box-shadow: var(--shadow-sm);
+}
+
+.quickCta--primary {
+  background: var(--bi-primary);
+  color: #fff;
+  border: 1.5px solid var(--bi-primary);
+}
+
+.quickCta--outline {
+  background: transparent;
+  color: var(--bi-ink-900);
+  border: 1.5px solid var(--bi-border);
+}
+
+.quickCta__tag {
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.quickCta--outline .quickCta__tag {
+  background: var(--bi-bg-alt);
+  color: var(--bi-ink-700);
+}
+
+/* CTA varianti per sfondo teal (navbar e mobile panel) */
+
+.quickCta--navPrimary {
+  background: #fff;
+  color: var(--bi-primary);
+  border: 1.5px solid rgba(255, 255, 255, 0.8);
+}
+
+.quickCta--navPrimary .quickCta__tag {
+  background: var(--brand-primary-100);
+  color: var(--brand-primary);
+}
+
+.quickCta--navOutline {
+  background: transparent;
+  color: #fff;
+  border: 1.5px solid rgba(255, 255, 255, 0.45);
+}
+
+.quickCta--navOutline .quickCta__tag {
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
+}
+
+/* BrandRow mobile */
+
+.brandRow__mobileWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.brandRow__mobileTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+/* Mobile panel CTA section */
+
+.mobilePanel__ctas {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+/* color helpers (apply at icon/text level for CUP vs URP) */
+.txtPrimary {
+  color: var(--bi-primary);
+}
+.txtInk700 {
+  color: var(--bi-ink-700);
+}
+.txtInk500 {
+  color: var(--bi-ink-500);
+}
+.flexShrink0 {
+  flex-shrink: 0;
+}
+.mlAuto {
+  margin-left: auto;
+}

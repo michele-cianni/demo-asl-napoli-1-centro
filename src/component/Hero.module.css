@@ -1,0 +1,311 @@
+/* Hero section — homepage.
+   Breakpoints aligned with responsive.jsx: mobile <768, compact <1024.
+   Dynamic values (focused shadow, bar widths) stay inline in JSX. */
+
+/* ─── Section ────────────────────────────────────────────── */
+
+.section {
+  position: relative;
+  background: linear-gradient(160deg, var(--bi-primary-050) 0%, var(--bi-surface) 70%);
+  overflow: hidden;
+  padding: 80px 0 100px;
+}
+
+@media (max-width: 1023.98px) {
+  .section {
+    padding: 64px 0 80px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .section {
+    padding: 48px 0 56px;
+  }
+}
+
+/* ─── Decorative geometry ────────────────────────────────── */
+
+.decor1 {
+  position: absolute;
+  top: -120px;
+  right: -120px;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 121, 140, 0.1) 0%, transparent 65%);
+}
+
+.decor2 {
+  position: absolute;
+  bottom: -180px;
+  left: -100px;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 102, 204, 0.1) 0%, transparent 65%);
+}
+
+.decor3 {
+  position: absolute;
+  top: 120px;
+  right: 38%;
+  width: 1px;
+  height: 260px;
+  background: linear-gradient(to bottom, transparent, var(--bi-primary-100), transparent);
+}
+
+/* ─── Layout grid ────────────────────────────────────────── */
+
+.grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 72px;
+  align-items: center;
+}
+
+/* Prevent grid items from expanding beyond their cell (chip row with nowrap causes this) */
+.grid > * {
+  min-width: 0;
+}
+
+@media (max-width: 1023.98px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+/* ─── Heading + intro ────────────────────────────────────── */
+
+.heading {
+  font-family: var(--ff-serif);
+  font-weight: 500;
+  font-size: clamp(32px, 6vw, 64px);
+  line-height: 1.05;
+  letter-spacing: -1px;
+  margin: 0 0 24px;
+  color: var(--bi-ink-900);
+  text-wrap: pretty;
+}
+
+.heading em {
+  font-style: italic;
+  color: var(--bi-teal);
+}
+
+.intro {
+  font-size: 19px;
+  line-height: 1.55;
+  color: var(--bi-ink-700);
+  margin-bottom: 32px;
+  max-width: 560px;
+}
+
+@media (max-width: 1023.98px) {
+  .intro {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .intro {
+    font-size: 17px;
+  }
+}
+
+/* ─── Search box ─────────────────────────────────────────── */
+
+.searchBox {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--bi-border);
+  transition: box-shadow 0.2s ease;
+  position: relative;
+}
+
+.searchBox--focused {
+  box-shadow:
+    0 0 0 4px rgba(0, 102, 204, 0.15),
+    var(--shadow-lg);
+}
+
+.searchRow {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  padding: 6px 6px 6px 20px;
+  gap: 12px;
+}
+
+@media (max-width: 767.98px) {
+  .searchRow {
+    flex-wrap: wrap;
+    padding: 12px 14px;
+    gap: 10px;
+  }
+}
+
+.searchInput {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  font-family: var(--ff-sans);
+  font-size: 17px;
+  padding: 16px 0;
+  background: transparent;
+  color: var(--bi-ink-900);
+}
+
+@media (max-width: 767.98px) {
+  .searchInput {
+    min-width: calc(100% - 34px);
+    font-size: 16px;
+    padding: 6px 0 2px;
+  }
+}
+
+.micBtn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--bi-ink-500);
+}
+
+/* ─── Suggestions dropdown ───────────────────────────────── */
+
+.dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid var(--bi-border);
+  box-shadow: var(--shadow-lg);
+  padding: 8px;
+  z-index: 30;
+}
+
+@media (max-width: 767.98px) {
+  .dropdown {
+    position: static;
+    margin-top: 8px;
+  }
+}
+
+.dropdown__label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--bi-ink-500);
+  text-transform: uppercase;
+  padding: 8px 12px;
+}
+
+.suggestion {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  color: var(--bi-ink-900);
+  font-size: 15px;
+}
+
+.suggestion:hover {
+  background: var(--bi-bg-alt);
+}
+
+.suggestion__icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: var(--bi-primary-050);
+  color: var(--bi-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.suggestion__cat {
+  font-size: 12px;
+  color: var(--bi-ink-500);
+}
+
+/* ─── Quick chips ────────────────────────────────────────── */
+
+.chips {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 8px;
+  margin-top: 20px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.chips::-webkit-scrollbar {
+  display: none;
+}
+
+.chips__label {
+  font-size: 13px;
+  color: var(--bi-ink-500);
+  align-self: center;
+  margin-right: 4px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.chip {
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 99px;
+  background: #fff;
+  border: 1px solid var(--bi-border);
+  color: var(--bi-ink-700);
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+/* ─── Hero visual — desktop ──────────────────────────────── */
+
+.visual {
+  position: relative;
+  min-height: 480px;
+}
+
+@media (max-width: 1023.98px) {
+  .visual {
+    min-height: 520px;
+  }
+}
+
+.visualMobile {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* ─── Placeholder image ──────────────────────────────────── */
+
+.placeholder {
+  border-radius: 20px;
+}
+
+.placeholder--desktop {
+  position: absolute;
+  inset: 0;
+}
+
+.placeholder--mobile {
+  position: relative;
+  aspect-ratio: 16 / 11;
+}
