@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 import { resolve } from 'path'
 
 export default defineConfig({
-  base: '/demo-asl-napoli-3-sud/',
+  base: '/demo-asl-napoli-1-centro/',
   plugins: [react()],
   build: {
     rollupOptions: {
