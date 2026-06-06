@@ -16,10 +16,10 @@ import { Footer } from '../component/Footer.jsx';
 import { FeedbackWidget } from '../component/Feedback.jsx';
 import { MapView } from '../component/MapView.jsx';
 import {
-  OSPEDALI_ASL_NAPOLI_3_SUD as OSPEDALI,
-  ALL_COMUNI,
+  OSPEDALI_ASL_NAPOLI_1_CENTRO as OSPEDALI,
+  ALL_QUARTIERI as ALL_COMUNI,
   AREE_CLINICHE,
-} from '../data/ospedaliAslNapoli3Sud.js';
+} from '../data/ospedaliAslNapoli1Centro.js';
 
 // ─── Pagina lista Ospedali (PRD §5.5) ───
 // URL: /strutture/ospedali/
@@ -54,7 +54,7 @@ const OspedaleCard = ({ osp }) => {
     primary: { bg: 'var(--bi-primary-100)', fg: 'var(--bi-primary-800)' },
   };
   const t = badgeTones[osp.badgeTone] || badgeTones.primary;
-  const cardHref = osp.href !== '#' ? osp.href : (osp.fonteUrl || '#');
+  const cardHref = osp.href !== '#' ? osp.href : osp.fonteUrl || '#';
 
   return (
     <a
@@ -433,41 +433,43 @@ const PageOspedali = () => {
             </div>
 
             {/* Toggle lista / mappa — nascosto su mobile */}
-            {!isMobile && <div
-              style={{
-                display: 'flex',
-                border: '1.5px solid var(--bi-border)',
-                borderRadius: 8,
-                overflow: 'hidden',
-                flexShrink: 0,
-              }}
-            >
-              {[
-                { id: 'lista', icon: 'menu', label: 'Lista' },
-                { id: 'mappa', icon: 'hospital', label: 'Mappa' },
-              ].map((v) => (
-                <button
-                  key={v.id}
-                  onClick={() => setView(v.id)}
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: 6,
-                    padding: '9px 16px',
-                    fontSize: 13,
-                    fontWeight: 700,
-                    background: view === v.id ? 'var(--bi-primary)' : 'var(--bi-surface)',
-                    color: view === v.id ? '#fff' : 'var(--bi-ink-700)',
-                    border: 'none',
-                    cursor: 'pointer',
-                    transition: 'all 0.15s',
-                  }}
-                >
-                  <Icon name={v.icon} size={15} />
-                  {v.label}
-                </button>
-              ))}
-            </div>}
+            {!isMobile && (
+              <div
+                style={{
+                  display: 'flex',
+                  border: '1.5px solid var(--bi-border)',
+                  borderRadius: 8,
+                  overflow: 'hidden',
+                  flexShrink: 0,
+                }}
+              >
+                {[
+                  { id: 'lista', icon: 'menu', label: 'Lista' },
+                  { id: 'mappa', icon: 'hospital', label: 'Mappa' },
+                ].map((v) => (
+                  <button
+                    key={v.id}
+                    onClick={() => setView(v.id)}
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: 6,
+                      padding: '9px 16px',
+                      fontSize: 13,
+                      fontWeight: 700,
+                      background: view === v.id ? 'var(--bi-primary)' : 'var(--bi-surface)',
+                      color: view === v.id ? '#fff' : 'var(--bi-ink-700)',
+                      border: 'none',
+                      cursor: 'pointer',
+                      transition: 'all 0.15s',
+                    }}
+                  >
+                    <Icon name={v.icon} size={15} />
+                    {v.label}
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
 
           {/* Filtri a chip */}
