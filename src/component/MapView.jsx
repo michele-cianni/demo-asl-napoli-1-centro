@@ -67,8 +67,8 @@ const createMarkerIcon = (isPS) => {
 
 const BADGE_TONES = {
   warm: { bg: '#fff0e6', fg: '#d14900' },
-  teal: { bg: '#e6f4f6', fg: '#00667a' },
-  primary: { bg: '#e6f0f8', fg: '#004f9e' },
+  teal: { bg: '#e2f4e9', fg: '#3a7d52' },
+  primary: { bg: '#e2eaf4', fg: '#1c3a6e' },
 };
 
 // Forza invalidateSize dopo il montaggio — due passaggi per coprire mobile lento
