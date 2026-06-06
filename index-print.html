@@ -14,14 +14,6 @@
     background: #fff !important;
   }
 
-  /* Keep accent palette set to teal (user's current tweak) so print matches preview */
-  :root {
-    --bi-primary: #00798C;
-    --bi-primary-800: #00606E;
-    --bi-primary-100: #CCE4E8;
-    --bi-primary-050: #E6F2F4;
-  }
-
   /* Force color printing and solid backgrounds */
   * {
     -webkit-print-color-adjust: exact !important;
@@ -77,13 +69,5 @@
 
 <script type="module" src="/src/main-print.jsx"></script>
 
-<script>
-// Apply teal primary
-const TEAL = { primary: "#00798C", primary800: "#00606E", primary100: "#CCE4E8", primary050: "#E6F2F4" };
-document.documentElement.style.setProperty("--bi-primary", TEAL.primary);
-document.documentElement.style.setProperty("--bi-primary-800", TEAL.primary800);
-document.documentElement.style.setProperty("--bi-primary-100", TEAL.primary100);
-document.documentElement.style.setProperty("--bi-primary-050", TEAL.primary050);
-</script>
 </body>
 </html>
