@@ -8,19 +8,36 @@
   display: block;
 }
 
-.map-wrapper :global(#Distretto34) { fill: #d19bca; }
-.map-wrapper :global(#Distretto48) { fill: #eedd50; }
-.map-wrapper :global(#Distretto49) { fill: #e7cecc; }
-.map-wrapper :global(#Distretto50) { fill: #b2c6dd; }
-.map-wrapper :global(#Distretto51) { fill: #6f82a0; }
-.map-wrapper :global(#Distretto52) { fill: #34c8b9; }
-.map-wrapper :global(#Distretto53) { fill: #5f78b8; }
-.map-wrapper :global(#Distretto54) { fill: #531e15; }
-.map-wrapper :global(#Distretto55) { fill: #75466e; }
-.map-wrapper :global(#Distretto56) { fill: #288e83; }
-.map-wrapper :global(#Distretto57) { fill: #c9bdc7; }
-.map-wrapper :global(#Distretto58) { fill: #9babd1; }
-.map-wrapper :global(#Distretto59) { fill: #e38357; }
+.map-wrapper :global(#Distretto24) {
+  fill: #d19bca;
+}
+.map-wrapper :global(#Distretto25) {
+  fill: #eedd50;
+}
+.map-wrapper :global(#Distretto26) {
+  fill: #e7cecc;
+}
+.map-wrapper :global(#Distretto27) {
+  fill: #b2c6dd;
+}
+.map-wrapper :global(#Distretto28) {
+  fill: #6f82a0;
+}
+.map-wrapper :global(#Distretto29) {
+  fill: #34c8b9;
+}
+.map-wrapper :global(#Distretto30) {
+  fill: #5f78b8;
+}
+.map-wrapper :global(#Distretto31) {
+  fill: #531e15;
+}
+.map-wrapper :global(#Distretto32) {
+  fill: #288e83;
+}
+.map-wrapper :global(#Distretto33) {
+  fill: #9babd1;
+}
 
 .map-wrapper :global(.numero) {
   fill: white;
@@ -56,19 +73,16 @@
   opacity: 0.42;
 }
 
-.map-wrapper[data-active-id="34"] :global(#Distretto34 path),
-.map-wrapper[data-active-id="48"] :global(#Distretto48 path),
-.map-wrapper[data-active-id="49"] :global(#Distretto49 path),
-.map-wrapper[data-active-id="50"] :global(#Distretto50 path),
-.map-wrapper[data-active-id="51"] :global(#Distretto51 path),
-.map-wrapper[data-active-id="52"] :global(#Distretto52 path),
-.map-wrapper[data-active-id="53"] :global(#Distretto53 path),
-.map-wrapper[data-active-id="54"] :global(#Distretto54 path),
-.map-wrapper[data-active-id="55"] :global(#Distretto55 path),
-.map-wrapper[data-active-id="56"] :global(#Distretto56 path),
-.map-wrapper[data-active-id="57"] :global(#Distretto57 path),
-.map-wrapper[data-active-id="58"] :global(#Distretto58 path),
-.map-wrapper[data-active-id="59"] :global(#Distretto59 path) {
+.map-wrapper[data-active-id='24'] :global(#Distretto24 path),
+.map-wrapper[data-active-id='25'] :global(#Distretto25 path),
+.map-wrapper[data-active-id='26'] :global(#Distretto26 path),
+.map-wrapper[data-active-id='27'] :global(#Distretto27 path),
+.map-wrapper[data-active-id='28'] :global(#Distretto28 path),
+.map-wrapper[data-active-id='29'] :global(#Distretto29 path),
+.map-wrapper[data-active-id='30'] :global(#Distretto30 path),
+.map-wrapper[data-active-id='31'] :global(#Distretto31 path),
+.map-wrapper[data-active-id='32'] :global(#Distretto32 path),
+.map-wrapper[data-active-id='33'] :global(#Distretto33 path) {
   opacity: 1;
   fill: #1f4374;
   filter: drop-shadow(2px 4px 8px rgba(0, 0, 0, 0.25));
