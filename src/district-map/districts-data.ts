@@ -1,8 +1,8 @@
 export interface Distretto {
-  id: number
-  nome: string
-  colore: string
-  comuni: string[]
+  id: number;
+  nome: string;
+  colore: string;
+  comuni: string[];
 }
 
 export const DISTRETTI: Distretto[] = [
@@ -22,25 +22,25 @@ export const DISTRETTI: Distretto[] = [
     id: 26,
     nome: 'Distretto 26',
     colore: '#e7cecc',
-    comuni: ['da verificare'],
+    comuni: ['Pianura', 'Soccavo'],
   },
   {
     id: 27,
     nome: 'Distretto 27',
     colore: '#b2c6dd',
-    comuni: ['da verificare'],
+    comuni: ['Arenella', 'Vomero'],
   },
   {
     id: 28,
     nome: 'Distretto 28',
     colore: '#6f82a0',
-    comuni: ['da verificare'],
+    comuni: ['Chiaiano', 'Piscinola', 'Marianella', 'Scampia'],
   },
   {
     id: 29,
     nome: 'Distretto 29',
     colore: '#34c8b9',
-    comuni: ["Stella", "San Carlo all'Arena"],
+    comuni: ['Colli Aminei', "San Carlo all'Arena", 'Stella'],
   },
   {
     id: 30,
@@ -66,21 +66,21 @@ export const DISTRETTI: Distretto[] = [
     colore: '#9babd1',
     comuni: ['Vicaria', 'San Lorenzo', 'Poggioreale'],
   },
-]
+];
 
-export const DEFAULT_DISTRETTO_ID = 25
+export const DEFAULT_DISTRETTO_ID = 25;
 
 export function getDistrettoById(id: number | null | undefined): Distretto | undefined {
   if (id == null) {
-    return undefined
+    return undefined;
   }
 
-  return DISTRETTI.find((d) => d.id === id)
+  return DISTRETTI.find((d) => d.id === id);
 }
 
 export function getComuniPreview(comuni: string[], maxItems = 4): string {
-  const shown = comuni.slice(0, maxItems)
-  const remaining = comuni.length - shown.length
+  const shown = comuni.slice(0, maxItems);
+  const remaining = comuni.length - shown.length;
 
-  return `${shown.join(', ')}${remaining > 0 ? ` +${remaining}` : ''}`
+  return `${shown.join(', ')}${remaining > 0 ? ` +${remaining}` : ''}`;
 }
