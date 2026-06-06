@@ -1108,7 +1108,7 @@ const PageComeFarePer = () => {
                         la redazione web.
                       </div>
                       <div>
-                        <strong>Email:</strong> redazione@aslnapoli3sud.it
+                        <strong>Email:</strong> redazione@aslnapoli1centro.it
                       </div>
                       <div>
                         <a
@@ -1161,13 +1161,13 @@ const PageComeFarePer = () => {
                         Per segnalazioni encomi e reclami, e per informazioni sui servizi sanitari o pratiche personali contatta l&apos;Ufficio Relazioni con il Pubblico.
                       </div>
                       <div>
-                        <strong>Tel.</strong> 081 8722111 — Lun-Ven 9:00–13:00 | Mar-Gio 15:00–17:00
+                        <strong>Tel.</strong> 081 2541111 — Lun-Ven 9:00–13:00 | Mar-Gio 15:00–17:00
                       </div>
                       <div>
-                        <strong>Email:</strong> urp@aslnapoli3sud.it
+                        <strong>Email:</strong> urp@aslnapoli1centro.it
                       </div>
                       <div>
-                        <strong>Sede:</strong> Via Acquaviva 109, Castellammare di Stabia (NA)
+                        <strong>Sede:</strong> Via Comunale del Principe 13/A, 80145 Napoli (NA)
                       </div>
                     </div>
                   </div>

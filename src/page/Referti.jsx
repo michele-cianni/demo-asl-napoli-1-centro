@@ -239,7 +239,7 @@ const PageReferti = () => {
               }}
             >
               <li>
-                Assistiti SSN iscritti all'ASL Napoli 3 Sud con Fascicolo Sanitario Elettronico
+                Assistiti SSN iscritti all'ASL Napoli 1 Centro con Fascicolo Sanitario Elettronico
                 attivo
               </li>
               <li>Caregiver con delega attiva per scaricare referti di un familiare</li>
@@ -523,7 +523,7 @@ const PageReferti = () => {
                 <a href="page-redazione-web.html" style={{ color: 'var(--bi-primary)' }}>
                   redazione web
                 </a>{' '}
-                oppure a <strong>redazione@aslnapoli3sud.it</strong>.
+                oppure a <strong>redazione@aslnapoli1centro.it</strong>.
               </li>
               <li>
                 Per problemi tecnici al portale regionale: numero verde <strong>800 012 333</strong>{' '}
@@ -613,15 +613,15 @@ const PageReferti = () => {
             >
               {[
                 {
-                  sede: 'S. Anna e SS. Madonna della Neve — Boscotrecase',
+                  sede: 'Ospedale del Mare — Ponticelli',
                   orari: 'Lun–Ven 8:00–13:00 | Mar–Gio 14:30–17:00',
                 },
                 {
-                  sede: 'Presidio San Leonardo — Castellammare',
+                  sede: 'P.O. San Giovanni Bosco — Napoli',
                   orari: 'Lun–Ven 8:00–13:30 | Mar–Gio 15:00–17:30',
                 },
                 {
-                  sede: 'Presidio Maresca — Torre del Greco',
+                  sede: 'P.O. dei Pellegrini — Napoli',
                   orari: 'Lun–Ven 8:00–13:00 | Mer 14:30–16:30',
                 },
               ].map((loc, i) => (
@@ -743,11 +743,11 @@ const PageReferti = () => {
                 }}
               >
                 <div>
-                  <strong>URP ASL Napoli 3 Sud</strong> — 081 8722111 — Lun–Ven 9:00–13:00 | Mar–Gio
+                  <strong>URP ASL Napoli 1 Centro</strong> — 081 2541111 — Lun–Ven 9:00–13:00 | Mar–Gio
                   15:00–17:00
                 </div>
                 <div>
-                  <strong>Email URP:</strong> urp@aslnapoli3sud.it
+                  <strong>Email URP:</strong> urp@aslnapoli1centro.it
                 </div>
                 <div>
                   <strong>Redazione web:</strong>{' '}
@@ -757,7 +757,7 @@ const PageReferti = () => {
                   >
                     segnala errori del sito
                   </a>{' '}
-                  — redazione@aslnapoli3sud.it
+                  — redazione@aslnapoli1centro.it
                 </div>
                 <div>
                   <strong>Supporto portale regionale:</strong> 800 012 333 (gratuito)

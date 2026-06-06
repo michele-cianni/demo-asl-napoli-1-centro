@@ -177,9 +177,9 @@ export function PageDistretti() {
             margin: '0 0 40px',
           }}
         >
-          Il territorio dell&apos;ASL Napoli 3 Sud è organizzato in 13 distretti che coprono 58
-          comuni dell&apos;area vesuviana, stabiese e sorrentina. Cerca il tuo comune per
-          individuare il distretto sanitario di competenza.
+          Il territorio dell&apos;ASL Napoli 1 Centro è organizzato in 10 distretti che coprono i
+          quartieri e le Municipalità della città di Napoli e l&apos;isola di Capri. Cerca il tuo
+          quartiere per individuare il distretto sanitario di competenza.
         </p>
 
         {isMobile ? (

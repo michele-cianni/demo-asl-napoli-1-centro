@@ -355,7 +355,7 @@ const PageOspedali = () => {
 
       <PageHero
         title="Ospedali"
-        lead={`La rete ospedaliera dell'ASL Napoli 3 Sud comprende ${OSPEDALI.length} presidi distribuiti nel territorio dei 58 comuni dell'area vesuviana, stabiese e sorrentina.`}
+        lead={`La rete ospedaliera dell'ASL Napoli 1 Centro comprende ${OSPEDALI.length} presidi distribuiti tra la città di Napoli e l'isola di Capri.`}
       />
 
       {/* ── Barra di ricerca ── */}

@@ -168,7 +168,7 @@ const InfoColumn = ({ isMobile }) => (
       Scrivi alla redazione
     </h1>
     <p className={styles.info__desc}>
-      La redazione web dell&apos;ASL Napoli 3 Sud cura i contenuti del sito istituzionale. Usa
+      La redazione web dell&apos;ASL Napoli 1 Centro cura i contenuti del sito istituzionale. Usa
       questa sezione per segnalare errori del sito, informazioni non aggiornate, link non
       funzionanti o difficolta di navigazione. Per reclami, orientamento ai servizi e richieste
       amministrative resta invece il canale URP.
@@ -267,8 +267,8 @@ const InfoColumn = ({ isMobile }) => (
         <div>
           <div className={styles.info__metaLabel}>Email diretta</div>
           <div className={styles.info__metaValue}>
-            <a href="mailto:redazione@aslnapoli3sud.it" className={styles.info__metaLink}>
-              redazione@aslnapoli3sud.it
+            <a href="mailto:redazione@aslnapoli1centro.it" className={styles.info__metaLink}>
+              redazione@aslnapoli1centro.it
             </a>
           </div>
         </div>

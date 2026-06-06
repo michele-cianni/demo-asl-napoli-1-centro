@@ -460,7 +460,7 @@ const PageServizi = () => (
 
     <PageHero
       title="Servizi e prestazioni"
-      lead="Scopri tutte le prestazioni sanitarie erogate dall'ASL Napoli 3 Sud: visite specialistiche, esami diagnostici, screening, chirurgia e molto altro."
+      lead="Scopri tutte le prestazioni sanitarie erogate dall'ASL Napoli 1 Centro: visite specialistiche, esami diagnostici, screening, chirurgia e molto altro."
     />
 
     <ServicesHighlights />
