@@ -26,7 +26,7 @@ const Hero = () => {
       cat: 'Come fare per',
     },
     {
-      label: 'Distretto sanitario di Torre del Greco',
+      label: 'Distretto sanitario di Ponticelli',
       icon: 'hospital',
       cat: 'Struttura',
     },

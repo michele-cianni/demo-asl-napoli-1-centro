@@ -35,7 +35,7 @@ const ServicesHighlights = () => {
       badge: 'Novità',
       tone: 'primary',
       title: 'Nuovo ambulatorio terapia del dolore',
-      desc: 'Dal 5 maggio attivo al Presidio San Leonardo di Castellammare di Stabia.',
+      desc: "Dal 5 maggio attivo all'Ospedale del Mare di Ponticelli.",
       icon: 'stethoscope',
       img: `${import.meta.env.BASE_URL}images/servizi_terapia_dolore.png`,
     },
@@ -205,7 +205,7 @@ const CategoryGrid = () => {
     {
       icon: 'ambulance',
       title: 'Pronto Soccorso',
-      desc: 'Presidi di Pronto Soccorso presenti nel territorio ASL Napoli 3 Sud.',
+      desc: 'Presidi di Pronto Soccorso presenti nel territorio ASL Napoli 1 Centro.',
     }
   ];
 

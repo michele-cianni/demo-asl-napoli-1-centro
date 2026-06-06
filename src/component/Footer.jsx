@@ -82,13 +82,13 @@ const Footer = () => {
           <div>
             <div className={styles.footer__colTitle}>Contatti</div>
             <p className={styles.footer__contactText}>
-              Via Marconi, 66 — 80059 Torre del Greco (NA)
+              Via Comunale del Principe 13/A — 80145 Napoli (NA)
               <br />
-              C.F. / P.IVA 06321661211
+              C.F. / P.IVA 06328131211
               <br />
-              PEC: protocollo@pec.aslnapoli3sud.it
+              PEC: aslnapoli1centro@pec.aslna1centro.it
               <br />
-              +39 081 8727111
+              +39 081 2541111
             </p>
             <a href="page-redazione-web.html" className={styles.footer__contactLink}>
               Segnala un problema del sito

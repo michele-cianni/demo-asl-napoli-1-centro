@@ -29,7 +29,7 @@ const TREE = {
     ],
   },
   prenota_si: {
-    msg: 'Ottimo! Puoi prenotare in tre modi: online tramite il CUP regionale (il più rapido), per telefono al numero verde gratuito 800 019 774, oppure in farmacia abilitata FarmaciUp.',
+    msg: "Ottimo! Puoi prenotare in tre modi: online tramite il CUP regionale (il più rapido), per telefono ai CUP distrettuali (numeri sul sito aslnapoli1centro.it), oppure in farmacia abilitata FarmaciUp.",
     options: [
       { label: 'Vai alla guida completa', next: 'prenota_guida' },
       {
@@ -121,7 +121,7 @@ const TREE = {
     ],
   },
   referti_sportello: {
-    msg: 'Puoi ritirare il referto cartaceo presso: P.O. S. Anna e SS. Madonna della Neve (Boscotrecase), P.O. San Leonardo (Castellammare), P.O. Maresca (Torre del Greco). Portare tessera sanitaria.',
+    msg: 'Puoi ritirare il referto cartaceo presso: Ospedale del Mare (Ponticelli), P.O. San Giovanni Bosco, P.O. dei Pellegrini. Portare tessera sanitaria.',
     options: [
       {
         label: 'Vedi orari dettagliati',

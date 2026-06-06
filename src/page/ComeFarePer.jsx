@@ -370,7 +370,7 @@ const PageComeFarePer = () => {
     {
       n: 2,
       title: 'Scegli come prenotare',
-      desc: 'Puoi prenotare in tre modi: online tramite il CUP regionale (il più rapido), telefonicamente al numero verde gratuito 800 019 774, oppure di persona in farmacia abilitata FarmaciUp o allo sportello CUP ASL.',
+      desc: "Puoi prenotare in tre modi: online tramite il CUP regionale (il più rapido), telefonicamente ai CUP distrettuali ASL Napoli 1 Centro, oppure di persona in farmacia abilitata FarmaciUp o allo sportello CUP ASL.",
     },
     {
       n: 3,
@@ -393,7 +393,7 @@ const PageComeFarePer = () => {
   const faq = [
     {
       q: 'Posso prenotare senza SPID o CIE?',
-      a: 'Sì. Puoi prenotare telefonicamente al numero verde 800 019 774 (gratuito, attivo lun-ven 8:00–19:00, sab 8:00–13:00) oppure recandoti di persona presso gli sportelli CUP o le farmacie abilitate FarmaciUp.',
+      a: 'Sì. Puoi prenotare telefonicamente ai CUP distrettuali ASL (numeri sul sito aslnapoli1centro.it, attivi lun-ven 8:00–19:00, sab 8:00–13:00) oppure recandoti di persona presso gli sportelli CUP o le farmacie abilitate FarmaciUp.',
     },
     {
       q: 'Come faccio a disdire o spostare un appuntamento?',
@@ -999,7 +999,7 @@ const PageComeFarePer = () => {
                     {
                       icon: 'phone',
                       title: 'CUP Telefonico',
-                      detail: '800 019 774 — gratuito\nLun-Ven 8:00–19:00 | Sab 8:00–13:00',
+                      detail: 'CUP distrettuali ASL\nLun-Ven 8:00–19:00 | Sab 8:00–13:00',
                     },
                     {
                       icon: 'pill',

@@ -3,7 +3,7 @@ import styles from './Hero.module.css';
 
 /**
  * PageHero — title strip (eyebrow + h1 + lead) used on top-level content pages.
- * Le pagine di dettaglio con hero più articolato (referti, come-fare-per, maresca)
+ * Le pagine di dettaglio con hero più articolato (referti, come-fare-per, ospedale-del-mare)
  * mantengono il proprio markup inline.
  */
 const PageHero = ({ eyebrow, eyebrowColor, title, lead }) => (

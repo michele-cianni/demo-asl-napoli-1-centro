@@ -11,7 +11,7 @@ const HowToGrid = () => {
     {
       icon: 'calendar',
       title: 'Prenotare una visita',
-      desc: 'CUP online, Farmacup e numero verde 800 019 774',
+      desc: 'CUP online, Farmacup e CUP distrettuali ASL',
       tone: 'primary',
       href: 'page-come-fare-per.html',
     },
