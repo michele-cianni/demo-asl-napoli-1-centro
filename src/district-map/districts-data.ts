@@ -6,99 +6,76 @@ export interface Distretto {
 }
 
 export const DISTRETTI: Distretto[] = [
-  { id: 34, nome: 'Distretto 34', colore: '#d19bca', comuni: ['Portici'] },
   {
-    id: 48,
-    nome: 'Distretto 48',
+    id: 24,
+    nome: 'Distretto 24/73',
+    colore: '#d19bca',
+    comuni: ['Chiaia', 'Posillipo', 'San Ferdinando', 'Capri', 'Anacapri'],
+  },
+  {
+    id: 25,
+    nome: 'Distretto 25',
     colore: '#eedd50',
-    comuni: ['Marigliano', 'Mariglianella', 'San Vitaliano', 'Castello di Cisterna', 'Somma Vesuviana', 'Brusciano'],
+    comuni: ['Bagnoli', 'Fuorigrotta'],
   },
   {
-    id: 49,
-    nome: 'Distretto 49',
+    id: 26,
+    nome: 'Distretto 26',
     colore: '#e7cecc',
-    comuni: [
-      'Nola',
-      'Carbonara di Nola',
-      'Casamarciano',
-      'Liveri',
-      'S.P. Belsito',
-      'Scisciano',
-      'Saviano',
-      'Camposano',
-      'Cicciano',
-      'Cimitile',
-      'Comiziano',
-      'Roccarainola',
-      'Tufino',
-      'Visciano',
-    ],
+    comuni: ['da verificare'],
   },
   {
-    id: 50,
-    nome: 'Distretto 50',
+    id: 27,
+    nome: 'Distretto 27',
     colore: '#b2c6dd',
-    comuni: ['Volla', 'Cercola', 'Pollena Trocchia', 'Massa di Somma'],
+    comuni: ['da verificare'],
   },
   {
-    id: 51,
-    nome: 'Distretto 51',
+    id: 28,
+    nome: 'Distretto 28',
     colore: '#6f82a0',
-    comuni: ["Pomigliano d'Arco", "Sant'Anastasia"],
+    comuni: ['da verificare'],
   },
   {
-    id: 52,
-    nome: 'Distretto 52',
+    id: 29,
+    nome: 'Distretto 29',
     colore: '#34c8b9',
-    comuni: ['Palma Campania', 'Ottaviano', 'S.Giuseppe Vesuviano', 'San Gennaro Vesuviano', 'Poggiomarino', 'Striano', 'Terzigno'],
+    comuni: ["Stella", "San Carlo all'Arena"],
   },
   {
-    id: 53,
-    nome: 'Distretto 53',
+    id: 30,
+    nome: 'Distretto 30',
     colore: '#5f78b8',
-    comuni: ['Castellammare di Stabia'],
+    comuni: ['Miano', 'Secondigliano', 'San Pietro a Patierno'],
   },
   {
-    id: 54,
-    nome: 'Distretto 54',
+    id: 31,
+    nome: 'Distretto 31',
     colore: '#531e15',
-    comuni: ['San Giorgio a Cremano', 'San Sebastiano al Vesuvio'],
+    comuni: ['Avvocata', 'Montecalvario', 'Pendino', 'Mercato', 'San Giuseppe', 'Porto'],
   },
-  { id: 55, nome: 'Distretto 55', colore: '#75466e', comuni: ['Ercolano'] },
   {
-    id: 56,
-    nome: 'Distretto 56',
+    id: 32,
+    nome: 'Distretto 32',
     colore: '#288e83',
-    comuni: ['Torre Annunziata', 'Boscoreale', 'Boscotrecase', 'Trecase'],
+    comuni: ['Barra', 'San Giovanni a Teduccio', 'Ponticelli'],
   },
   {
-    id: 57,
-    nome: 'Distretto 57',
-    colore: '#c9bdc7',
-    comuni: ['Torre del Greco'],
-  },
-  {
-    id: 58,
-    nome: 'Distretto 58',
+    id: 33,
+    nome: 'Distretto 33',
     colore: '#9babd1',
-    comuni: ['Agerola', 'Casola', 'Gragnano', 'Lettere', 'Pimonte', 'Pompei', 'Santa Maria la Carità', "Sant'Antonio Abate"],
-  },
-  {
-    id: 59,
-    nome: 'Distretto 59',
-    colore: '#e38357',
-    comuni: ['Sorrento', 'Massa Lubrense', 'Vico Equense', 'Meta', "Sant'Agnello", 'Piano di Sorrento'],
+    comuni: ['Vicaria', 'San Lorenzo', 'Poggioreale'],
   },
 ]
 
-export const DEFAULT_DISTRETTO_ID = 49
+export const DEFAULT_DISTRETTO_ID = 25
 
 export function getDistrettoById(id: number | null | undefined): Distretto | undefined {
   if (id == null) {
     return undefined
   }
 
-  return DISTRETTI.find((distretto) => distretto.id === id)
+  return DISTRETTI.find((d) => d.id === id)
 }
 
 export function getComuniPreview(comuni: string[], maxItems = 4): string {
