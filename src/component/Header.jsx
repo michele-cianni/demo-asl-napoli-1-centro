@@ -108,11 +108,16 @@ const BrandRow = () => {
         <div className={cx('container', styles.brandRow__mobileWrap)}>
           <div className={styles.brandRow__mobileTop}>
             <a href="index.html" className={cx(styles.brand, styles['brand--mobile'])}>
-              <img
-                src="https://www.aslnapoli3sud.it/o/na3theme-theme/images/logo_primario.png"
-                alt="ASL Napoli 3 Sud"
-                className={cx(styles.brand__logo, styles['brand__logo--mobile'])}
-              />
+              <div className={styles.brand__logoWrap}>
+                <img
+                  src={`${import.meta.env.BASE_URL}images/logos/asl-napoli-1-centro.png`}
+                  alt=""
+                  className={cx(styles.brand__logo, styles['brand__logo--mobile'])}
+                />
+              </div>
+              <div className={styles.brand__text}>
+                <div className={styles.brand__name}>ASL Napoli 1 Centro</div>
+              </div>
             </a>
             <div className={cx(styles.social, styles['social--mobile'])}>
               {SOCIAL_LINKS.map((s) => (
@@ -141,11 +146,17 @@ const BrandRow = () => {
         )}
       >
         <a href="index.html" className={cx(styles.brand, isCompact && styles['brand--compact'])}>
-          <img
-            src="https://www.aslnapoli3sud.it/o/na3theme-theme/images/logo_primario.png"
-            alt="ASL Napoli 3 Sud"
-            className={cx(styles.brand__logo, isCompact && styles['brand__logo--compact'])}
-          />
+          <div className={styles.brand__logoWrap}>
+            <img
+              src={`${import.meta.env.BASE_URL}images/logos/asl-napoli-1-centro.png`}
+              alt=""
+              className={cx(styles.brand__logo, isCompact && styles['brand__logo--compact'])}
+            />
+          </div>
+          <div className={styles.brand__text}>
+            <div className={styles.brand__name}>ASL Napoli 1 Centro</div>
+            <div className={styles.brand__tagline}>Azienda Sanitaria Locale</div>
+          </div>
         </a>
 
         <div className={cx(styles.brand__actions, isCompact && styles['brand__actions--compact'])}>

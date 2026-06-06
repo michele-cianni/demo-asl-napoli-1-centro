@@ -144,6 +144,52 @@
   height: 48px;
 }
 
+.brand__logoWrap {
+  background: var(--brand-primary);
+  border-radius: 8px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.brand__text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.brand__name {
+  font-family: var(--ff-sans);
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--bi-ink-900);
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.brand__tagline {
+  font-family: var(--ff-sans);
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--bi-ink-500);
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+@media (max-width: 991px) {
+  .brand__tagline {
+    display: none;
+  }
+  .brand__name {
+    font-size: 1rem;
+  }
+}
+
 .brand__actions {
   display: flex;
   align-items: center;

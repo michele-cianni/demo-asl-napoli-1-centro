@@ -1,14 +1,14 @@
-/* ASL Napoli 3 Sud — Redesign
+/* ASL Napoli 1 Centro — Redesign
    Base: Bootstrap Italia / Designers Italia tokens
    https://italia.github.io/bootstrap-italia/
 */
 
 :root {
   /* ── Brand palette — unica fonte di verità ──────────────────────────── */
-  --brand-primary:       #50639d;
-  --brand-primary-800:   #3d4e7a;
-  --brand-primary-100:   #d0d7ea;
-  --brand-primary-050:   #eaecf5;
+  --brand-primary:       #1c3a6e;
+  --brand-primary-800:   #152d56;
+  --brand-primary-100:   #c5d3e8;
+  --brand-primary-050:   #e2eaf4;
 
   --brand-secondary:       #52b075;
   --brand-secondary-800:   #3a7d52;

@@ -15,10 +15,11 @@ const Footer = () => {
         <div className={styles.footer__logos}>
           <div className={styles.footer__brand}>
             <img
-              src={`${import.meta.env.BASE_URL}images/logos/asl-napoli-3-sud-bianco.png`}
-              alt="ASL Napoli 3 Sud"
+              src={`${import.meta.env.BASE_URL}images/logos/asl-napoli-1-centro-bianco.png`}
+              alt=""
               style={{ height: 48, width: 'auto', objectFit: 'contain' }}
             />
+            <div className={styles.footer__brandTitle}>ASL Napoli 1 Centro</div>
           </div>
 
           {!isMobile && <div className={styles.footer__sep} />}

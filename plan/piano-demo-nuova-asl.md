@@ -84,7 +84,7 @@ Valori concreti per chi esegue le sostituzioni. Fonti: sito istituzionale (`asln
 | TASK-001 | Creare un branch di lavoro dedicato (es. `napoli-1-centro`). | ✅ | 2026-06-05 |
 | TASK-002 | Aggiornare il base path in `vite.config.js`: `/demo-asl-napoli-3-sud/` → `/demo-asl-napoli-1-centro/`. | ✅ | 2026-06-05 |
 | TASK-003 | Aggiornare i 9 titoli HTML "ASL Napoli 3 Sud" → "ASL Napoli 1 Centro": `index.html`, `index-print.html`, `page-servizi.html`, `page-referti.html`, `page-come-fare-per.html`, `page-ospedali.html`, `page-maresca.html`, `page-redazione-web.html`, `page-distretti.html`. | ✅ | 2026-06-05 |
-| TASK-004 | Definire il set branding (nome ente, palette, loghi ufficiali Napoli 1 Centro). **Nome ente definito**: "ASL Napoli 1 Centro". **Palette**: placeholder invariata (`--brand-primary: #50639d`, `--brand-secondary: #52b075`) — da aggiornare con colori ufficiali quando disponibili (DEP-001). **Logo**: DEP-001 non risolto — necessario asset logo ufficiale per TASK-006/007. | ⚠️ parziale | 2026-06-05 |
+| TASK-004 | Definire il set branding (nome ente, palette, loghi ufficiali Napoli 1 Centro). **Nome ente**: "ASL Napoli 1 Centro". **Palette**: `--brand-primary: #1c3a6e` (blu navy, estratto visivamente dal logo; da confermare con cliente). **Logo**: scaricato dal portale trasparenza (76×76px); variante bianca generata con ImageMagick. Valori da aggiornare quando cliente fornisce asset ufficiali (DEP-001). | ✅ | 2026-06-06 |
 
 ### Implementation Phase 2
 
@@ -92,9 +92,9 @@ Valori concreti per chi esegue le sostituzioni. Fonti: sito istituzionale (`asln
 
 | Task | Description | Completed | Date |
 |------|-------------|-----------|------|
-| TASK-005 | Verificare/aggiornare palette e token in `styles.css` (`--brand-primary` #50639d, `--brand-secondary` #52b075) e `src/theme.js` se il brand Napoli 1 Centro richiede colori diversi. |  |  |
-| TASK-006 | Sostituire logo header e alt text in `src/component/Header.jsx` (L113, L146) e i link TopBar istituzionali. |  |  |
-| TASK-007 | Aggiornare `src/component/Footer.jsx`: alt logo (L19, asset `asl-napoli-3-sud-bianco.png`), indirizzo, C.F./P.IVA, PEC, centralino (L84–90) con i valori Napoli 1 Centro. |  |  |
+| TASK-005 | Verificare/aggiornare palette e token in `styles.css` (`--brand-primary` #50639d, `--brand-secondary` #52b075) e `src/theme.js` se il brand Napoli 1 Centro richiede colori diversi. | ✅ | 2026-06-06 |
+| TASK-006 | Sostituire logo header e alt text in `src/component/Header.jsx` (L113, L146) e i link TopBar istituzionali. | ✅ (logo) | 2026-06-06 |
+| TASK-007 | Aggiornare `src/component/Footer.jsx`: alt logo (L19, asset `asl-napoli-3-sud-bianco.png`), indirizzo, C.F./P.IVA, PEC, centralino (L84–90) con i valori Napoli 1 Centro. | ✅ (logo) | 2026-06-06 |
 | TASK-008 | Verificare elementi brand in `Header.module.css`, `Footer.module.css` e componenti con variabili brand. |  |  |
 
 ### Implementation Phase 3
