@@ -10,7 +10,7 @@ import styles from './Chatbot.module.css';
 // ── Albero di dialogo ──
 const TREE = {
   root: {
-    msg: "Ciao! Sono l'assistente ASL Napoli 3 Sud. Posso aiutarti a trovare informazioni di orientamento. Cosa ti serve?",
+    msg: "Ciao! Sono l'assistente ASL Napoli 1 Centro. Come posso aiutarti?",
     options: [
       { label: 'Prenotare una visita specialistica', next: 'prenota' },
       { label: 'Ritirare un referto', next: 'referti' },
@@ -144,7 +144,7 @@ const TREE = {
     ],
   },
   presidio: {
-    msg: "L'ASL Napoli 3 Sud copre 58 Comuni con 8 presidi ospedalieri: P.O. Maresca (Torre del Greco), P.O. S. Anna e SS. Madonna della Neve (Boscotrecase), P.O. San Leonardo (Castellammare), P.O. Santa Maria della Misericordia (Sorrento), P.O. De Luca e Rossano (Vico Equense), P.O. Santa Maria della Pietà (Nola), P.O. Apicella (Pollena Trocchia), P.O. Gragnano.",
+    msg: "L'ASL Napoli 1 Centro copre la città di Napoli con 10 distretti e 8 presidi ospedalieri: Ospedale del Mare (Ponticelli), P.O. San Giovanni Bosco, P.O. San Paolo (Fuorigrotta), P.O. dei Pellegrini, P.O. Loreto Mare, S.M. degli Incurabili/Ascalesi, Capilupi (Capri), P.S.I. di Barra.",
     options: [
       { label: 'Vedi tutti i presidi', next: 'link_presidi' },
       { label: "Torna all'inizio", next: 'root' },
@@ -158,7 +158,7 @@ const TREE = {
     ],
   },
   contatti: {
-    msg: 'Centralino ASL: 081 8722111\nURP (relazioni pubblico): 081 8722111 — Lun–Ven 9:00–13:00, Mar–Gio 15:00–17:00\nEmail URP: urp@aslnapoli3sud.it\nRedazione web: redazione@aslnapoli3sud.it\nCUP telefonico: 800 019 774 (gratuito)',
+    msg: 'Centralino ASL: 081 2541111\nURP (relazioni pubblico): 081 2541111 — Lun–Ven 9:00–13:00, Mar–Gio 15:00–17:00\nEmail URP: urp@aslnapoli1centro.it\nRedazione web: redazione@aslnapoli1centro.it\nCUP: consultare i numeri distrettuali sul sito aslnapoli1centro.it',
     options: [
       { label: 'Problema del sito o contenuto errato', next: 'sito_web' },
       { label: "Torna all'inizio", next: 'root' },
@@ -207,7 +207,7 @@ const TREE = {
     ],
   },
   operatore: {
-    msg: 'Per parlare con un operatore:\n• Telefono: 081 8722111\n• Lun–Ven 9:00–13:00 | Mar–Gio 15:00–17:00\n• Email: urp@aslnapoli3sud.it',
+    msg: 'Per parlare con un operatore:\n• Telefono: 081 2541111\n• Lun–Ven 9:00–13:00 | Mar–Gio 15:00–17:00\n• Email: urp@aslnapoli1centro.it',
     options: [{ label: "Torna all'inizio", next: 'root' }],
   },
   // Nodi "foglia" con link: solo messaggio di redirect
@@ -289,7 +289,7 @@ const Chatbot = () => {
               </div>
               <div>
                 <div className={styles.header__title}>Assistente ASL</div>
-                <div className={styles.header__subtitle}>Napoli 3 Sud</div>
+                <div className={styles.header__subtitle}>Napoli 1 Centro</div>
               </div>
             </div>
             <button
@@ -333,7 +333,7 @@ const Chatbot = () => {
                 ← Torna
               </button>
             )}
-            <a href="tel:0818722111" className={styles.callBtn}>
+            <a href="tel:0812541111" className={styles.callBtn}>
               <Icon name="phone" size={13} color="#fff" />
               Parla con un operatore
             </a>
