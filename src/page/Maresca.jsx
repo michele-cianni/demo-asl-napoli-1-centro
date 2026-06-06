@@ -6,10 +6,10 @@ import { Footer } from '../component/Footer.jsx';
 import { FeedbackWidget } from '../component/Feedback.jsx';
 import { useResponsive } from '../hooks/useResponsive.js';
 
-// ─── Pagina foglia — Ospedale Maresca di Torre del Greco (PRD §5.6) ───
+// ─── Pagina foglia — Ospedale del Mare di Ponticelli (PRD §5.6) ───
 // Conforme al Modello AGID Tipologia Struttura (§5.6.2)
-// URL: /strutture/ospedali/maresca-torre-del-greco/
-// Breadcrumb: Home → Strutture → Ospedali → Ospedale Maresca
+// URL: /strutture/ospedali/ospedale-del-mare/
+// Breadcrumb: Home → Strutture → Ospedali → Ospedale del Mare
 
 // ── Dati statici ──
 
@@ -121,7 +121,7 @@ const ACHIBlock = () => (
     <div style={{ maxWidth: 720 }}>
       <SectionHeading title="A chi è rivolto" />
       <p style={{ fontSize: 16, color: 'var(--bi-ink-700)', lineHeight: 1.7, margin: '0 0 16px' }}>
-        Il Presidio Ospedaliero di Torre del Greco garantisce assistenza sanitaria di qualità a
+        Il Presidio Ospedaliero di Ponticelli garantisce assistenza sanitaria di qualità a
         cittadini italiani e stranieri, residenti e non, rispettando sempre la dignità della
         persona.
       </p>
@@ -206,17 +206,17 @@ const DoveBlock = () => {
                   lineHeight: 1.4,
                 }}
               >
-                Via Montedoro 53
+                Via Enrico Russo, 11
                 <br />
-                80059 Torre del Greco (NA)
+                80147 Ponticelli, Napoli (NA)
               </div>
               <div style={{ fontSize: 13, color: 'var(--bi-ink-500)', marginTop: 6 }}>
-                Distretto Sanitario 58 — Torre del Greco
+                Distretto Sanitario 32 — Barra/San Giovanni/Ponticelli
               </div>
             </div>
           </div>
           <a
-            href="https://maps.google.com/?q=Via+Montedoro+Torre+del+Greco+NA"
+            href="https://maps.google.com/?q=Via+Enrico+Russo+Ponticelli+Napoli"
             target="_blank"
             rel="noopener noreferrer"
             style={{
@@ -255,7 +255,7 @@ const DoveBlock = () => {
             }}
           >
             <Icon name="hospital" size={36} />
-            <div style={{ fontWeight: 700 }}>Mappa — Via Montedoro, Torre del Greco</div>
+            <div style={{ fontWeight: 700 }}>Mappa — Via Enrico Russo, Ponticelli</div>
             <div style={{ opacity: 0.7, fontSize: 11 }}>
               OpenStreetMap / Leaflet.js — da integrare
             </div>
@@ -283,8 +283,8 @@ const ComeAccedereBlock = () => (
           icon: 'car',
           title: 'In auto',
           items: [
-            'Autostrada A3 Napoli–Salerno, uscita Torre del Greco',
-            "Via Montedoro: 500 m dall'uscita autostradale",
+            'Tangenziale di Napoli, uscita Ponticelli',
+            "Via Enrico Russo: 500 m dall'uscita",
             'Parcheggio convenzionato in Via Circumvallazione (gratuito 2h)',
           ],
         },
@@ -292,9 +292,9 @@ const ComeAccedereBlock = () => (
           icon: 'train',
           title: 'Treno e mezzi pubblici',
           items: [
-            'Circumvesuviana: fermata Torre del Greco (10 min a piedi)',
-            'Bus ANM linea 170 — fermata Ospedale Maresca',
-            'Bus SITA linea CS — fermata Via Montedoro',
+            'Metro linea 1 — stazione Brin (15 min a piedi)',
+            'ANM linee 154/156 — fermata Ospedale del Mare',
+            'ANM linea 195 — fermata Ponticelli',
           ],
         },
         {
@@ -493,17 +493,17 @@ const ContattiBlock = () => {
         }}
       >
         {[
-          { label: 'Centralino', tel: '081 849 2111', orari: '24h/24' },
+          { label: 'Centralino', tel: '081 1959 1111', orari: '24h/24' },
           {
             label: 'URP ospedaliero',
-            tel: '081 849 2150',
+            tel: '081 1959 2150',
             orari: 'Lun–Ven 9:00–13:00',
           },
           {
             label: 'Email istituzionale',
-            email: 'ospedale.maresca@aslnapoli3sud.it',
+            email: 'ospedale.delmare@aslnapoli1centro.it',
           },
-          { label: 'PEC', pec: 'maresca.aslna3sud@pec.it' },
+          { label: 'PEC', pec: 'ospedaledelmare@pec.aslna1centro.it' },
         ].map((n, i, arr) => (
           <div
             key={i}
@@ -583,7 +583,7 @@ const ServiziBlock = () => (
   <Section bg="var(--bi-surface)" id="servizi">
     <SectionHeading
       title="Servizi e prestazioni"
-      subtitle="Servizi erogati dall'Ospedale Maresca."
+      subtitle="Servizi erogati dall'Ospedale del Mare."
     />
     {SERVIZI.map((cat) => (
       <div key={cat.cat} style={{ marginBottom: 36 }}>
@@ -726,7 +726,7 @@ const ResponsabileBlock = () => (
           Dott.ssa Alessandra Gimigliano
         </div>
         <div style={{ fontSize: 14, color: 'var(--bi-ink-500)', marginTop: 4 }}>
-          Direzione medica di presidio — Ospedale Maresca
+          Direzione medica di presidio — Ospedale del Mare
         </div>
         <a
           href="#"
@@ -787,7 +787,7 @@ const UrpBlock = () => (
           Dott.ssa Cira Ascione
         </div>
         <div style={{ fontSize: 14, color: 'var(--bi-ink-500)', marginTop: 4 }}>
-          Responsabile URP — Ospedale Maresca
+          Responsabile URP — Ospedale del Mare
         </div>
         <a
           href="tel:08118434924"
@@ -819,7 +819,7 @@ const CupBlock = () => (
     <div style={{ maxWidth: 540 }}>
       {[
         { label: 'Telefono', value: '08118434926', tel: true },
-        { label: 'Email', value: 'potdg.dirs@aslnapoli3sud.it', email: true },
+        { label: 'Email', value: 'direzionesanitaria@aslnapoli1centro.it', email: true },
         { label: 'Lunedì–Venerdì', value: '08:30–15:00' },
         { label: 'Sabato', value: '08:00–11:00' },
       ].map((row, i, arr) => (
@@ -903,7 +903,7 @@ const CartellaClinicaBlock = () => (
           Email richiesta
         </div>
         <a
-          href="mailto:potdg.arc@aslnapoli3sud.it"
+          href="mailto:direzionesanitaria@aslnapoli1centro.it"
           style={{
             fontSize: 15,
             fontWeight: 600,
@@ -911,7 +911,7 @@ const CartellaClinicaBlock = () => (
             textDecoration: 'none',
           }}
         >
-          potdg.arc@aslnapoli3sud.it
+          direzionesanitaria@aslnapoli1centro.it
         </a>
       </div>
       <div style={{ maxWidth: 540 }}>
@@ -1075,7 +1075,7 @@ const GalleriaBlock = () => {
 // ── Pagina principale ──
 const PageMaresca = () => (
   <div
-    data-screen-label="06 Ospedale Maresca — pagina foglia"
+    data-screen-label="06 Ospedale del Mare — pagina foglia"
     style={{ background: 'var(--bi-bg)' }}
   >
     <TopBar />
@@ -1088,7 +1088,7 @@ const PageMaresca = () => (
         { label: 'Home', href: 'index.html' },
         { label: 'Strutture', href: '#' },
         { label: 'Ospedali', href: 'page-ospedali.html' },
-        { label: 'Ospedale Maresca' },
+        { label: 'Ospedale del Mare' },
       ]}
     />
 
@@ -1115,7 +1115,7 @@ const PageMaresca = () => (
           justifyContent: 'center',
         }}
       >
-        FOTO REALE OSPEDALE MARESCA · full-bleed · 1920×600
+        FOTO REALE OSPEDALE DEL MARE · full-bleed · 1920×600
       </div>
 
       <div className="container" style={{ position: 'relative', padding: '64px 0 56px' }}>
@@ -1131,7 +1131,7 @@ const PageMaresca = () => (
               color: '#fff',
             }}
           >
-            Ospedale Maresca
+            Ospedale del Mare
           </h1>
 
           {/* Campo: Tipo presidio + servizi erogati */}
@@ -1145,7 +1145,7 @@ const PageMaresca = () => (
               textTransform: 'uppercase',
             }}
           >
-            P.O. di base con Pronto Soccorso
+            P.O. di II livello con Pronto Soccorso
           </p>
           <p
             style={{
@@ -1187,7 +1187,7 @@ const PageMaresca = () => (
               <Icon name="hospital" size={13} />
               <span>
                 <strong style={{ color: 'rgba(255,255,255,0.55)', fontWeight: 600 }}>Sede</strong>
-                &nbsp; Via Montedoro, 53 – Torre del Greco
+                &nbsp; Via Enrico Russo, 11 — Ponticelli, Napoli
               </span>
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
@@ -1196,21 +1196,21 @@ const PageMaresca = () => (
                 <strong style={{ color: 'rgba(255,255,255,0.55)', fontWeight: 600 }}>
                   Centralino
                 </strong>
-                &nbsp; 08118431111
+                &nbsp; 081 1959 1111
               </span>
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
               <Icon name="mail" size={13} />
               <span>
                 <strong style={{ color: 'rgba(255,255,255,0.55)', fontWeight: 600 }}>Email</strong>
-                &nbsp; potdg.dirs@aslnapoli3sud.it
+                &nbsp; direzionesanitaria@aslnapoli1centro.it
               </span>
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
               <Icon name="mail" size={13} />
               <span>
                 <strong style={{ color: 'rgba(255,255,255,0.55)', fontWeight: 600 }}>PEC</strong>
-                &nbsp; potdg.dirs@pec.aslnapoli3sud.it
+                &nbsp; direzionesanitaria@pec.aslna1centro.it
               </span>
             </div>
           </div>

@@ -14,7 +14,7 @@ export default defineConfig({
         referti: resolve(__dirname, 'page-referti.html'),
         'come-fare-per': resolve(__dirname, 'page-come-fare-per.html'),
         ospedali: resolve(__dirname, 'page-ospedali.html'),
-        maresca: resolve(__dirname, 'page-maresca.html'),
+        'ospedale-mare': resolve(__dirname, 'page-ospedale-mare.html'),
         'redazione-web': resolve(__dirname, 'page-redazione-web.html'),
         distretti: resolve(__dirname, 'page-distretti.html'),
       },
