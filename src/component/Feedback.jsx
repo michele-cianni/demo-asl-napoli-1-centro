@@ -80,7 +80,7 @@ const FeedbackWidget = () => {
               </div>
               <div className={styles.thanks__body}>
                 Il tuo contributo ci aiuta a migliorare la qualità delle informazioni sul sito
-                dell&apos;ASL Napoli 3 Sud.
+                dell&apos;ASL Napoli 1 Centro.
               </div>
             </div>
             <div

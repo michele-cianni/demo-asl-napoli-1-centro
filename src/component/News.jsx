@@ -131,11 +131,11 @@ const Facilities = () => {
       phone: '081 535 3111',
     },
     {
-      name: 'P.O. Maresca',
-      city: 'Torre del Greco',
-      beds: 215,
-      depts: 13,
-      phone: '081 849 0111',
+      name: 'Ospedale del Mare',
+      city: 'Ponticelli, Napoli',
+      beds: 450,
+      depts: 20,
+      phone: '081 1959 1111',
     },
   ];
 

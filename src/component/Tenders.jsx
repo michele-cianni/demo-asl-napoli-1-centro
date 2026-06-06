@@ -152,7 +152,7 @@ const Tenders = () => {
       <SectionHeading
         eyebrow="ASL Comunica"
         title="Bandi e concorsi"
-        subtitle="Ultimi avvisi pubblicati dall'ASL Napoli 3 Sud."
+        subtitle="Ultimi avvisi pubblicati dall'ASL Napoli 1 Centro."
       />
 
       <div

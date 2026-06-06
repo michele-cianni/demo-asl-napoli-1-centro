@@ -54,7 +54,7 @@ const WaitingLists = () => {
       <SectionHeading
         eyebrow="Trasparenza"
         title="Liste d'attesa aggiornate al 18 aprile 2026"
-        subtitle="Tempi medi di attesa per le prestazioni ambulatoriali erogate dall'ASL Napoli 3 Sud, aggiornati ogni lunedì."
+        subtitle="Tempi medi di attesa per le prestazioni ambulatoriali erogate dall'ASL Napoli 1 Centro, aggiornati ogni lunedì."
         action={<ArrowLink>Scarica il report completo</ArrowLink>}
       />
 
