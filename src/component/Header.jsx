@@ -373,8 +373,8 @@ const MainNav = ({ activeItem, active }) => {
       ],
     },
     {
-      id: 'asl-informa',
-      label: 'ASL Informa',
+      id: 'asl-comunica',
+      label: 'ASL Comunica',
       href: '#',
       children: [
         { id: 'avvisi', label: 'Avvisi', href: '#' },

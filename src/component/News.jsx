@@ -41,8 +41,26 @@ const News = () => {
     },
   ];
 
+  const [current, setCurrent] = React.useState(0);
+  const [paused, setPaused] = React.useState(false);
+  const total = items.length;
+
+  React.useEffect(() => {
+    if (paused) return;
+    const id = setInterval(() => {
+      setCurrent((c) => (c + 1) % total);
+    }, 5000);
+    return () => clearInterval(id);
+  }, [paused, total]);
+
+  const prev = () => setCurrent((c) => (c - 1 + total) % total);
+  const next = () => setCurrent((c) => (c + 1) % total);
+
+  const item = items[current];
+
   return (
     <Section
+      pad={{ desktop: '28px 0 40px', compact: '24px 0 32px', mobile: '20px 0 28px' }}
       style={{
         backgroundColor: 'var(--bi-bg-alt)',
         backgroundImage: `url('${import.meta.env.BASE_URL}images/background/sotto%20in%20evidenza.png')`,
@@ -58,33 +76,56 @@ const News = () => {
         action={<ArrowLink>Tutte le notizie</ArrowLink>}
       />
 
-      <div className={styles.news__grid}>
-        {items.map((item, i) => (
-          <a key={i} href="#" className={styles.news__card}>
-            <img
-              src={item.img}
-              alt={item.imgLabel}
-              style={{
-                width: '100%',
-                aspectRatio: '5/3',
-                objectFit: 'cover',
-                display: 'block',
-              }}
-            />
-            <div className={styles.news__cardBody}>
-              <div className={styles.news__cardContent}>
-                <div className={styles.news__cardMeta}>
-                  <Badge tone={item.badgeTone}>{item.badge}</Badge>
-                  <span className={styles.news__cardDate}>
-                    {item.date} · {item.readTime} di lettura
-                  </span>
-                </div>
-                <h3 className={styles.news__cardTitle}>{item.title}</h3>
-                <p className={styles.news__cardDesc}>{item.desc}</p>
+      <div
+        className={styles.carousel}
+        onMouseEnter={() => setPaused(true)}
+        onMouseLeave={() => setPaused(false)}
+      >
+        <a key={current} href="#" className={styles.carousel__card}>
+          <img
+            src={item.img}
+            alt={item.imgLabel}
+            style={{ width: '100%', aspectRatio: '16/5', objectFit: 'cover', display: 'block' }}
+          />
+          <div className={styles.news__cardBody}>
+            <div className={styles.news__cardContent}>
+              <div className={styles.news__cardMeta}>
+                <Badge tone={item.badgeTone}>{item.badge}</Badge>
+                <span className={styles.news__cardDate}>
+                  {item.date} · {item.readTime} di lettura
+                </span>
               </div>
+              <h3 className={styles.news__cardTitle}>{item.title}</h3>
+              <p className={styles.news__cardDesc}>{item.desc}</p>
             </div>
-          </a>
-        ))}
+          </div>
+        </a>
+
+        <button
+          onClick={prev}
+          aria-label="Precedente"
+          className={cx(styles.carousel__arrow, styles['carousel__arrow--prev'])}
+        >
+          <Icon name="chevron-down" size={20} style={{ transform: 'rotate(90deg)' }} />
+        </button>
+        <button
+          onClick={next}
+          aria-label="Successivo"
+          className={cx(styles.carousel__arrow, styles['carousel__arrow--next'])}
+        >
+          <Icon name="chevron-down" size={20} style={{ transform: 'rotate(-90deg)' }} />
+        </button>
+
+        <div className={styles.carousel__dots}>
+          {items.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setCurrent(i)}
+              aria-label={`Vai alla slide ${i + 1}`}
+              className={cx(styles.carousel__dot, i === current && styles['carousel__dot--active'])}
+            />
+          ))}
+        </div>
       </div>
     </Section>
   );
