@@ -93,7 +93,7 @@ const Section = ({ children, bg, pad, style, id }) => {
 };
 
 // ─── Eyebrow ───
-const Eyebrow = ({ children, color = 'var(--bi-teal)' }) => (
+const Eyebrow = ({ children, color = 'var(--bi-primary)' }) => (
   <div className={styles.eyebrow} style={{ color }}>
     <span className={styles.eyebrow__bar} />
     {children}

@@ -4,14 +4,7 @@ import styles from './FSEBand.module.css';
 const cx = (...parts) => parts.filter(Boolean).join(' ');
 
 const FSEBand = () => (
-  <section
-    className={styles.band}
-    style={{
-      backgroundImage: `url('${import.meta.env.BASE_URL}images/background/sotto%20fascicolo%20sanitario%20elettronico.png')`,
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-    }}
-  >
+  <section className={styles.band}>
     <div aria-hidden className={styles.band__dots} />
     <div aria-hidden className={styles.band__ringLg} />
     <div aria-hidden className={styles.band__ringSm} />
