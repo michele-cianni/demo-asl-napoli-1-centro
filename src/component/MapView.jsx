@@ -7,7 +7,7 @@ import { Icon } from '../icons.jsx';
 import { BoundaryLayer } from './BoundaryLayer.jsx';
 import { BRAND_SECONDARY } from '../theme.js';
 
-const INITIAL_CENTER = [40.74, 14.43];
+const INITIAL_CENTER = [40.853, 14.268];
 const INITIAL_ZOOM = 11;
 
 if (typeof document !== 'undefined' && !document.getElementById('asl-marker-styles')) {
@@ -77,7 +77,10 @@ const MapInitializer = () => {
   useEffect(() => {
     const t1 = setTimeout(() => map.invalidateSize(), 100);
     const t2 = setTimeout(() => map.invalidateSize(), 400);
-    return () => { clearTimeout(t1); clearTimeout(t2); };
+    return () => {
+      clearTimeout(t1);
+      clearTimeout(t2);
+    };
   }, [map]);
   return null;
 };
@@ -93,7 +96,7 @@ const BoundsController = ({ ospedali }) => {
     } else {
       map.fitBounds(
         ospedali.map((o) => o.coords),
-        { padding: [40, 40], duration: 0.6 },
+        { padding: [40, 40], duration: 0.6 }
       );
     }
   }, [ospedali, map]);
@@ -167,24 +170,76 @@ const MapView = ({ ospedali }) => {
           }}
         >
           <div style={{ display: 'flex', alignItems: 'center', gap: 7 }}>
-            <span style={{ width: 14, height: 14, borderRadius: '50%', background: '#d14900', border: '2px solid rgba(255,255,255,.9)', boxShadow: '0 0 0 2px #d14900', flexShrink: 0, display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>
-              <svg width="7" height="7" viewBox="0 0 20 20" fill="white"><rect x="8" y="2" width="4" height="16" rx="1"/><rect x="2" y="8" width="16" height="4" rx="1"/></svg>
+            <span
+              style={{
+                width: 14,
+                height: 14,
+                borderRadius: '50%',
+                background: '#d14900',
+                border: '2px solid rgba(255,255,255,.9)',
+                boxShadow: '0 0 0 2px #d14900',
+                flexShrink: 0,
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              <svg width="7" height="7" viewBox="0 0 20 20" fill="white">
+                <rect x="8" y="2" width="4" height="16" rx="1" />
+                <rect x="2" y="8" width="16" height="4" rx="1" />
+              </svg>
             </span>
             Pronto Soccorso 24/7
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 7 }}>
-            <span style={{ width: 14, height: 14, borderRadius: '50%', background: 'var(--brand-secondary)', border: '2px solid rgba(255,255,255,.9)', boxShadow: '0 0 0 2px var(--brand-secondary)', flexShrink: 0, display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>
-              <svg width="7" height="7" viewBox="0 0 19 19" fill="white"><rect x="2" y="2" width="4" height="15" rx="1"/><rect x="13" y="2" width="4" height="15" rx="1"/><rect x="2" y="7.5" width="15" height="4" rx="1"/></svg>
+            <span
+              style={{
+                width: 14,
+                height: 14,
+                borderRadius: '50%',
+                background: 'var(--brand-secondary)',
+                border: '2px solid rgba(255,255,255,.9)',
+                boxShadow: '0 0 0 2px var(--brand-secondary)',
+                flexShrink: 0,
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              <svg width="7" height="7" viewBox="0 0 19 19" fill="white">
+                <rect x="2" y="2" width="4" height="15" rx="1" />
+                <rect x="13" y="2" width="4" height="15" rx="1" />
+                <rect x="2" y="7.5" width="15" height="4" rx="1" />
+              </svg>
             </span>
             Presidio Ospedaliero
           </div>
           <div style={{ borderTop: '1px solid rgba(0,0,0,0.1)', marginTop: 4, paddingTop: 4 }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 7 }}>
-              <span style={{ width: 14, height: 3, background: 'var(--brand-primary)', flexShrink: 0, display: 'inline-block', borderRadius: 1 }} />
-              ASL Napoli 3 Sud
+              <span
+                style={{
+                  width: 14,
+                  height: 3,
+                  background: 'var(--brand-primary)',
+                  flexShrink: 0,
+                  display: 'inline-block',
+                  borderRadius: 1,
+                }}
+              />
+              ASL Napoli 1 Centro
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: 7 }}>
-              <span style={{ width: 14, height: 2, background: 'var(--brand-secondary)', flexShrink: 0, display: 'inline-block', borderRadius: 1, opacity: 0.7 }} />
+              <span
+                style={{
+                  width: 14,
+                  height: 2,
+                  background: 'var(--brand-secondary)',
+                  flexShrink: 0,
+                  display: 'inline-block',
+                  borderRadius: 1,
+                  opacity: 0.7,
+                }}
+              />
               Regione Campania
             </div>
           </div>
@@ -343,8 +398,7 @@ const MapView = ({ ospedali }) => {
               transition: 'background 0.12s',
             }}
             onMouseEnter={(e) => {
-              if (selectedId !== osp.id)
-                e.currentTarget.style.background = 'var(--bi-bg-alt)';
+              if (selectedId !== osp.id) e.currentTarget.style.background = 'var(--bi-bg-alt)';
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.background =

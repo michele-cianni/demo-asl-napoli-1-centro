@@ -9,14 +9,14 @@ const campaniaStyle = {
   weight: 1.5,
   dashArray: '4 4',
   fillColor: BRAND_SECONDARY,
-  fillOpacity: 0.10,
+  fillOpacity: 0.1,
 };
 
 const aslStyle = {
   color: BRAND_PRIMARY,
   weight: 2,
   fillColor: BRAND_PRIMARY,
-  fillOpacity: 0.20,
+  fillOpacity: 0.2,
 };
 
 const load = (url) =>
@@ -31,7 +31,7 @@ const BoundaryLayer = () => {
   useEffect(() => {
     Promise.all([
       load(`${BASE}data/campania.geojson`),
-      load(`${BASE}data/asl-napoli-3-sud.geojson`),
+      load(`${BASE}data/asl-napoli-1-centro.geojson`),
     ]).then(([c, a]) => {
       if (c) setCampania(c);
       if (a) setAsl(a);
@@ -41,7 +41,7 @@ const BoundaryLayer = () => {
   return (
     <>
       {campania ? <GeoJSON key="campania" data={campania} style={campaniaStyle} /> : null}
-      {asl ? <GeoJSON key="asl" data={asl} style={aslStyle} /> : null}
+      {asl ? <GeoJSON key="asl-napoli-1-centro" data={asl} style={aslStyle} /> : null}
     </>
   );
 };
