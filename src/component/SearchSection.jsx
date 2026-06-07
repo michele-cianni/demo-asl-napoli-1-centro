@@ -22,7 +22,10 @@ const SearchSection = () => {
   };
 
   return (
-    <Section bg="var(--bi-bg)" pad={{ desktop: '20px 0 16px', compact: '16px 0 12px', mobile: '14px 0 10px' }}>
+    <Section
+      bg="var(--bi-bg)"
+      pad={{ desktop: '20px 0 16px', compact: '16px 0 12px', mobile: '14px 0 10px' }}
+    >
       <div>
         <h2
           style={{
@@ -62,7 +65,9 @@ const SearchSection = () => {
           </div>
           <input
             type="text"
-            placeholder={isMobile ? 'Cerca nel sito…' : 'Inserisci parole chiave, ad esempio "Vaccinazioni"'}
+            placeholder={
+              isMobile ? 'Cerca nel sito…' : 'Inserisci parole chiave, ad esempio "Vaccinazioni"'
+            }
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             onFocus={() => setFocused(true)}
@@ -97,7 +102,9 @@ const SearchSection = () => {
         </form>
 
         {isMobile && (
-          <p style={{ fontSize: 11, color: 'var(--bi-ink-500)', marginTop: 6, fontStyle: 'italic' }}>
+          <p
+            style={{ fontSize: 11, color: 'var(--bi-ink-500)', marginTop: 6, fontStyle: 'italic' }}
+          >
             Ad esempio: "Vaccinazioni", "Cambio medico"
           </p>
         )}
@@ -115,7 +122,18 @@ const SearchSection = () => {
           >
             Ricerca rapida
           </p>
-          <div style={{ display: 'flex', flexWrap: 'nowrap', gap: 8, ...(isMobile && { overflowX: 'auto', WebkitOverflowScrolling: 'touch', scrollbarWidth: 'none' }) }}>
+          <div
+            style={{
+              display: 'flex',
+              flexWrap: 'nowrap',
+              gap: 8,
+              ...(isMobile && {
+                overflowX: 'auto',
+                WebkitOverflowScrolling: 'touch',
+                scrollbarWidth: 'none',
+              }),
+            }}
+          >
             {quick.map((label) => (
               <a
                 key={label}

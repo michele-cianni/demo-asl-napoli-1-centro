@@ -121,9 +121,8 @@ const ACHIBlock = () => (
     <div style={{ maxWidth: 720 }}>
       <SectionHeading title="A chi è rivolto" />
       <p style={{ fontSize: 16, color: 'var(--bi-ink-700)', lineHeight: 1.7, margin: '0 0 16px' }}>
-        Il Presidio Ospedaliero di Ponticelli garantisce assistenza sanitaria di qualità a
-        cittadini italiani e stranieri, residenti e non, rispettando sempre la dignità della
-        persona.
+        Il Presidio Ospedaliero di Ponticelli garantisce assistenza sanitaria di qualità a cittadini
+        italiani e stranieri, residenti e non, rispettando sempre la dignità della persona.
       </p>
       <p style={{ fontSize: 16, color: 'var(--bi-ink-700)', lineHeight: 1.7, margin: '0 0 16px' }}>
         Grazie alle Unità Operative di Degenza e ai Servizi Diagnostici moderni, l'ospedale offre

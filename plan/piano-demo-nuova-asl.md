@@ -2,9 +2,9 @@
 goal: Creare la demo per ASL Napoli 1 Centro riusando la repository (fork di ASL Napoli 3 Sud)
 version: 2.0
 date_created: 2026-06-04
-last_updated: 2026-06-05
+last_updated: 2026-06-07
 owner: Team Prodotto Web ASL
-status: Planned
+status: In Progress (Phase 5)
 tags: [demo, migration, rebranding, asl, napoli-1-centro]
 ---
 
@@ -93,9 +93,9 @@ Valori concreti per chi esegue le sostituzioni. Fonti: sito istituzionale (`asln
 | Task | Description | Completed | Date |
 |------|-------------|-----------|------|
 | TASK-005 | Verificare/aggiornare palette e token in `styles.css` (`--brand-primary` #50639d, `--brand-secondary` #52b075) e `src/theme.js` se il brand Napoli 1 Centro richiede colori diversi. | ✅ | 2026-06-06 |
-| TASK-006 | Sostituire logo header e alt text in `src/component/Header.jsx` (L113, L146) e i link TopBar istituzionali. | ✅ (logo) | 2026-06-06 |
-| TASK-007 | Aggiornare `src/component/Footer.jsx`: alt logo (L19, asset `asl-napoli-3-sud-bianco.png`), indirizzo, C.F./P.IVA, PEC, centralino (L84–90) con i valori Napoli 1 Centro. | ✅ (logo) | 2026-06-06 |
-| TASK-008 | Verificare elementi brand in `Header.module.css`, `Footer.module.css` e componenti con variabili brand. |  |  |
+| TASK-006 | Sostituire logo header e alt text in `src/component/Header.jsx` (L113, L146) e i link TopBar istituzionali. | ✅ | 2026-06-06 |
+| TASK-007 | Aggiornare `src/component/Footer.jsx`: alt logo (L19, asset `asl-napoli-3-sud-bianco.png`), indirizzo, C.F./P.IVA, PEC, centralino (L84–90) con i valori Napoli 1 Centro. | ✅ | 2026-06-06 |
+| TASK-008 | Verificare elementi brand in `Header.module.css`, `Footer.module.css` e componenti con variabili brand. | ✅ | 2026-06-07 |
 
 ### Implementation Phase 3
 
@@ -103,11 +103,11 @@ Valori concreti per chi esegue le sostituzioni. Fonti: sito istituzionale (`asln
 
 | Task | Description | Completed | Date |
 |------|-------------|-----------|------|
-| TASK-009 | Riscrivere (ed eventualmente rinominare) `src/data/ospedaliAslNapoli3Sud.js` con gli 8 presidi Napoli 1 Centro (vedi §0). |  |  |
-| TASK-010 | Aggiornare `src/district-map/districts-data.ts`: 10 distretti (24/73, 25–33) con campo `comuni` valorizzato a quartieri/Municipalità (vedi §0). |  |  |
-| TASK-011 | Rifare la mappa distretti SVG `src/district-map/mappa-distretti.svg` sulla geometria della città di Napoli. |  |  |
-| TASK-012 | Sostituire `public/data/asl-napoli-3-sud.geojson` con il confine **città di Napoli** (+ eventuale partizione Municipalità); `public/data/campania.geojson` resta invariato. |  |  |
-| TASK-013 | Verificare comportamento layer mappa in `src/component/BoundaryLayer.jsx` e legenda in `src/component/MapView.jsx` (L184, L251). |  |  |
+| TASK-009 | Riscrivere (ed eventualmente rinominare) `src/data/ospedaliAslNapoli3Sud.js` con gli 8 presidi Napoli 1 Centro (vedi §0). Ora: `src/data/ospedaliAslNapoli1Centro.js`. | ✅ | 2026-06-07 |
+| TASK-010 | Aggiornare `src/district-map/districts-data.ts`: 10 distretti (24/73, 25–33) con campo `comuni` valorizzato a quartieri/Municipalità (vedi §0). **Distretti 26/27/28 popolati** (26: Pianura/Soccavo; 27: Arenella/Vomero; 28: Chiaiano/Piscinola/Marianella/Scampia) — RISK-001 risolto. | ✅ | 2026-06-07 |
+| TASK-011 | Rifare la mappa distretti SVG `src/district-map/mappa-distretti.svg` sulla geometria della città di Napoli. | ✅ | 2026-06-07 |
+| TASK-012 | Sostituire `public/data/asl-napoli-3-sud.geojson` con il confine **città di Napoli** (+ eventuale partizione Municipalità); `public/data/campania.geojson` resta invariato. Ora: `asl-napoli-1-centro.geojson`. | ✅ | 2026-06-07 |
+| TASK-013 | Verificare comportamento layer mappa in `src/component/BoundaryLayer.jsx` e legenda in `src/component/MapView.jsx` (L184, L251). | ✅ | 2026-06-07 |
 
 ### Implementation Phase 4
 
@@ -115,11 +115,11 @@ Valori concreti per chi esegue le sostituzioni. Fonti: sito istituzionale (`asln
 
 | Task | Description | Completed | Date |
 |------|-------------|-----------|------|
-| TASK-014 | Aggiornare `src/component/Chatbot.jsx` (L13, 147, 161, 210): saluto, frase "58 Comuni / 8 presidi" → "città di Napoli, 10 distretti, N presidi", contatti URP/centralino/CUP, elenco presidi. |  |  |
-| TASK-015 | Aggiornare copy istituzionale nelle pagine: `src/page/Servizi.jsx`, `Referti.jsx`, `Ospedali.jsx`, `Distretti.jsx`, `RedazioneWeb.jsx`, `ComeFarePer.jsx`, `Maresca.jsx`. |  |  |
-| TASK-016 | Bonificare le occorrenze residue "Napoli 3"/"Maresca"/"aslnapoli3sud" in: `src/component/News.jsx` (L16), `Tenders.jsx` (L155), `Waiting.jsx` (L57), `Feedback.jsx` (L83), `MapView.jsx`, `BoundaryLayer.jsx`, `src/main-maresca.jsx`, `src/page/Referti.jsx`. |  |  |
-| TASK-017 | Decidere la sorte della pagina **Maresca**: ritargetizzare su un presidio Napoli 1 Centro (es. Ospedale del Mare) o rimuoverla. Coinvolge `page-maresca.html`, `src/main-maresca.jsx`, `src/page/Maresca.jsx` (11 occorrenze) e la voce `maresca` in `vite.config.js`. |  |  |
-| TASK-018 | Verificare che i link esterni puntino al nuovo ente o lasciare placeholder dove non disponibili. |  |  |
+| TASK-014 | Aggiornare `src/component/Chatbot.jsx` (L13, 147, 161, 210): saluto, frase "58 Comuni / 8 presidi" → "città di Napoli, 10 distretti, N presidi", contatti URP/centralino/CUP, elenco presidi. | ✅ | 2026-06-07 |
+| TASK-015 | Aggiornare copy istituzionale nelle pagine: `src/page/Servizi.jsx`, `Referti.jsx`, `Ospedali.jsx`, `Distretti.jsx`, `RedazioneWeb.jsx`, `ComeFarePer.jsx`, `Maresca.jsx`. | ✅ | 2026-06-07 |
+| TASK-016 | Bonificare le occorrenze residue "Napoli 3"/"Maresca"/"aslnapoli3sud" in tutti i file src/. Grep confermato: zero hit su "Napoli 3", "aslnapoli3sud", "081 872", "06321661211". | ✅ | 2026-06-07 |
+| TASK-017 | **Decisione presa**: ritargetizzato su **Ospedale del Mare**. File rinominati: `page-maresca.html` → `page-ospedale-mare.html`, `src/main-maresca.jsx` → `src/main-ospedale-mare.jsx`, entry vite.config: `ospedale-mare`. Componente `src/page/Maresca.jsx` (1320L) aggiornato come Ospedale del Mare. | ✅ | 2026-06-07 |
+| TASK-018 | Verificare che i link esterni puntino al nuovo ente o lasciare placeholder dove non disponibili. Tutti i domini aggiornati ad aslnapoli1centro.it; zero aslnapoli3sud.it. | ✅ | 2026-06-07 |
 
 ### Implementation Phase 5
 
@@ -127,10 +127,10 @@ Valori concreti per chi esegue le sostituzioni. Fonti: sito istituzionale (`asln
 
 | Task | Description | Completed | Date |
 |------|-------------|-----------|------|
-| TASK-019 | Eseguire `npm install` (se necessario) e `npm run check`. |  |  |
-| TASK-020 | Eseguire `npm run build` e `npm run preview`. |  |  |
-| TASK-021 | Smoke test di tutte le entry page e navigazione cross-page. |  |  |
-| TASK-022 | Compilare lista gap noti (link mancanti, contenuti/placeholder, distretti 26/27/28 da verificare) per stakeholder. |  |  |
+| TASK-019 | Eseguire `npm install` (se necessario) e `npm run check`. **Risultato**: 0 errori, 24 warning (unescaped entities, unused imports — tutti pre-esistenti, non bloccanti). | ✅ | 2026-06-07 |
+| TASK-020 | Eseguire `npm run build` e `npm run preview`. **Risultato**: build completata, 121 moduli, 9 entry page generate in `dist/`. | ✅ | 2026-06-07 |
+| TASK-021 | Smoke test di tutte le entry page e navigazione cross-page. | Da fare (manuale) |  |
+| TASK-022 | Compilare lista gap noti per stakeholder (vedi §6 aggiornato). | ✅ | 2026-06-07 |
 
 ## 3. Deliverables
 
@@ -154,14 +154,25 @@ Valori concreti per chi esegue le sostituzioni. Fonti: sito istituzionale (`asln
 
 ## 6. Risks & Mitigations
 
-- RISK-001: Dati territoriali incompleti o non uniformi (distretti 26/27/28 da verificare).
+- RISK-001: Dati territoriali incompleti o non uniformi (distretti 26/27/28 da verificare). **RISOLTO** — 26: Pianura/Soccavo, 27: Arenella/Vomero, 28: Chiaiano/Piscinola/Marianella/Scampia.
   - MIT-001: Introdurre versione minima validata per demo e backlog di completamento.
-- RISK-002: Hardcode residui con riferimenti Napoli 3 Sud / Maresca / aslnapoli3sud.it.
+- RISK-002: Hardcode residui con riferimenti Napoli 3 Sud / Maresca / aslnapoli3sud.it. **RISOLTO** — grep confermato zero hit.
   - MIT-002: Pass di ricerca testuale globale (`grep -ri "napoli 3"`, `"maresca"`, `"aslnapoli3sud"`) prima del freeze demo.
-- RISK-003: Mismatch del modello territoriale (geometria comuni vs quartieri/Municipalità) tra GeoJSON, SVG e `districts-data.ts`.
+- RISK-003: Mismatch del modello territoriale (geometria comuni vs quartieri/Municipalità) tra GeoJSON, SVG e `districts-data.ts`. **RISOLTO** — tre asset allineati.
   - MIT-003: Allineare i tre asset in un unico pass coerente prima del QA mappa.
-- RISK-004: `CLAUDE.md` stale che indirizza l'esecutore verso path inesistenti.
+- RISK-004: `CLAUDE.md` stale che indirizza l'esecutore verso path inesistenti. **APERTO** — CLAUDE.md non ancora aggiornato.
   - MIT-004: Seguire i path di questo piano; aggiornare `CLAUDE.md` come task separato.
+
+### Gap noti per stakeholder (TASK-022)
+
+| Gap | File/Area | Priorità |
+|-----|-----------|----------|
+| Molti link `href="#"` non ancora collegati | Tutte le pagine | Bassa (demo) |
+| 24 ESLint warning: `&apos;`/`&quot;` non escaped, unused imports | `Referti.jsx`, `Ospedali.jsx`, `Maresca.jsx` | Bassa |
+| TASK-021 smoke test manuale non eseguito | Preview locale | Media |
+| `CLAUDE.md` stale (RISK-004) | Documentazione | Bassa |
+| CUP distrettuali: placeholder "consultare sito" nel chatbot | `Chatbot.jsx` L161 | Media (per produzione) |
+| Coordinate/mappa alcuni presidi da verificare su terreno | `ospedaliAslNapoli1Centro.js` | Bassa |
 
 ## 7. Exit Criteria
 

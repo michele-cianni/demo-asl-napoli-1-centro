@@ -1,63 +1,60 @@
-import { useState, useRef, useId } from 'react'
-import { DISTRETTI } from './districts-data'
-import { Icon } from '../icons.jsx'
+import { useState, useRef, useId } from 'react';
+import { DISTRETTI } from './districts-data';
+import { Icon } from '../icons.jsx';
 
 const ALL_COMUNI = DISTRETTI.flatMap((d) =>
   d.comuni.map((c) => ({ comune: c, distrettoId: d.id, distrettoNome: d.nome }))
-).sort((a, b) => a.comune.localeCompare(b.comune, 'it'))
+).sort((a, b) => a.comune.localeCompare(b.comune, 'it'));
 
 function normalize(s) {
-  return s
-    .normalize('NFD')
-    .replace(/[̀-ͯ]/g, '')
-    .toLowerCase()
+  return s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
 }
 
 export function ComuneSearch({ onSelect, placeholder = 'Cerca comune…' }) {
-  const [query, setQuery] = useState('')
-  const [open, setOpen] = useState(false)
-  const [activeIdx, setActiveIdx] = useState(-1)
-  const listboxId = useId()
-  const inputRef = useRef(null)
+  const [query, setQuery] = useState('');
+  const [open, setOpen] = useState(false);
+  const [activeIdx, setActiveIdx] = useState(-1);
+  const listboxId = useId();
+  const inputRef = useRef(null);
 
   const suggestions =
     query.length > 0
       ? ALL_COMUNI.filter((c) => normalize(c.comune).includes(normalize(query))).slice(0, 6)
-      : []
+      : [];
 
   function select(item) {
-    setQuery(item.comune)
-    setOpen(false)
-    setActiveIdx(-1)
-    onSelect?.(item.distrettoId)
+    setQuery(item.comune);
+    setOpen(false);
+    setActiveIdx(-1);
+    onSelect?.(item.distrettoId);
   }
 
   function handleKey(e) {
     if (e.key === 'ArrowDown') {
-      e.preventDefault()
-      setOpen(true)
-      setActiveIdx((i) => Math.min(i + 1, suggestions.length - 1))
+      e.preventDefault();
+      setOpen(true);
+      setActiveIdx((i) => Math.min(i + 1, suggestions.length - 1));
     } else if (e.key === 'ArrowUp') {
-      e.preventDefault()
-      setActiveIdx((i) => Math.max(i - 1, 0))
+      e.preventDefault();
+      setActiveIdx((i) => Math.max(i - 1, 0));
     } else if (e.key === 'Enter' && activeIdx >= 0 && suggestions.length > 0) {
-      e.preventDefault()
-      select(suggestions[activeIdx])
+      e.preventDefault();
+      select(suggestions[activeIdx]);
     } else if (e.key === 'Escape') {
-      setOpen(false)
-      setActiveIdx(-1)
+      setOpen(false);
+      setActiveIdx(-1);
     }
   }
 
   function clear() {
-    setQuery('')
-    setOpen(false)
-    setActiveIdx(-1)
-    onSelect?.(null)
-    inputRef.current?.focus()
+    setQuery('');
+    setOpen(false);
+    setActiveIdx(-1);
+    onSelect?.(null);
+    inputRef.current?.focus();
   }
 
-  const isOpen = open && suggestions.length > 0
+  const isOpen = open && suggestions.length > 0;
 
   return (
     <div style={{ position: 'relative' }}>
@@ -83,13 +80,13 @@ export function ComuneSearch({ onSelect, placeholder = 'Cerca comune…' }) {
           value={query}
           placeholder={placeholder}
           onChange={(e) => {
-            setQuery(e.target.value)
-            setOpen(true)
-            setActiveIdx(-1)
+            setQuery(e.target.value);
+            setOpen(true);
+            setActiveIdx(-1);
           }}
           onKeyDown={handleKey}
           onFocus={() => {
-            if (query.length > 0) setOpen(true)
+            if (query.length > 0) setOpen(true);
           }}
           onBlur={() => setTimeout(() => setOpen(false), 150)}
           style={{
@@ -105,8 +102,8 @@ export function ComuneSearch({ onSelect, placeholder = 'Cerca comune…' }) {
         {query.length > 0 && (
           <button
             onMouseDown={(e) => {
-              e.preventDefault()
-              clear()
+              e.preventDefault();
+              clear();
             }}
             aria-label="Cancella ricerca"
             style={{
@@ -178,5 +175,5 @@ export function ComuneSearch({ onSelect, placeholder = 'Cerca comune…' }) {
         </ul>
       )}
     </div>
-  )
+  );
 }

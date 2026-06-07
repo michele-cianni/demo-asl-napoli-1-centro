@@ -29,7 +29,7 @@ const TREE = {
     ],
   },
   prenota_si: {
-    msg: "Ottimo! Puoi prenotare in tre modi: online tramite il CUP regionale (il più rapido), per telefono ai CUP distrettuali (numeri sul sito aslnapoli1centro.it), oppure in farmacia abilitata FarmaciUp.",
+    msg: 'Ottimo! Puoi prenotare in tre modi: online tramite il CUP regionale (il più rapido), per telefono ai CUP distrettuali (numeri sul sito aslnapoli1centro.it), oppure in farmacia abilitata FarmaciUp.',
     options: [
       { label: 'Vai alla guida completa', next: 'prenota_guida' },
       {

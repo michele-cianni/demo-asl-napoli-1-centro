@@ -136,9 +136,9 @@ export function PageDistretti() {
 
   // Deep-link: #distretto-49 → pre-seleziona il distretto
   useEffect(() => {
-    const match = window.location.hash.match(/^#distretto-(\d+)$/)
+    const match = window.location.hash.match(/^#distretto-(\d+)$/);
     if (match) {
-      setSelectedDistrettoId(Number(match[1]))
+      setSelectedDistrettoId(Number(match[1]));
     }
   }, []);
 

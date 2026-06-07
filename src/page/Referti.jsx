@@ -743,8 +743,8 @@ const PageReferti = () => {
                 }}
               >
                 <div>
-                  <strong>URP ASL Napoli 1 Centro</strong> — 081 2541111 — Lun–Ven 9:00–13:00 | Mar–Gio
-                  15:00–17:00
+                  <strong>URP ASL Napoli 1 Centro</strong> — 081 2541111 — Lun–Ven 9:00–13:00 |
+                  Mar–Gio 15:00–17:00
                 </div>
                 <div>
                   <strong>Email URP:</strong> urp@aslnapoli1centro.it

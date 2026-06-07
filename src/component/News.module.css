@@ -265,8 +265,14 @@
 }
 
 @keyframes fadeSlide {
-  from { opacity: 0; transform: translateX(24px); }
-  to   { opacity: 1; transform: translateX(0); }
+  from {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .carousel__arrow {
@@ -318,7 +324,9 @@
   border: none;
   cursor: pointer;
   padding: 0;
-  transition: background 0.2s, transform 0.2s;
+  transition:
+    background 0.2s,
+    transform 0.2s;
 }
 
 .carousel__dot--active {

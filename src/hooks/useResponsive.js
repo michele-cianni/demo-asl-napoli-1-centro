@@ -14,7 +14,6 @@ const useViewportWidth = () => {
 
     const handleResize = () => setWidth(window.innerWidth);
 
-
     handleResize();
     window.addEventListener('resize', handleResize);
 

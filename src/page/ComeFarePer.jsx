@@ -39,16 +39,12 @@ const VideoPlayer = () => {
           boxShadow: '0 8px 32px rgba(0,0,0,0.25)',
         }}
       >
-        <img
-          src={`${import.meta.env.BASE_URL}images/screen_come_fare_per.png`}
-          alt="Come fare per prenotare una visita"
+        <div
           style={{
             position: 'absolute',
             inset: 0,
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover',
-            opacity: playing ? 0.25 : 0.55,
+            background: 'linear-gradient(135deg, #001a2e 0%, #003d5c 50%, #005f73 100%)',
+            opacity: playing ? 0.6 : 1,
             transition: 'opacity 0.3s',
           }}
         />
@@ -370,7 +366,7 @@ const PageComeFarePer = () => {
     {
       n: 2,
       title: 'Scegli come prenotare',
-      desc: "Puoi prenotare in tre modi: online tramite il CUP regionale (il più rapido), telefonicamente ai CUP distrettuali ASL Napoli 1 Centro, oppure di persona in farmacia abilitata FarmaciUp o allo sportello CUP ASL.",
+      desc: 'Puoi prenotare in tre modi: online tramite il CUP regionale (il più rapido), telefonicamente ai CUP distrettuali ASL Napoli 1 Centro, oppure di persona in farmacia abilitata FarmaciUp o allo sportello CUP ASL.',
     },
     {
       n: 3,
@@ -487,8 +483,8 @@ const PageComeFarePer = () => {
               margin: 0,
             }}
           >
-            Scopri come prenotare una visita con uno specialista ASL partendo dall&apos;impegnativa del
-            tuo medico di base, passo dopo passo. Il video in primo piano ti guida in 4 minuti.
+            Scopri come prenotare una visita con uno specialista ASL partendo dall&apos;impegnativa
+            del tuo medico di base, passo dopo passo. Il video in primo piano ti guida in 4 minuti.
           </p>
         </div>
       </div>
@@ -1104,8 +1100,8 @@ const PageComeFarePer = () => {
                       }}
                     >
                       <div>
-                        Per errori del sito, link non funzionanti o informazioni da aggiornare contatta
-                        la redazione web.
+                        Per errori del sito, link non funzionanti o informazioni da aggiornare
+                        contatta la redazione web.
                       </div>
                       <div>
                         <strong>Email:</strong> redazione@aslnapoli1centro.it
@@ -1158,7 +1154,8 @@ const PageComeFarePer = () => {
                       }}
                     >
                       <div>
-                        Per segnalazioni encomi e reclami, e per informazioni sui servizi sanitari o pratiche personali contatta l&apos;Ufficio Relazioni con il Pubblico.
+                        Per segnalazioni encomi e reclami, e per informazioni sui servizi sanitari o
+                        pratiche personali contatta l&apos;Ufficio Relazioni con il Pubblico.
                       </div>
                       <div>
                         <strong>Tel.</strong> 081 2541111 — Lun-Ven 9:00–13:00 | Mar-Gio 15:00–17:00

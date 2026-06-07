@@ -249,7 +249,10 @@ const MobileMainNav = ({ items, activeItem }) => {
             <Icon
               name="chevron-down"
               size={16}
-              style={{ transition: 'transform 0.15s', transform: isExpanded ? 'rotate(180deg)' : 'none' }}
+              style={{
+                transition: 'transform 0.15s',
+                transform: isExpanded ? 'rotate(180deg)' : 'none',
+              }}
             />
           </button>
           {isExpanded && (
@@ -367,8 +370,8 @@ const MainNav = ({ activeItem, active }) => {
       label: 'Strutture',
       href: '#',
       children: [
-        { id: 'distretti',           label: 'Distretti',           href: 'page-distretti.html' },
-        { id: 'dipartimenti',        label: 'Dipartimenti',        href: '#' },
+        { id: 'distretti', label: 'Distretti', href: 'page-distretti.html' },
+        { id: 'dipartimenti', label: 'Dipartimenti', href: '#' },
         { id: 'presidi-ospedalieri', label: 'Presidi ospedalieri', href: 'page-ospedali.html' },
       ],
     },
@@ -411,7 +414,10 @@ const MainNav = ({ activeItem, active }) => {
             <Icon
               name="chevron-down"
               size={14}
-              style={{ transition: 'transform 0.15s', transform: isOpen ? 'rotate(180deg)' : 'none' }}
+              style={{
+                transition: 'transform 0.15s',
+                transform: isOpen ? 'rotate(180deg)' : 'none',
+              }}
             />
           </button>
           {isOpen && (

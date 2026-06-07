@@ -140,10 +140,7 @@ const Tenders = () => {
   };
 
   return (
-    <Section
-      style={{ backgroundColor: 'var(--bi-surface)' }}
-      id="bandi-concorsi"
-    >
+    <Section style={{ backgroundColor: 'var(--bi-surface)' }} id="bandi-concorsi">
       <SectionHeading
         eyebrow="ASL Comunica"
         title="Bandi e concorsi"

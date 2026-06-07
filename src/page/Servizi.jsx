@@ -206,7 +206,7 @@ const CategoryGrid = () => {
       icon: 'ambulance',
       title: 'Pronto Soccorso',
       desc: 'Presidi di Pronto Soccorso presenti nel territorio ASL Napoli 1 Centro.',
-    }
+    },
   ];
 
   return (
