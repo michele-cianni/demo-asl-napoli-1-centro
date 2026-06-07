@@ -15,9 +15,9 @@ const Footer = () => {
         <div className={styles.footer__logos}>
           <div className={styles.footer__brand}>
             <img
-              src={`${import.meta.env.BASE_URL}images/logos/asl-napoli-1-centro-bianco.png`}
+              src={`${import.meta.env.BASE_URL}images/logos/nuovologoasl1.png`}
               alt=""
-              style={{ height: 48, width: 'auto', objectFit: 'contain' }}
+              style={{ height: 48, width: 'auto', objectFit: 'contain', background: 'white', borderRadius: 6, padding: '4px 8px' }}
             />
             <div className={styles.footer__brandTitle}>ASL Napoli 1 Centro</div>
           </div>

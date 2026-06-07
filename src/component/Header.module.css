@@ -145,7 +145,7 @@
 }
 
 .brand__logoWrap {
-  background: var(--brand-primary);
+  background: transparent;
   border-radius: 8px;
   padding: 8px;
   display: flex;
