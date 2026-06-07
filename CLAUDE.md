@@ -30,7 +30,7 @@ Components use standard `import`/`export`. Each page has a dedicated entry point
 | `page-referti.html` | `src/main-referti.jsx` → `<PageReferti />` |
 | `page-come-fare-per.html` | `src/main-come-fare-per.jsx` → `<PageComeFarePer />` |
 | `page-ospedali.html` | `src/main-ospedali.jsx` → `<PageOspedali />` |
-| `page-maresca.html` | `src/main-maresca.jsx` → `<PageMaresca />` |
+| `page-ospedale-mare.html` | `src/main-ospedale-mare.jsx` → `<PageOspedaleMare />` |
 
 ### Shared components
 

@@ -26,7 +26,7 @@ export const OSPEDALI_ASL_NAPOLI_1_CENTRO = [
       'Radiologia',
       'Pronto Soccorso',
     ],
-    href: '#',
+    href: 'page-ospedale-mare.html',
     fonteUrl: 'https://www.aslnapoli1centro.it/',
   },
   {

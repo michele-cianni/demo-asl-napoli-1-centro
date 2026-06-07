@@ -266,14 +266,16 @@ const DoveBlock = () => {
 };
 
 // ── 6. Come accedere (campo AGID necessario — assorbe auto/treno/accessibilità/parcheggi) ──
-const ComeAccedereBlock = () => (
+const ComeAccedereBlock = () => {
+  const { isMobile } = useResponsive();
+  return (
   <Section bg="var(--bi-bg-alt)" id="come-accedere">
     <SectionHeading title="Come accedere" />
     <div
       style={{
         display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
-        gap: 28,
+        gridTemplateColumns: isMobile ? '1fr' : 'repeat(auto-fill, minmax(280px, 1fr))',
+        gap: isMobile ? 16 : 28,
         marginBottom: 24,
       }}
     >
@@ -381,7 +383,8 @@ const ComeAccedereBlock = () => (
       .
     </div>
   </Section>
-);
+  );
+};
 
 // ── 7. Orari di apertura (campo AGID necessario) ──
 const OrariAperturaBlock = () => {
@@ -428,7 +431,7 @@ const OrariAperturaBlock = () => {
                 display: isMobile ? 'flex' : 'grid',
                 flexDirection: 'column',
                 gridTemplateColumns: '1.4fr 1.6fr',
-                gap: isMobile ? 2 : undefined,
+                gap: isMobile ? 8 : undefined,
                 padding: '14px 24px',
                 borderBottom: i < arr.length - 1 ? '1px solid var(--bi-border)' : 'none',
                 background: i % 2 === 0 ? 'transparent' : 'var(--bi-surface)',
@@ -578,7 +581,9 @@ const ContattiBlock = () => {
 };
 
 // ── 9. Servizi e prestazioni (campo AGID necessario — Card Services) ──
-const ServiziBlock = () => (
+const ServiziBlock = () => {
+  const { isMobile } = useResponsive();
+  return (
   <Section bg="var(--bi-surface)" id="servizi">
     <SectionHeading
       title="Servizi e prestazioni"
@@ -604,7 +609,7 @@ const ServiziBlock = () => (
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
+            gridTemplateColumns: isMobile ? '1fr' : 'repeat(auto-fill, minmax(280px, 1fr))',
             gap: 12,
           }}
         >
@@ -684,22 +689,26 @@ const ServiziBlock = () => (
       </div>
     ))}
   </Section>
-);
+  );
+};
 
 // ── 10. Responsabile della struttura (campo AGID necessario — Card People) ──
-const ResponsabileBlock = () => (
+const ResponsabileBlock = () => {
+  const { isMobile } = useResponsive();
+  return (
   <Section bg="var(--bi-bg-alt)" id="responsabile">
     <SectionHeading title="Responsabile della struttura" />
     <div
       style={{
         display: 'flex',
-        gap: 20,
-        alignItems: 'center',
-        padding: '24px',
+        flexDirection: isMobile ? 'column' : 'row',
+        gap: isMobile ? 12 : 20,
+        alignItems: isMobile ? 'flex-start' : 'center',
+        padding: isMobile ? '16px' : '24px',
         background: 'var(--bi-surface)',
         border: '1px solid var(--bi-border)',
         borderRadius: 12,
-        maxWidth: 480,
+        maxWidth: isMobile ? '100%' : 480,
       }}
     >
       <div
@@ -745,22 +754,26 @@ const ResponsabileBlock = () => (
       </div>
     </div>
   </Section>
-);
+  );
+};
 
 // ── 10b. URP ──
-const UrpBlock = () => (
+const UrpBlock = () => {
+  const { isMobile } = useResponsive();
+  return (
   <Section bg="var(--bi-surface)" id="urp">
     <SectionHeading title="Ufficio Relazioni con il Pubblico (URP)" />
     <div
       style={{
         display: 'flex',
-        gap: 20,
-        alignItems: 'center',
-        padding: '24px',
+        flexDirection: isMobile ? 'column' : 'row',
+        gap: isMobile ? 12 : 20,
+        alignItems: isMobile ? 'flex-start' : 'center',
+        padding: isMobile ? '16px' : '24px',
         background: 'var(--bi-bg-alt)',
         border: '1px solid var(--bi-border)',
         borderRadius: 12,
-        maxWidth: 480,
+        maxWidth: isMobile ? '100%' : 480,
       }}
     >
       <div
@@ -809,10 +822,13 @@ const UrpBlock = () => (
       </div>
     </div>
   </Section>
-);
+  );
+};
 
 // ── 10c. CUP ──
-const CupBlock = () => (
+const CupBlock = () => {
+  const { isMobile } = useResponsive();
+  return (
   <Section bg="var(--bi-bg-alt)" id="cup">
     <SectionHeading title="Centro Unico di Prenotazione (CUP)" />
     <div style={{ maxWidth: 540 }}>
@@ -825,10 +841,11 @@ const CupBlock = () => (
         <div
           key={i}
           style={{
-            display: 'grid',
+            display: isMobile ? 'flex' : 'grid',
+            flexDirection: 'column',
             gridTemplateColumns: '1.4fr 1.6fr',
-            gap: 12,
-            padding: '14px 0',
+            gap: isMobile ? 4 : 12,
+            padding: isMobile ? '12px 0' : '14px 0',
             borderBottom: i < arr.length - 1 ? '1px solid var(--bi-border)' : 'none',
           }}
         >
@@ -868,13 +885,16 @@ const CupBlock = () => (
       ))}
     </div>
   </Section>
-);
+  );
+};
 
 // ── 10d. Cartella clinica ──
-const CartellaClinicaBlock = () => (
+const CartellaClinicaBlock = () => {
+  const { isMobile } = useResponsive();
+  return (
   <Section bg="var(--bi-surface)" id="cartella-clinica">
     <SectionHeading title="Cartella clinica" />
-    <div style={{ maxWidth: 680, display: 'flex', flexDirection: 'column', gap: 20 }}>
+    <div style={{ maxWidth: isMobile ? '100%' : 680, display: 'flex', flexDirection: 'column', gap: isMobile ? 14 : 20 }}>
       <div>
         <p style={{ fontSize: 15, color: 'var(--bi-ink-700)', margin: '0 0 8px', lineHeight: 1.6 }}>
           La richiesta può essere effettuata via mail allegando:
@@ -924,10 +944,11 @@ const CartellaClinicaBlock = () => (
           <div
             key={i}
             style={{
-              display: 'grid',
+              display: isMobile ? 'flex' : 'grid',
+              flexDirection: 'column',
               gridTemplateColumns: '1.4fr 1.6fr',
-              gap: 12,
-              padding: '14px 0',
+              gap: isMobile ? 4 : 12,
+              padding: isMobile ? '12px 0' : '14px 0',
               borderBottom: i < arr.length - 1 ? '1px solid var(--bi-border)' : 'none',
             }}
           >
@@ -942,10 +963,13 @@ const CartellaClinicaBlock = () => (
       </div>
     </div>
   </Section>
-);
+  );
+};
 
 // ── 11a. Direzione Medica di Presidio ──
-const DirMedicaBlock = () => (
+const DirMedicaBlock = () => {
+  const { isMobile } = useResponsive();
+  return (
   <Section bg="var(--bi-bg-alt)" id="direzione-medica">
     <SectionHeading title="U.O.C. Direzione Medica di Presidio" />
     <div style={{ maxWidth: 680, display: 'flex', flexDirection: 'column', gap: 20 }}>
@@ -962,10 +986,11 @@ const DirMedicaBlock = () => (
           <div
             key={i}
             style={{
-              display: 'grid',
+              display: isMobile ? 'flex' : 'grid',
+              flexDirection: 'column',
               gridTemplateColumns: '1.4fr 1.6fr',
-              gap: 12,
-              padding: '14px 0',
+              gap: isMobile ? 4 : 12,
+              padding: isMobile ? '12px 0' : '14px 0',
               borderBottom: i < arr.length - 1 ? '1px solid var(--bi-border)' : 'none',
             }}
           >
@@ -988,10 +1013,13 @@ const DirMedicaBlock = () => (
       </div>
     </div>
   </Section>
-);
+  );
+};
 
 // ── 11b. SAO ──
-const SaoBlock = () => (
+const SaoBlock = () => {
+  const { isMobile } = useResponsive();
+  return (
   <Section bg="var(--bi-surface)" id="sao">
     <SectionHeading title="U.O.C. Servizi Amministrativi Ospedalieri Area Nord – SAO" />
     <div style={{ maxWidth: 740 }}>
@@ -1011,10 +1039,11 @@ const SaoBlock = () => (
         <div
           key={i}
           style={{
-            display: 'grid',
+            display: isMobile ? 'flex' : 'grid',
+            flexDirection: 'column',
             gridTemplateColumns: '2fr 1fr',
-            gap: 12,
-            padding: '14px 0',
+            gap: isMobile ? 4 : 12,
+            padding: isMobile ? '12px 0' : '14px 0',
             borderBottom: i < arr.length - 1 ? '1px solid var(--bi-border)' : 'none',
           }}
         >
@@ -1036,7 +1065,8 @@ const SaoBlock = () => (
       ))}
     </div>
   </Section>
-);
+  );
+};
 
 // ── 11. Galleria (campo AGID opzionale, incluso — griglia 3 colonne desktop) ──
 const GalleriaBlock = () => {
@@ -1072,7 +1102,7 @@ const GalleriaBlock = () => {
 };
 
 // ── Pagina principale ──
-const PageMaresca = () => (
+const PageOspedaleMare = () => (
   <div
     data-screen-label="06 Ospedale del Mare — pagina foglia"
     style={{ background: 'var(--bi-bg)' }}
@@ -1318,4 +1348,4 @@ const PageMaresca = () => (
   </div>
 );
 
-export { PageMaresca };
+export { PageOspedaleMare };
