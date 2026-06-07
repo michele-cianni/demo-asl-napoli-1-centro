@@ -361,15 +361,26 @@ const PageOspedali = () => {
       {/* ── Barra di ricerca ── */}
       <div
         style={{
+          position: 'relative',
+          overflow: 'hidden',
           backgroundColor: 'var(--bi-surface)',
-          backgroundImage: `url('${import.meta.env.BASE_URL}images/background/sotto%20ospedali%20barra%20di%20ricerca.png')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
           borderBottom: '1px solid var(--bi-border)',
           padding: '24px 0',
         }}
       >
-        <div className="container">
+        <div
+          aria-hidden="true"
+          style={{
+            position: 'absolute',
+            inset: 0,
+            backgroundImage: `url('${import.meta.env.BASE_URL}images/background/asl14.png')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            filter: 'blur(6px)',
+            transform: 'scale(1.08)',
+          }}
+        />
+        <div className="container" style={{ position: 'relative' }}>
           <div
             style={{
               display: 'flex',

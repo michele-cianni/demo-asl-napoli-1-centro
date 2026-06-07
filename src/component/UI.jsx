@@ -66,7 +66,7 @@ const ArrowLink = ({ children, href = '#', color = 'var(--bi-primary)' }) => (
 );
 
 // ─── Section wrapper ───
-const Section = ({ children, bg, pad, style, id }) => {
+const Section = ({ children, bg, pad, style, id, bgImage, bgBlur = '6px', bgOverlay }) => {
   const { isMobile, isCompact } = useResponsive();
 
   let resolvedPad;
@@ -83,11 +83,34 @@ const Section = ({ children, bg, pad, style, id }) => {
     ...(bg !== undefined && { background: bg }),
     ...(resolvedPad !== undefined && { padding: resolvedPad }),
     ...style,
+    ...(bgImage && { overflow: 'hidden' }),
   };
 
   return (
     <section id={id} className={styles.section} style={sectionStyle}>
-      <div className="container">{children}</div>
+      {bgImage && (
+        <div
+          aria-hidden="true"
+          style={{
+            position: 'absolute',
+            inset: 0,
+            backgroundImage: bgImage,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            filter: `blur(${bgBlur})`,
+            transform: 'scale(1.08)',
+          }}
+        />
+      )}
+      {bgOverlay && (
+        <div
+          aria-hidden="true"
+          style={{ position: 'absolute', inset: 0, background: bgOverlay }}
+        />
+      )}
+      <div className="container" style={{ position: bgImage ? 'relative' : undefined }}>
+        {children}
+      </div>
     </section>
   );
 };

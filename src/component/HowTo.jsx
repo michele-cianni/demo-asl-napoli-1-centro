@@ -74,12 +74,9 @@ const HowToGrid = () => {
 
   return (
     <Section
-      style={{
-        backgroundColor: 'var(--bi-surface)',
-        backgroundImage: `linear-gradient(rgba(255,255,255,0.82), rgba(255,255,255,0.82)), url('${import.meta.env.BASE_URL}images/background/sotto%20percorsi%20guidati.png')`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-      }}
+      style={{ backgroundColor: 'var(--bi-surface)' }}
+      bgImage={`url('${import.meta.env.BASE_URL}images/background/asl1.png')`}
+      bgOverlay="rgba(255,255,255,0.82)"
       id="servizi"
     >
       <SectionHeading

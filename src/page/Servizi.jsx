@@ -49,12 +49,8 @@ const ServicesHighlights = () => {
 
   return (
     <Section
-      style={{
-        backgroundColor: 'var(--bi-surface)',
-        backgroundImage: `url('${import.meta.env.BASE_URL}images/background/sotto%20servizi%20prioritari%20del%20momento.png')`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-      }}
+      style={{ backgroundColor: 'var(--bi-surface)' }}
+      bgImage={`url('${import.meta.env.BASE_URL}images/background/asl12.png')`}
       id="servizi-evidenza"
     >
       <SectionHeading
@@ -211,12 +207,9 @@ const CategoryGrid = () => {
 
   return (
     <Section
-      style={{
-        backgroundColor: 'var(--bi-bg-alt)',
-        backgroundImage: `linear-gradient(rgba(255,255,255,0.82), rgba(255,255,255,0.82)), url('${import.meta.env.BASE_URL}images/background/sez%20servizisotto%20tutti%20i%20servizi%20dell%20asl.png')`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-      }}
+      style={{ backgroundColor: 'var(--bi-bg-alt)' }}
+      bgImage={`url('${import.meta.env.BASE_URL}images/background/asl13.png')`}
+      bgOverlay="rgba(255,255,255,0.82)"
       id="categorie"
     >
       <SectionHeading

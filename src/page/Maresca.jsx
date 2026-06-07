@@ -1095,28 +1095,30 @@ const PageMaresca = () => (
     <div
       style={{
         position: 'relative',
-        background: 'linear-gradient(160deg, #001a24 0%, var(--bi-primary) 100%)',
         color: '#fff',
         overflow: 'hidden',
       }}
     >
-      {/* Campo: Immagine (opzionale, di sfondo) */}
       <div
-        className="placeholder-img"
+        aria-hidden="true"
         style={{
           position: 'absolute',
           inset: 0,
-          borderRadius: 0,
-          opacity: 0.25,
-          fontSize: 12,
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
+          backgroundImage: `url('${import.meta.env.BASE_URL}images/background/asl16.png')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          filter: 'blur(6px)',
+          transform: 'scale(1.08)',
         }}
-      >
-        FOTO REALE OSPEDALE DEL MARE · full-bleed · 1920×600
-      </div>
-
+      />
+      <div
+        aria-hidden="true"
+        style={{
+          position: 'absolute',
+          inset: 0,
+          background: 'linear-gradient(160deg, rgba(0,26,36,0.82) 0%, rgba(0,121,140,0.82) 100%)',
+        }}
+      />
       <div className="container" style={{ position: 'relative', padding: '64px 0 56px' }}>
         <div style={{ maxWidth: 640 }}>
           {/* Campo: Nome della struttura (H1) */}

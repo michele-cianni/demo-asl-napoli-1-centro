@@ -61,12 +61,8 @@ const News = () => {
   return (
     <Section
       pad={{ desktop: '28px 0 40px', compact: '24px 0 32px', mobile: '20px 0 28px' }}
-      style={{
-        backgroundColor: 'var(--bi-bg-alt)',
-        backgroundImage: `url('${import.meta.env.BASE_URL}images/background/sotto%20in%20evidenza.png')`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-      }}
+      style={{ backgroundColor: 'var(--bi-bg-alt)' }}
+      bgImage={`url('${import.meta.env.BASE_URL}images/background/asl1napoli.png')`}
       id="news"
     >
       <SectionHeading
