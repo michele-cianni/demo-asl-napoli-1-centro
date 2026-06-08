@@ -50,7 +50,6 @@ const ServicesHighlights = () => {
   return (
     <Section
       style={{ backgroundColor: 'var(--bi-surface)' }}
-      bgImage={`url('${import.meta.env.BASE_URL}images/background/banda-generica-1.png')`}
       id="servizi-evidenza"
     >
       <SectionHeading
@@ -86,16 +85,18 @@ const ServicesHighlights = () => {
               }
               onMouseLeave={(e) => (e.currentTarget.style.boxShadow = 'none')}
             >
-              <img
-                src={item.img}
-                alt={item.title}
+              <div
                 style={{
                   width: '100%',
                   height: 160,
-                  objectFit: 'cover',
-                  display: 'block',
+                  background: 'var(--bi-primary-100)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
                 }}
-              />
+              >
+                <Icon name={item.icon} size={48} style={{ color: 'var(--bi-primary-800)', opacity: 0.35 }} />
+              </div>
               <div
                 style={{
                   padding: '20px',
@@ -112,8 +113,8 @@ const ServicesHighlights = () => {
                     padding: '3px 10px',
                     borderRadius: 99,
                     marginBottom: 10,
-                    background: t.bg,
-                    color: t.fg,
+                    background: 'var(--bi-primary-100)',
+                    color: 'var(--bi-primary-800)',
                     fontSize: 11,
                     fontWeight: 700,
                     textTransform: 'uppercase',
