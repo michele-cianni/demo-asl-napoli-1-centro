@@ -2,7 +2,7 @@
 // Usare qui solo per contesti che non supportano CSS custom properties (es. Leaflet).
 // Per React inline styles preferire var(--brand-primary) / var(--brand-secondary).
 
-export const BRAND_PRIMARY = '#1c3a6e';
-export const BRAND_PRIMARY_800 = '#152d56';
-export const BRAND_SECONDARY = '#52b075';
-export const BRAND_SECONDARY_800 = '#3a7d52';
+export const BRAND_PRIMARY = '#004c82';
+export const BRAND_PRIMARY_800 = '#003563';
+export const BRAND_SECONDARY = '#eaeeee';
+export const BRAND_SECONDARY_800 = '#bbbebe';

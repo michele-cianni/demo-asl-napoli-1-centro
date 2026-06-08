@@ -1139,11 +1139,9 @@ const PageOspedaleMare = () => (
         style={{
           position: 'absolute',
           inset: 0,
-          backgroundImage: `url('${import.meta.env.BASE_URL}images/background/asl16.png')`,
+          backgroundImage: `url('${import.meta.env.BASE_URL}images/corsia.png')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          filter: 'blur(6px)',
-          transform: 'scale(1.08)',
         }}
       />
       <div

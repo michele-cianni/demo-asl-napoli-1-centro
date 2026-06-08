@@ -5,11 +5,17 @@ const cx = (...parts) => parts.filter(Boolean).join(' ');
 
 const FSEBand = () => (
   <section className={styles.band}>
-    <div aria-hidden className={styles.band__dots} />
-    <div aria-hidden className={styles.band__ringLg} />
-    <div aria-hidden className={styles.band__ringSm} />
-    <div aria-hidden className={styles.band__slashes} />
-
+    <div
+      aria-hidden
+      style={{
+        position: 'absolute',
+        inset: 0,
+        backgroundImage: `url('${import.meta.env.BASE_URL}images/background/fascicolo-sanitario.png')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        opacity: 0.18,
+      }}
+    />
     <div className={cx('container', styles.band__center)}>
       <h2 className={styles.band__title}>Fascicolo Sanitario Elettronico (FSE)</h2>
       <p className={styles.band__intro}>

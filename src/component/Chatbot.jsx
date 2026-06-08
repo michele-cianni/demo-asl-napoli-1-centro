@@ -144,7 +144,7 @@ const TREE = {
     ],
   },
   presidio: {
-    msg: "L'ASL Napoli 1 Centro copre la città di Napoli con 10 distretti e 8 presidi ospedalieri: Ospedale del Mare (Ponticelli), P.O. San Giovanni Bosco, P.O. San Paolo (Fuorigrotta), P.O. dei Pellegrini, P.O. Loreto Mare, S.M. degli Incurabili/Ascalesi, Capilupi (Capri), P.S.I. di Barra.",
+    msg: "L'ASL Napoli 1 Centro copre la città di Napoli con 10 distretti e 7 presidi ospedalieri: Ospedale del Mare – DEA II° (Ponticelli), P.O. San Paolo – DEA I° (Fuorigrotta), P.O. dei Pellegrini – DEA I°, P.O. S.M. Loreto Nuovo – DEA I°, P.O. San Giovanni Bosco (Miano), Stabilimento Ospedaliero di Barra, Presidio Capilupi (Capri).",
     options: [
       { label: 'Vedi tutti i presidi', next: 'link_presidi' },
       { label: "Torna all'inizio", next: 'root' },

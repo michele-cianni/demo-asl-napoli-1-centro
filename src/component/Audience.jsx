@@ -11,49 +11,61 @@ const AudienceGrid = () => {
       label: 'Anziani',
       desc: 'Assistenza domiciliare, prevenzione, vaccinazioni e servizi dedicati agli over 65.',
       color: 'var(--bi-primary)',
-      bg: 'var(--bi-primary-050)',
+      accent: 'var(--bi-primary)',
+      iconFg: '#fff',
+      hoverBg: 'var(--bi-primary-050)',
     },
     {
       icon: 'star',
       label: 'Giovani',
       desc: 'Salute mentale, consultori, vaccinazioni e medicina dello sport.',
-      color: 'var(--bi-teal-700)',
-      bg: 'var(--bi-teal-100)',
+      color: 'var(--bi-primary)',
+      accent: 'var(--bi-primary)',
+      iconFg: '#fff',
+      hoverBg: 'var(--bi-primary-050)',
     },
     {
       icon: 'heart',
       label: 'Donne',
       desc: 'Screening oncologici, percorsi nascita, consultori e salute di genere.',
-      color: 'var(--bi-warm)',
-      bg: 'var(--bi-warm-100)',
+      color: 'var(--bi-primary)',
+      accent: 'var(--bi-primary)',
+      iconFg: '#fff',
+      hoverBg: 'var(--bi-primary-050)',
     },
     {
       icon: 'stethoscope',
       label: 'Bambini',
       desc: "Pediatria di base, vaccinazioni dell'infanzia, consultori familiari.",
       color: 'var(--bi-primary)',
-      bg: 'var(--bi-primary-050)',
+      accent: 'var(--bi-primary)',
+      iconFg: '#fff',
+      hoverBg: 'var(--bi-primary-050)',
     },
     {
       icon: 'shield',
       label: 'Caregiver',
       desc: 'Supporto a chi assiste un familiare: deleghe, ADI, sportello ascolto.',
-      color: 'var(--bi-teal-700)',
-      bg: 'var(--bi-teal-100)',
+      color: 'var(--bi-primary)',
+      accent: 'var(--bi-primary)',
+      iconFg: '#fff',
+      hoverBg: 'var(--bi-primary-050)',
     },
     {
       icon: 'accessibility',
       label: 'Persone con disabilità',
       desc: 'Accertamento invalidità, ausili e presidi, centri diurni e residenziali.',
-      color: 'var(--bi-warm)',
-      bg: 'var(--bi-warm-100)',
+      color: 'var(--bi-primary)',
+      accent: 'var(--bi-primary)',
+      iconFg: '#fff',
+      hoverBg: 'var(--bi-primary-050)',
     },
   ];
 
   return (
     <Section
       style={{ backgroundColor: 'var(--bi-bg-alt)' }}
-      bgImage={`url('${import.meta.env.BASE_URL}images/background/asl1napoli.png')`}
+      bgImage={`url('${import.meta.env.BASE_URL}images/tutto-per.png')`}
       id="tutto-per"
     >
       <SectionHeading
@@ -74,63 +86,75 @@ const AudienceGrid = () => {
             href="#"
             style={{
               display: 'flex',
-              alignItems: 'flex-start',
-              gap: 16,
-              padding: '20px 24px',
+              flexDirection: 'column',
               background: 'var(--bi-surface)',
-              borderRadius: 8,
-              border: '1px solid var(--bi-border)',
+              borderRadius: 16,
+              boxShadow: 'var(--shadow-sm)',
+              overflow: 'hidden',
               textDecoration: 'none',
               color: 'inherit',
-              transition: 'box-shadow 0.15s, transform 0.15s',
+              transition: 'all 0.2s ease',
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.boxShadow = '0 4px 20px rgba(0,0,0,0.10)';
-              e.currentTarget.style.transform = 'translateY(-2px)';
+              e.currentTarget.style.transform = 'translateY(-4px)';
+              e.currentTarget.style.boxShadow = 'var(--shadow-lg)';
+              e.currentTarget.style.background = a.hoverBg;
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.boxShadow = 'none';
-              e.currentTarget.style.transform = 'none';
+              e.currentTarget.style.transform = 'translateY(0)';
+              e.currentTarget.style.boxShadow = 'var(--shadow-sm)';
+              e.currentTarget.style.background = 'var(--bi-surface)';
             }}
           >
+            <div style={{ height: 4, background: a.accent, flexShrink: 0 }} />
             <div
               style={{
-                width: 44,
-                height: 44,
-                borderRadius: 10,
-                background: a.bg,
-                color: a.color,
                 display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                flexShrink: 0,
+                alignItems: 'flex-start',
+                gap: 16,
+                padding: '20px 24px',
+                flex: 1,
               }}
             >
-              <Icon name={a.icon} size={22} />
-            </div>
-            <div style={{ flex: 1 }}>
               <div
                 style={{
-                  fontWeight: 700,
-                  fontSize: 16,
-                  color: 'var(--bi-ink-900)',
-                  marginBottom: 4,
+                  width: 52,
+                  height: 52,
+                  borderRadius: '50%',
+                  background: a.color,
+                  color: a.iconFg,
                   display: 'flex',
                   alignItems: 'center',
-                  justifyContent: 'space-between',
+                  justifyContent: 'center',
+                  flexShrink: 0,
                 }}
               >
-                {a.label}
-                <Icon name="arrow-right" size={16} color="var(--bi-primary)" />
+                <Icon name={a.icon} size={24} />
               </div>
-              <div
-                style={{
-                  fontSize: 14,
-                  color: 'var(--bi-ink-500)',
-                  lineHeight: 1.5,
-                }}
-              >
-                {a.desc}
+              <div style={{ flex: 1 }}>
+                <div
+                  style={{
+                    fontWeight: 700,
+                    fontSize: 16,
+                    color: 'var(--bi-ink-900)',
+                    marginBottom: 4,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                  }}
+                >
+                  {a.label}
+                  <Icon name="arrow-right" size={16} color="var(--bi-primary)" />
+                </div>
+                <div
+                  style={{
+                    fontSize: 14,
+                    color: 'var(--bi-ink-500)',
+                    lineHeight: 1.5,
+                  }}
+                >
+                  {a.desc}
+                </div>
               </div>
             </div>
           </a>

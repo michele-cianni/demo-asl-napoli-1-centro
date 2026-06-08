@@ -25,7 +25,7 @@ const ServicesGrid = () => {
   return (
     <Section
       style={{ backgroundColor: 'var(--bi-surface)' }}
-      bgImage={`url('${import.meta.env.BASE_URL}images/background/asl1.png')`}
+      bgImage={`url('${import.meta.env.BASE_URL}images/servizi-e-prestazioni.png')`}
       bgOverlay="rgba(255,255,255,0.82)"
     >
       <SectionHeading

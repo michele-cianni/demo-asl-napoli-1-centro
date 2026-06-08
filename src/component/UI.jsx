@@ -66,7 +66,7 @@ const ArrowLink = ({ children, href = '#', color = 'var(--bi-primary)' }) => (
 );
 
 // ─── Section wrapper ───
-const Section = ({ children, bg, pad, style, id, bgImage, bgBlur = '6px', bgOverlay }) => {
+const Section = ({ children, bg, pad, style, id, bgImage, bgOverlay }) => {
   const { isMobile, isCompact } = useResponsive();
 
   let resolvedPad;
@@ -97,8 +97,6 @@ const Section = ({ children, bg, pad, style, id, bgImage, bgBlur = '6px', bgOver
             backgroundImage: bgImage,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            filter: `blur(${bgBlur})`,
-            transform: 'scale(1.08)',
           }}
         />
       )}

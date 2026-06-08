@@ -50,7 +50,7 @@ const ServicesHighlights = () => {
   return (
     <Section
       style={{ backgroundColor: 'var(--bi-surface)' }}
-      bgImage={`url('${import.meta.env.BASE_URL}images/background/asl12.png')`}
+      bgImage={`url('${import.meta.env.BASE_URL}images/background/banda-generica-1.png')`}
       id="servizi-evidenza"
     >
       <SectionHeading
@@ -208,7 +208,7 @@ const CategoryGrid = () => {
   return (
     <Section
       style={{ backgroundColor: 'var(--bi-bg-alt)' }}
-      bgImage={`url('${import.meta.env.BASE_URL}images/background/asl13.png')`}
+      bgImage={`url('${import.meta.env.BASE_URL}images/tutti-i-servizi-dell-asl.png')`}
       bgOverlay="rgba(255,255,255,0.82)"
       id="categorie"
     >

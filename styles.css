@@ -5,15 +5,15 @@
 
 :root {
   /* ── Brand palette — unica fonte di verità ──────────────────────────── */
-  --brand-primary:       #1c3a6e;
-  --brand-primary-800:   #152d56;
-  --brand-primary-100:   #c5d3e8;
-  --brand-primary-050:   #e2eaf4;
+  --brand-primary:       #004c82;
+  --brand-primary-800:   #003563;
+  --brand-primary-100:   #ccdbe6;
+  --brand-primary-050:   #e6eef3;
 
-  --brand-secondary:       #52b075;
-  --brand-secondary-800:   #3a7d52;
-  --brand-secondary-100:   #c5e8d2;
-  --brand-secondary-050:   #e2f4e9;
+  --brand-secondary:       #eaeeee;
+  --brand-secondary-800:   #bbbebe;
+  --brand-secondary-100:   #f7f8f8;
+  --brand-secondary-050:   #fbfcfc;
 
   /* Bootstrap Italia overrides — referenziano il brand palette */
   --bi-primary:     var(--brand-primary);

@@ -66,11 +66,7 @@ const HowToGrid = () => {
     },
   ];
 
-  const tonesMap = {
-    primary: { bg: 'var(--bi-primary-050)', fg: 'var(--bi-primary)' },
-    teal: { bg: 'var(--bi-teal-100)', fg: 'var(--bi-teal-700)' },
-    warm: { bg: 'var(--bi-warm-100)', fg: 'var(--bi-warm)' },
-  };
+  const tone = { accent: 'var(--bi-primary)', iconBg: 'var(--bi-primary)', iconFg: '#fff', hoverBg: 'var(--bi-primary-050)' };
 
   return (
     <Section style={{ backgroundColor: 'var(--bi-surface)' }} id="servizi">
@@ -88,84 +84,93 @@ const HowToGrid = () => {
         }}
       >
         {services.map((s, i) => {
-          const t = tonesMap[s.tone];
+          const t = tone;
           return (
             <a
               key={i}
               href={s.href}
               style={{
                 background: 'var(--bi-surface)',
-                border: '1px solid var(--bi-border)',
-                borderRadius: 12,
-                padding: isMobile ? 20 : 24,
+                borderRadius: 16,
+                boxShadow: 'var(--shadow-sm)',
                 display: 'flex',
                 flexDirection: 'column',
-                gap: 16,
-                minHeight: isMobile ? 'auto' : 200,
+                minHeight: isMobile ? 'auto' : 210,
+                overflow: 'hidden',
                 transition: 'all 0.2s ease',
                 color: 'var(--bi-ink-900)',
-                position: 'relative',
-                overflow: 'hidden',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = 'var(--bi-primary)';
-                e.currentTarget.style.transform = 'translateY(-2px)';
-                e.currentTarget.style.boxShadow = 'var(--shadow-md)';
+                e.currentTarget.style.transform = 'translateY(-4px)';
+                e.currentTarget.style.boxShadow = 'var(--shadow-lg)';
+                e.currentTarget.style.background = t.hoverBg;
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = 'var(--bi-border)';
                 e.currentTarget.style.transform = 'translateY(0)';
-                e.currentTarget.style.boxShadow = 'none';
+                e.currentTarget.style.boxShadow = 'var(--shadow-sm)';
+                e.currentTarget.style.background = 'var(--bi-surface)';
               }}
             >
+              <div style={{ height: 4, background: t.accent, flexShrink: 0 }} />
               <div
                 style={{
-                  width: 44,
-                  height: 44,
-                  borderRadius: 10,
-                  background: t.bg,
-                  color: t.fg,
+                  padding: isMobile ? 20 : 24,
                   display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
+                  flexDirection: 'column',
+                  gap: 16,
+                  flex: 1,
                 }}
               >
-                <Icon name={s.icon} size={22} />
-              </div>
-              <div style={{ flex: 1 }}>
                 <div
                   style={{
-                    fontFamily: 'var(--ff-serif)',
-                    fontSize: 18,
-                    fontWeight: 500,
-                    color: 'var(--bi-ink-900)',
-                    marginBottom: 6,
-                    lineHeight: 1.25,
+                    width: 52,
+                    height: 52,
+                    borderRadius: '50%',
+                    background: t.iconBg,
+                    color: t.iconFg,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    flexShrink: 0,
                   }}
                 >
-                  {s.title}
+                  <Icon name={s.icon} size={24} />
+                </div>
+                <div style={{ flex: 1 }}>
+                  <div
+                    style={{
+                      fontFamily: 'var(--ff-serif)',
+                      fontSize: 19,
+                      fontWeight: 600,
+                      color: 'var(--bi-ink-900)',
+                      marginBottom: 8,
+                      lineHeight: 1.25,
+                    }}
+                  >
+                    {s.title}
+                  </div>
+                  <div
+                    style={{
+                      fontSize: 14,
+                      color: 'var(--bi-ink-500)',
+                      lineHeight: 1.5,
+                    }}
+                  >
+                    {s.desc}
+                  </div>
                 </div>
                 <div
                   style={{
+                    color: 'var(--bi-primary)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 4,
                     fontSize: 13,
-                    color: 'var(--bi-ink-500)',
-                    lineHeight: 1.5,
+                    fontWeight: 700,
                   }}
                 >
-                  {s.desc}
+                  Scopri come <Icon name="arrow-right" size={14} />
                 </div>
-              </div>
-              <div
-                style={{
-                  color: 'var(--bi-primary)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: 4,
-                  fontSize: 13,
-                  fontWeight: 700,
-                }}
-              >
-                Scopri come <Icon name="arrow-right" size={14} />
               </div>
             </a>
           );

@@ -1,16 +1,8 @@
 import { useEffect, useState } from 'react';
 import { GeoJSON } from 'react-leaflet';
-import { BRAND_PRIMARY, BRAND_SECONDARY } from '../theme.js';
+import { BRAND_PRIMARY } from '../theme.js';
 
 const BASE = import.meta.env.BASE_URL;
-
-const campaniaStyle = {
-  color: BRAND_SECONDARY,
-  weight: 1.5,
-  dashArray: '4 4',
-  fillColor: BRAND_SECONDARY,
-  fillOpacity: 0.1,
-};
 
 const aslStyle = {
   color: BRAND_PRIMARY,
@@ -25,25 +17,15 @@ const load = (url) =>
     .catch(() => null);
 
 const BoundaryLayer = () => {
-  const [campania, setCampania] = useState(null);
   const [asl, setAsl] = useState(null);
 
   useEffect(() => {
-    Promise.all([
-      load(`${BASE}data/campania.geojson`),
-      load(`${BASE}data/asl-napoli-1-centro.geojson`),
-    ]).then(([c, a]) => {
-      if (c) setCampania(c);
+    load(`${BASE}data/asl-napoli-1-centro.geojson`).then((a) => {
       if (a) setAsl(a);
     });
   }, []);
 
-  return (
-    <>
-      {campania ? <GeoJSON key="campania" data={campania} style={campaniaStyle} /> : null}
-      {asl ? <GeoJSON key="asl-napoli-1-centro" data={asl} style={aslStyle} /> : null}
-    </>
-  );
+  return asl ? <GeoJSON key="asl-napoli-1-centro" data={asl} style={aslStyle} /> : null;
 };
 
 export { BoundaryLayer };

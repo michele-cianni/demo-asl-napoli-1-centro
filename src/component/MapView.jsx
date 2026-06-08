@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useResponsive } from '../hooks/useResponsive.js';
 import { Icon } from '../icons.jsx';
 import { BoundaryLayer } from './BoundaryLayer.jsx';
-import { BRAND_SECONDARY } from '../theme.js';
+import { BRAND_PRIMARY } from '../theme.js';
 
 const INITIAL_CENTER = [40.853, 14.268];
 const INITIAL_ZOOM = 11;
@@ -51,7 +51,7 @@ const createMarkerIcon = (isPS) => {
   }
   return L.divIcon({
     html: `
-      <div style="width:40px;height:40px;border-radius:50%;background:${BRAND_SECONDARY};border:3px solid rgba(255,255,255,.92);box-shadow:0 3px 12px rgba(82,176,117,.35);display:flex;align-items:center;justify-content:center;">
+      <div style="width:40px;height:40px;border-radius:50%;background:${BRAND_PRIMARY};border:3px solid rgba(255,255,255,.92);box-shadow:0 3px 12px rgba(0,76,130,.35);display:flex;align-items:center;justify-content:center;">
         <svg width="19" height="19" viewBox="0 0 19 19" fill="white">
           <rect x="2"  y="2"   width="4" height="15" rx="1"/>
           <rect x="13" y="2"   width="4" height="15" rx="1"/>
@@ -67,8 +67,8 @@ const createMarkerIcon = (isPS) => {
 
 const BADGE_TONES = {
   warm: { bg: '#fff0e6', fg: '#d14900' },
-  teal: { bg: '#e2f4e9', fg: '#3a7d52' },
-  primary: { bg: '#e2eaf4', fg: '#1c3a6e' },
+  teal: { bg: '#e6eef3', fg: '#004c82' },
+  primary: { bg: '#e6eef3', fg: '#004c82' },
 };
 
 // Forza invalidateSize dopo il montaggio — due passaggi per coprire mobile lento
@@ -101,6 +101,16 @@ const BoundsController = ({ ospedali }) => {
     }
   }, [ospedali, map]);
 
+  return null;
+};
+
+const SelectionController = ({ selectedId, ospedali }) => {
+  const map = useMap();
+  useEffect(() => {
+    if (!selectedId) return;
+    const osp = ospedali.find((o) => o.id === selectedId);
+    if (osp) map.flyTo(osp.coords, 14, { duration: 0.6 });
+  }, [selectedId, ospedali, map]);
   return null;
 };
 
@@ -197,9 +207,9 @@ const MapView = ({ ospedali }) => {
                 width: 14,
                 height: 14,
                 borderRadius: '50%',
-                background: 'var(--brand-secondary)',
+                background: 'var(--brand-primary)',
                 border: '2px solid rgba(255,255,255,.9)',
-                boxShadow: '0 0 0 2px var(--brand-secondary)',
+                boxShadow: '0 0 0 2px var(--brand-primary)',
                 flexShrink: 0,
                 display: 'inline-flex',
                 alignItems: 'center',
@@ -228,20 +238,6 @@ const MapView = ({ ospedali }) => {
               />
               ASL Napoli 1 Centro
             </div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 7 }}>
-              <span
-                style={{
-                  width: 14,
-                  height: 2,
-                  background: 'var(--brand-secondary)',
-                  flexShrink: 0,
-                  display: 'inline-block',
-                  borderRadius: 1,
-                  opacity: 0.7,
-                }}
-              />
-              Regione Campania
-            </div>
           </div>
         </div>
         <MapContainer
@@ -259,6 +255,7 @@ const MapView = ({ ospedali }) => {
           <BoundaryLayer />
           <MapInitializer />
           <BoundsController ospedali={ospedali} />
+          <SelectionController selectedId={selectedId} ospedali={ospedali} />
           {ospedali.map((osp) => (
             <Marker
               key={osp.id}
@@ -306,7 +303,7 @@ const MapView = ({ ospedali }) => {
                     href={`tel:${osp.telefono.replace(/\s/g, '')}`}
                     style={{
                       fontSize: 12,
-                      color: 'var(--brand-secondary)',
+                      color: 'var(--brand-primary)',
                       fontWeight: 600,
                       display: 'block',
                       marginBottom: 10,
@@ -321,7 +318,7 @@ const MapView = ({ ospedali }) => {
                       style={{
                         display: 'inline-block',
                         padding: '5px 12px',
-                        background: 'var(--brand-secondary)',
+                        background: 'var(--brand-primary)',
                         color: '#fff',
                         borderRadius: 6,
                         fontSize: 12,
@@ -411,8 +408,8 @@ const MapView = ({ ospedali }) => {
                 height: 36,
                 borderRadius: 8,
                 flexShrink: 0,
-                background: osp.ps ? 'var(--bi-warm-100)' : 'var(--brand-secondary-050)',
-                color: osp.ps ? 'var(--bi-warm)' : 'var(--brand-secondary)',
+                background: osp.ps ? 'var(--bi-warm-100)' : 'var(--brand-primary-050)',
+                color: osp.ps ? 'var(--bi-warm)' : 'var(--brand-primary)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',

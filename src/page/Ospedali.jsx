@@ -373,11 +373,9 @@ const PageOspedali = () => {
           style={{
             position: 'absolute',
             inset: 0,
-            backgroundImage: `url('${import.meta.env.BASE_URL}images/background/asl14.png')`,
+            backgroundImage: `url('${import.meta.env.BASE_URL}images/sotto-la-barra-ricerca-ospedali.png')`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            filter: 'blur(6px)',
-            transform: 'scale(1.08)',
           }}
         />
         <div className="container" style={{ position: 'relative' }}>
