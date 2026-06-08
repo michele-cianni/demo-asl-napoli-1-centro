@@ -21,7 +21,6 @@ const ServicesHighlights = () => {
       title: 'Vaccino antinfluenzale 2026–2027',
       desc: "Prenotazioni aperte per over 60 e categorie a rischio presso tutti i distretti dell'ASL.",
       icon: 'shield',
-      img: `${import.meta.env.BASE_URL}images/servizi_vaccino.png`,
     },
     {
       badge: 'Prevenzione',
@@ -29,7 +28,6 @@ const ServicesHighlights = () => {
       title: 'Screening mammografico — inviti in corso',
       desc: 'Se hai ricevuto una lettera di invito, prenota la mammografia gratuita.',
       icon: 'heart',
-      img: `${import.meta.env.BASE_URL}images/servizi_screening_mammografico.png`,
     },
     {
       badge: 'Novità',
@@ -37,7 +35,6 @@ const ServicesHighlights = () => {
       title: 'Nuovo ambulatorio terapia del dolore',
       desc: "Dal 5 maggio attivo all'Ospedale del Mare di Ponticelli.",
       icon: 'stethoscope',
-      img: `${import.meta.env.BASE_URL}images/servizi_terapia_dolore.png`,
     },
   ];
 
@@ -78,16 +75,24 @@ const ServicesHighlights = () => {
               }
               onMouseLeave={(e) => (e.currentTarget.style.boxShadow = 'none')}
             >
-              <img
-                src={item.img}
-                alt={item.title}
+              <div
                 style={{
                   width: '100%',
                   height: 160,
-                  objectFit: 'cover',
-                  display: 'block',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  gap: 10,
+                  background: 'var(--bi-ink-100)',
+                  color: 'var(--bi-ink-300)',
                 }}
-              />
+              >
+                <Icon name={item.icon} size={40} />
+                <span style={{ fontSize: 11, fontWeight: 600, opacity: 0.6, letterSpacing: 0.5, textTransform: 'uppercase' }}>
+                  Immagine placeholder
+                </span>
+              </div>
               <div
                 style={{
                   padding: '20px',
