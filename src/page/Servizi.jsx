@@ -41,12 +41,6 @@ const ServicesHighlights = () => {
     },
   ];
 
-  const tones = {
-    primary: { bg: 'var(--bi-primary-100)', fg: 'var(--bi-primary-800)' },
-    teal: { bg: 'var(--bi-teal-100)', fg: 'var(--bi-teal-700)' },
-    warm: { bg: 'var(--bi-warm-100)', fg: 'var(--bi-warm)' },
-  };
-
   return (
     <Section
       style={{ backgroundColor: 'var(--bi-surface)' }}
@@ -65,7 +59,6 @@ const ServicesHighlights = () => {
         }}
       >
         {items.map((item, i) => {
-          const t = tones[item.tone];
           return (
             <a
               key={i}
@@ -85,18 +78,16 @@ const ServicesHighlights = () => {
               }
               onMouseLeave={(e) => (e.currentTarget.style.boxShadow = 'none')}
             >
-              <div
+              <img
+                src={item.img}
+                alt={item.title}
                 style={{
                   width: '100%',
                   height: 160,
-                  background: 'var(--bi-primary-100)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
+                  objectFit: 'cover',
+                  display: 'block',
                 }}
-              >
-                <Icon name={item.icon} size={48} style={{ color: 'var(--bi-primary-800)', opacity: 0.35 }} />
-              </div>
+              />
               <div
                 style={{
                   padding: '20px',

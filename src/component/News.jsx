@@ -11,7 +11,7 @@ const News = () => {
   const items = [
     {
       badge: 'Salute',
-      badgeTone: 'warm',
+      badgeTone: 'primary',
       date: '5 giugno 2026',
       title: 'In aumento i casi di Epatite A',
       desc: 'La ASL Napoli 1 Centro invita la cittadinanza a seguire le norme igieniche di base. Disponibile la vaccinazione nei centri vaccinali del territorio.',
@@ -31,7 +31,7 @@ const News = () => {
     },
     {
       badge: 'Donazione',
-      badgeTone: 'teal',
+      badgeTone: 'primary',
       date: '28 maggio 2026',
       title: 'Dona il sangue. Un semplice gesto, un dono prezioso.',
       desc: 'I centri trasfusionali della ASL Napoli 1 Centro sono aperti ogni mattina. Bastano 30 minuti per salvare fino a 3 vite.',

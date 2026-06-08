@@ -29,10 +29,6 @@ const TopBar = () => {
               <Icon name="globe" size={13} />
               Regione Campania
             </a>
-            <button className={styles.topbar__pill}>
-              <Icon name="accessibility" size={13} />
-              Accessibilità
-            </button>
             <a href="#" className={cx(styles.topbar__pill, styles['topbar__pill--strong'])}>
               <Icon name="users" size={13} />
               Area personale
@@ -50,9 +46,6 @@ const TopBar = () => {
             Portale Regione Campania
           </a>
           <div className={cx(styles.topbar__actions, styles['topbar__actions--compact'])}>
-            <button className={styles.topbar__btn}>
-              <Icon name="accessibility" size={14} /> Accessibilità
-            </button>
             <a href="#" className={cx(styles.topbar__link, styles['topbar__link--strong'])}>
               <Icon name="users" size={14} /> Area personale
             </a>
@@ -71,24 +64,11 @@ const TopBar = () => {
             Portale Regione Campania
             <Icon name="external" size={11} />
           </a>
-          <span className={styles.topbar__sep}>|</span>
-          <a href="#" className={styles.topbar__link}>
-            Amministrazione Trasparente
-          </a>
-          <span className={styles.topbar__sep}>|</span>
-          <a href="#" className={styles.topbar__link}>
-            Albo Pretorio
-          </a>
         </div>
         <div className={styles.topbar__actions}>
           <button className={styles.topbar__btn}>
             <Icon name="globe" size={14} /> ITA <Icon name="chevron-down" size={12} />
           </button>
-          <span className={styles.topbar__sep}>|</span>
-          <button className={styles.topbar__btn}>
-            <Icon name="accessibility" size={14} /> Accessibilita
-          </button>
-          <span className={styles.topbar__sep}>|</span>
           <a href="#" className={cx(styles.topbar__link, styles['topbar__link--strong'])}>
             <Icon name="users" size={14} /> Area personale
           </a>
