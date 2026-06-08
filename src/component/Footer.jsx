@@ -45,7 +45,7 @@ const Footer = () => {
               title: 'Area Istituzionale',
               links: [
                 'Organizzazione',
-                { label: 'Distretti sanitari', href: 'page-distretti.html' },
+                { label: 'Distretti sanitari', href: '#' },
                 'Documenti',
                 'Personale',
                 'Lavora con noi',
@@ -90,7 +90,7 @@ const Footer = () => {
               <br />
               +39 081 2541111
             </p>
-            <a href="page-redazione-web.html" className={styles.footer__contactLink}>
+            <a href="#" className={styles.footer__contactLink}>
               Segnala un problema del sito
             </a>
             <p

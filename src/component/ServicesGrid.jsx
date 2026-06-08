@@ -24,13 +24,14 @@ const ServicesGrid = () => {
 
   return (
     <Section
-      style={{ backgroundColor: 'var(--bi-surface)' }}
+      style={{ backgroundColor: 'var(--bi-bg)' }}
       bgImage={`url('${import.meta.env.BASE_URL}images/servizi-e-prestazioni.png')`}
-      bgOverlay="rgba(255,255,255,0.82)"
+      bgOverlay="rgba(255,255,255,0.68)"
     >
       <SectionHeading
         title="Servizi e prestazioni"
-        subtitle="Scopri e accedi ai servizi dell'ASL come visite specialistiche, esami, percorsi di cura, referti e certificati."
+        subtitle="Prenota visite, ritira referti e accedi a tutti i servizi sanitari del territorio in modo semplice e veloce."
+        subtitleStyle={{ color: 'var(--bi-ink-700)' }}
         action={<ArrowLink href="page-servizi.html">Tutti i servizi</ArrowLink>}
       />
 

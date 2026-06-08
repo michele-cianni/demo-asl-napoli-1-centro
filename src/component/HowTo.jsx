@@ -13,14 +13,14 @@ const HowToGrid = () => {
       title: 'Prenotare una visita',
       desc: 'CUP online, Farmacup e CUP distrettuali ASL',
       tone: 'primary',
-      href: 'page-come-fare-per.html',
+      href: '#',
     },
     {
       icon: 'document',
       title: 'Ritirare un referto',
       desc: 'Accedi con SPID o CIE al FSE per scaricare gli esiti',
       tone: 'primary',
-      href: 'page-referti.html',
+      href: '#',
     },
     {
       icon: 'users',
@@ -62,7 +62,7 @@ const HowToGrid = () => {
       title: 'Segnalare un problema del sito',
       desc: 'Redazione web: errori, link rotti, contenuti non aggiornati',
       tone: 'primary',
-      href: 'page-redazione-web.html',
+      href: '#',
     },
   ];
 

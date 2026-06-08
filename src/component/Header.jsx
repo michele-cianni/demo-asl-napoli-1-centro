@@ -316,7 +316,7 @@ const MobileMainNav = ({ items, activeItem }) => {
                 <span className={styles.quickCta__tag}>CUP</span>
               </a>
               <a
-                href="page-redazione-web.html"
+                href="#"
                 className={cx(
                   styles.quickCta,
                   styles['quickCta--navOutline'],
@@ -344,13 +344,13 @@ const MainNav = ({ activeItem, active }) => {
   const items = [
     { id: 'home', label: 'Home', href: 'index.html' },
     { id: 'servizi', label: 'Servizi e prestazioni', href: 'page-servizi.html' },
-    { id: 'come-fare-per', label: 'Come fare per', href: 'page-come-fare-per.html' },
+    { id: 'come-fare-per', label: 'Come fare per', href: '#' },
     {
       id: 'strutture',
       label: 'Strutture',
       href: '#',
       children: [
-        { id: 'distretti', label: 'Distretti', href: 'page-distretti.html' },
+        { id: 'distretti', label: 'Distretti', href: '#' },
         { id: 'dipartimenti', label: 'Dipartimenti', href: '#' },
         { id: 'presidi-ospedalieri', label: 'Presidi ospedalieri', href: 'page-ospedali.html' },
       ],
@@ -462,7 +462,7 @@ const MainNav = ({ activeItem, active }) => {
                 <span className={styles.quickCta__tag}>CUP</span>
               </a>
               <a
-                href="page-redazione-web.html"
+                href="#"
                 className={cx(styles.quickCta, styles['quickCta--navOutline'])}
               >
                 <Icon name="mail" size={15} />
@@ -504,7 +504,7 @@ const QuickActions = () => {
           <span className={styles.quickCta__tag}>CUP</span>
         </a>
         <a
-          href="page-redazione-web.html"
+          href="#"
           className={cx(
             styles.quickCta,
             styles['quickCta--outline'],

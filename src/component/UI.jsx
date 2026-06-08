@@ -122,7 +122,7 @@ const Eyebrow = ({ children, color = 'var(--bi-primary)' }) => (
 );
 
 // ─── Section heading ───
-const SectionHeading = ({ eyebrow, title, subtitle, align = 'left', action }) => {
+const SectionHeading = ({ eyebrow, title, subtitle, subtitleStyle, align = 'left', action }) => {
   const { isCompact } = useResponsive();
   const isCentered = align === 'center';
 
@@ -137,7 +137,7 @@ const SectionHeading = ({ eyebrow, title, subtitle, align = 'left', action }) =>
       <div className={styles.heading__main}>
         {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
         <h2 className={styles.heading__title}>{title}</h2>
-        {subtitle && <p className={styles.heading__subtitle}>{subtitle}</p>}
+        {subtitle && <p className={styles.heading__subtitle} style={subtitleStyle}>{subtitle}</p>}
       </div>
       {action && <div className={styles.heading__action}>{action}</div>}
     </div>

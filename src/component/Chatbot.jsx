@@ -54,7 +54,7 @@ const TREE = {
       {
         label: 'Apri la guida',
         next: 'link_prenota',
-        internal: 'page-come-fare-per.html',
+        internal: '#',
       },
       { label: 'Parla con un operatore', next: 'operatore' },
       { label: "Torna all'inizio", next: 'root' },
@@ -83,7 +83,7 @@ const TREE = {
       {
         label: 'Vai alla guida completa',
         next: 'referti_guida',
-        internal: 'page-referti.html',
+        internal: '#',
       },
       { label: "Torna all'inizio", next: 'root' },
     ],
@@ -103,7 +103,7 @@ const TREE = {
       {
         label: 'Vai alla guida referti',
         next: 'referti_guida',
-        internal: 'page-referti.html',
+        internal: '#',
       },
       { label: 'Parla con un operatore', next: 'operatore' },
       { label: "Torna all'inizio", next: 'root' },
@@ -115,7 +115,7 @@ const TREE = {
       {
         label: 'Apri la pagina referti',
         next: 'link_referti_guida',
-        internal: 'page-referti.html',
+        internal: '#',
       },
       { label: "Torna all'inizio", next: 'root' },
     ],
@@ -126,7 +126,7 @@ const TREE = {
       {
         label: 'Vedi orari dettagliati',
         next: 'referti_guida',
-        internal: 'page-referti.html',
+        internal: '#',
       },
       { label: "Torna all'inizio", next: 'root' },
     ],
@@ -200,7 +200,7 @@ const TREE = {
       {
         label: 'Apri la redazione web',
         next: 'link_redazione',
-        internal: 'page-redazione-web.html',
+        internal: '#',
       },
       { label: 'Devo contattare URP', next: 'operatore' },
       { label: "Torna all'inizio", next: 'root' },

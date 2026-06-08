@@ -64,13 +64,15 @@ const AudienceGrid = () => {
 
   return (
     <Section
-      style={{ backgroundColor: 'var(--bi-bg-alt)' }}
+      style={{ backgroundColor: 'var(--bi-bg)' }}
       bgImage={`url('${import.meta.env.BASE_URL}images/tutto-per.png')`}
+      bgOverlay="rgba(255,255,255,0.28)"
       id="tutto-per"
     >
       <SectionHeading
         title="Tutto per"
         subtitle="Scopri i servizi, le strutture e le novità per tipologia di utente"
+        subtitleStyle={{ color: 'var(--bi-ink-700)' }}
       />
 
       <div

@@ -54,11 +54,9 @@ const OspedaleCard = ({ osp }) => {
     primary: { bg: 'var(--bi-primary-100)', fg: 'var(--bi-primary-800)' },
   };
   const t = badgeTones[osp.badgeTone] || badgeTones.primary;
-  const cardHref = osp.href !== '#' ? osp.href : osp.fonteUrl || '#';
 
   return (
-    <a
-      href={cardHref}
+    <div
       style={{
         display: 'flex',
         flexDirection: 'column',
@@ -66,17 +64,7 @@ const OspedaleCard = ({ osp }) => {
         border: '1px solid var(--bi-border)',
         borderRadius: 12,
         overflow: 'hidden',
-        textDecoration: 'none',
         color: 'inherit',
-        transition: 'box-shadow 0.2s, transform 0.2s',
-      }}
-      onMouseEnter={(e) => {
-        e.currentTarget.style.boxShadow = 'var(--shadow-md)';
-        e.currentTarget.style.transform = 'translateY(-3px)';
-      }}
-      onMouseLeave={(e) => {
-        e.currentTarget.style.boxShadow = 'none';
-        e.currentTarget.style.transform = 'none';
       }}
     >
       {/* Immagine placeholder 16:9 */}
@@ -194,7 +182,6 @@ const OspedaleCard = ({ osp }) => {
             fontSize: 13,
             color: 'var(--bi-ink-700)',
           }}
-          onClick={(e) => e.preventDefault()}
         >
           <Icon name="phone" size={14} style={{ color: 'var(--bi-primary)' }} />
           <a
@@ -269,7 +256,7 @@ const OspedaleCard = ({ osp }) => {
           <Icon name="arrow-right" size={14} />
         </div>
       </div>
-    </a>
+    </div>
   );
 };
 

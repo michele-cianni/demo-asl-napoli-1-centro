@@ -97,7 +97,7 @@ const FeedbackWidget = () => {
                 Invia un altro feedback
               </button>
               <a
-                href="page-redazione-web.html"
+                href="#"
                 style={{
                   fontSize: 13,
                   color: 'var(--bi-primary)',
@@ -219,7 +219,7 @@ const FeedbackWidget = () => {
                       puoi scrivere direttamente alla redazione web.
                     </div>
                     <a
-                      href="page-redazione-web.html"
+                      href="#"
                       style={{
                         color: 'var(--bi-primary)',
                         fontSize: 13,
@@ -261,7 +261,7 @@ const FeedbackWidget = () => {
                 >
                   Se stai segnalando un errore del sito o un contenuto non aggiornato, puoi anche{' '}
                   <a
-                    href="page-redazione-web.html"
+                    href="#"
                     style={{
                       color: 'var(--bi-primary)',
                       fontWeight: 700,

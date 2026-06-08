@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Icon } from '../icons.jsx';
 import { ArrowLink, Section, SectionHeading, Breadcrumb } from '../component/UI.jsx';
 import { PageHero } from './Hero.jsx';
@@ -16,38 +17,36 @@ const ServicesHighlights = () => {
   const { isMobile, isCompact } = useResponsive();
   const items = [
     {
-      badge: 'Campagna vaccinale',
+      badge: 'Prenota online',
       tone: 'warm',
-      title: 'Vaccino antinfluenzale 2026–2027',
-      desc: "Prenotazioni aperte per over 60 e categorie a rischio presso tutti i distretti dell'ASL.",
-      icon: 'shield',
+      title: 'Prenota una visita online',
+      desc: 'Accedi al portale CUP e prenota la tua prestazione in pochi click, senza code allo sportello.',
+      image: 'servizi-prenotaibli.jpg',
     },
     {
       badge: 'Prevenzione',
       tone: 'teal',
       title: 'Screening mammografico — inviti in corso',
-      desc: 'Se hai ricevuto una lettera di invito, prenota la mammografia gratuita.',
-      icon: 'heart',
+      desc: 'Se hai ricevuto una lettera di invito, prenota la mammografia gratuita. Salva la tua salute.',
+      image: 'mammografia.jpg',
     },
     {
-      badge: 'Novità',
+      badge: 'Medicina di base',
       tone: 'primary',
-      title: 'Nuovo ambulatorio terapia del dolore',
-      desc: "Dal 5 maggio attivo all'Ospedale del Mare di Ponticelli.",
-      icon: 'stethoscope',
+      title: 'Trova il tuo medico o pediatra',
+      desc: 'Cerca e scegli il medico di medicina generale o il pediatra di libera scelta nella tua zona.',
+      image: 'medici-e-pediatri.png',
     },
   ];
 
   return (
     <Section
       style={{ backgroundColor: 'var(--bi-surface)' }}
+      bgImage={`url('${import.meta.env.BASE_URL}images/tutti-i-servizi-dell-asl.png')`}
+      bgOverlay="rgba(255,255,255,0.55)"
       id="servizi-evidenza"
     >
-      <SectionHeading
-        eyebrow="In evidenza"
-        title="Servizi prioritari del momento"
-        subtitle="Selezione editoriale aggiornata dalla redazione ASL."
-      />
+      <SectionHeading title="In evidenza" />
       <div
         style={{
           display: 'grid',
@@ -68,31 +67,22 @@ const ServicesHighlights = () => {
                 overflow: 'hidden',
                 textDecoration: 'none',
                 color: 'inherit',
-                transition: 'box-shadow 0.15s',
+                transition: 'border-color 0.2s, box-shadow 0.2s',
               }}
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.boxShadow = '0 4px 20px rgba(0,0,0,0.10)')
-              }
-              onMouseLeave={(e) => (e.currentTarget.style.boxShadow = 'none')}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderColor = 'var(--bi-primary)';
+                e.currentTarget.style.boxShadow = '0 4px 20px rgba(0,0,0,0.10)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor = 'var(--bi-border)';
+                e.currentTarget.style.boxShadow = 'none';
+              }}
             >
-              <div
-                style={{
-                  width: '100%',
-                  height: 160,
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  gap: 10,
-                  background: 'var(--bi-ink-100)',
-                  color: 'var(--bi-ink-300)',
-                }}
-              >
-                <Icon name={item.icon} size={40} />
-                <span style={{ fontSize: 11, fontWeight: 600, opacity: 0.6, letterSpacing: 0.5, textTransform: 'uppercase' }}>
-                  Immagine placeholder
-                </span>
-              </div>
+              <img
+                src={`${import.meta.env.BASE_URL}images/${item.image}`}
+                alt={item.title}
+                style={{ width: '100%', height: 160, objectFit: 'cover', display: 'block' }}
+              />
               <div
                 style={{
                   padding: '20px',
@@ -121,11 +111,12 @@ const ServicesHighlights = () => {
                 </span>
                 <div
                   style={{
-                    fontWeight: 700,
-                    fontSize: 17,
+                    fontFamily: 'var(--ff-serif)',
+                    fontWeight: 600,
+                    fontSize: 18,
                     color: 'var(--bi-ink-900)',
                     marginBottom: 8,
-                    lineHeight: 1.35,
+                    lineHeight: 1.3,
                   }}
                 >
                   {item.title}
@@ -203,17 +194,8 @@ const CategoryGrid = () => {
   ];
 
   return (
-    <Section
-      style={{ backgroundColor: 'var(--bi-bg-alt)' }}
-      bgImage={`url('${import.meta.env.BASE_URL}images/tutti-i-servizi-dell-asl.png')`}
-      bgOverlay="rgba(255,255,255,0.82)"
-      id="categorie"
-    >
-      <SectionHeading
-        eyebrow="Esplora per categoria"
-        title="Tutti i servizi dell'ASL"
-        subtitle="Scegli la categoria per trovare le prestazioni di tuo interesse."
-      />
+    <Section style={{ backgroundColor: 'var(--bi-bg-alt)' }} id="categorie">
+      <SectionHeading title="Esplora per categoria" />
       <div
         style={{
           display: 'grid',
@@ -227,47 +209,51 @@ const CategoryGrid = () => {
             href="#"
             style={{
               display: 'flex',
-              alignItems: 'flex-start',
-              gap: 16,
-              padding: '20px',
-              borderRadius: 8,
+              alignItems: 'center',
+              gap: 20,
+              padding: '24px',
+              borderRadius: 10,
               background: 'var(--bi-surface)',
               border: '1px solid var(--bi-border)',
               textDecoration: 'none',
               color: 'inherit',
-              transition: 'box-shadow 0.15s, transform 0.15s',
+              transition: 'box-shadow 0.22s, transform 0.22s',
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.boxShadow = '0 4px 16px rgba(0,0,0,0.09)';
+              e.currentTarget.style.boxShadow =
+                'inset 0 0 0 2px var(--bi-primary), 0 8px 28px rgba(0,121,140,0.12)';
               e.currentTarget.style.transform = 'translateY(-2px)';
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.boxShadow = 'none';
-              e.currentTarget.style.transform = 'none';
+              e.currentTarget.style.transform = 'translateY(0)';
             }}
           >
             <div
               style={{
-                width: 44,
-                height: 44,
-                borderRadius: 10,
-                background: 'var(--bi-primary-050)',
-                color: 'var(--bi-primary)',
+                width: 52,
+                height: 52,
+                borderRadius: '50%',
+                background: 'var(--bi-primary)',
+                color: '#fff',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 flexShrink: 0,
+                boxShadow: '0 2px 8px rgba(0,0,0,0.18)',
               }}
             >
               <Icon name={cat.icon} size={22} />
             </div>
-            <div>
+            <div style={{ flex: 1 }}>
               <div
                 style={{
-                  fontWeight: 700,
-                  fontSize: 15,
+                  fontFamily: 'var(--ff-serif)',
+                  fontWeight: 600,
+                  fontSize: 17,
                   color: 'var(--bi-ink-900)',
                   marginBottom: 4,
+                  lineHeight: 1.3,
                 }}
               >
                 {cat.title}
@@ -282,6 +268,7 @@ const CategoryGrid = () => {
                 {cat.desc}
               </div>
             </div>
+            <Icon name="arrow-right" size={16} color="var(--bi-primary)" />
           </a>
         ))}
       </div>
@@ -310,18 +297,29 @@ const TopicCloud = () => {
   ];
 
   return (
-    <Section bg="var(--bi-bg-alt)" id="parliamo-di">
-      <SectionHeading
-        eyebrow="Parliamo di"
-        title="Argomenti correlati"
-        subtitle="Esplora i contenuti per tema clinico o area di interesse."
-        align="center"
-      />
+    <Section
+      bg="var(--bi-bg)"
+      pad={{ desktop: '40px 0', compact: '32px 0', mobile: '32px 0' }}
+      id="parliamo-di"
+    >
+      <h2
+        style={{
+          fontFamily: 'var(--ff-serif)',
+          fontSize: 'clamp(24px, 2.2vw, 30px)',
+          fontWeight: 500,
+          lineHeight: 1.12,
+          letterSpacing: '-0.3px',
+          color: 'var(--bi-ink-900)',
+          margin: '0 0 16px',
+        }}
+      >
+        Parliamo di
+      </h2>
       <div
         style={{
           display: 'flex',
           flexWrap: 'wrap',
-          gap: 10,
+          gap: 8,
           justifyContent: 'center',
         }}
       >
@@ -330,25 +328,23 @@ const TopicCloud = () => {
             key={t}
             href="#"
             style={{
-              padding: '8px 18px',
+              padding: '5px 14px',
               borderRadius: 99,
-              border: '1.5px solid var(--bi-border)',
+              border: '2px solid var(--bi-primary)',
               background: 'var(--bi-surface)',
-              color: 'var(--bi-ink-700)',
+              color: 'var(--bi-primary)',
               fontWeight: 600,
-              fontSize: 14,
+              fontSize: 13,
               textDecoration: 'none',
-              transition: 'all 0.15s',
+              transition: 'background 0.15s, color 0.15s',
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.background = 'var(--bi-primary-050)';
-              e.currentTarget.style.borderColor = 'var(--bi-primary)';
-              e.currentTarget.style.color = 'var(--bi-primary)';
+              e.currentTarget.style.background = 'var(--bi-primary)';
+              e.currentTarget.style.color = '#fff';
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.background = 'var(--bi-surface)';
-              e.currentTarget.style.borderColor = 'var(--bi-border)';
-              e.currentTarget.style.color = 'var(--bi-ink-700)';
+              e.currentTarget.style.color = 'var(--bi-primary)';
             }}
           >
             {t}
@@ -361,6 +357,8 @@ const TopicCloud = () => {
 
 // ── Come fare per (richiamo) ──
 const ServicesHowTo = () => {
+  const { isMobile, isCompact } = useResponsive();
+  const [hoveredIdx, setHoveredIdx] = useState(null);
   const guides = [
     {
       icon: 'calendar',
@@ -379,60 +377,103 @@ const ServicesHowTo = () => {
   ];
 
   return (
-    <Section bg="var(--bi-surface)" id="come-fare-per-servizi">
+    <Section
+      bg="var(--bi-surface)"
+      bgImage={`url('${import.meta.env.BASE_URL}images/servizi-e-prestazioni.png')`}
+      bgOverlay="rgba(255,255,255,0.55)"
+      id="come-fare-per-servizi"
+    >
       <SectionHeading
-        eyebrow="Come fare per"
-        title="Guide passo-passo correlate"
+        title="Come fare per"
         subtitle="Percorsi guidati per le pratiche più richieste legate ai servizi e alle prestazioni."
+        subtitleStyle={{ color: 'var(--bi-ink-700)' }}
         action={<ArrowLink href="#">Tutte le guide</ArrowLink>}
       />
       <div
         style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))',
-          gap: 12,
+          gridTemplateColumns: isMobile ? '1fr' : isCompact ? 'repeat(2,1fr)' : 'repeat(3,1fr)',
+          gap: 16,
         }}
       >
-        {guides.map((g, i) => (
-          <a
-            key={i}
-            href={g.href}
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: 14,
-              padding: '14px 18px',
-              borderRadius: 6,
-              border: '1px solid var(--bi-border)',
-              background: 'var(--bi-surface)',
-              textDecoration: 'none',
-              color: 'var(--bi-ink-900)',
-              fontWeight: 600,
-              fontSize: 14,
-              transition: 'background 0.12s',
-            }}
-            onMouseEnter={(e) => (e.currentTarget.style.background = 'var(--bi-primary-050)')}
-            onMouseLeave={(e) => (e.currentTarget.style.background = 'var(--bi-surface)')}
-          >
-            <span
+        {guides.map((g, i) => {
+          const isHov = hoveredIdx === i;
+          return (
+            <a
+              key={i}
+              href={g.href}
               style={{
-                width: 36,
-                height: 36,
-                borderRadius: 8,
-                background: 'var(--bi-primary-050)',
-                color: 'var(--bi-primary)',
                 display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                flexShrink: 0,
+                flexDirection: 'column',
+                gap: 14,
+                padding: '24px',
+                borderRadius: 10,
+                border: `1px solid ${isHov ? 'var(--bi-primary)' : 'var(--bi-border)'}`,
+                background: isHov ? 'var(--bi-primary)' : 'var(--bi-surface)',
+                textDecoration: 'none',
+                color: 'inherit',
+                transition: 'background 0.2s, border-color 0.2s, box-shadow 0.2s, transform 0.2s',
+                boxShadow: isHov ? '0 8px 28px rgba(0,121,140,0.18)' : 'none',
+                transform: isHov ? 'translateY(-3px)' : 'translateY(0)',
+                position: 'relative',
               }}
+              onMouseEnter={() => setHoveredIdx(i)}
+              onMouseLeave={() => setHoveredIdx(null)}
             >
-              <Icon name={g.icon} size={18} />
-            </span>
-            <span style={{ flex: 1, lineHeight: 1.4 }}>{g.title}</span>
-            <Icon name="arrow-right" size={14} color="var(--bi-primary)" />
-          </a>
-        ))}
+              <div
+                style={{
+                  position: 'absolute',
+                  top: 20,
+                  right: 20,
+                  fontFamily: 'var(--ff-mono)',
+                  fontSize: 11,
+                  fontWeight: 700,
+                  letterSpacing: 1,
+                  color: isHov ? 'rgba(255,255,255,0.35)' : 'var(--bi-ink-300)',
+                  transition: 'color 0.2s',
+                }}
+              >
+                {String(i + 1).padStart(2, '0')}
+              </div>
+              <div
+                style={{
+                  width: 52,
+                  height: 52,
+                  borderRadius: 14,
+                  background: isHov ? 'rgba(255,255,255,0.18)' : 'var(--bi-primary)',
+                  color: '#fff',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  flexShrink: 0,
+                  transition: 'background 0.2s',
+                }}
+              >
+                <Icon name={g.icon} size={22} />
+              </div>
+              <div
+                style={{
+                  fontFamily: 'var(--ff-serif)',
+                  fontWeight: 600,
+                  fontSize: 16,
+                  color: isHov ? '#fff' : 'var(--bi-ink-900)',
+                  lineHeight: 1.35,
+                  flex: 1,
+                  transition: 'color 0.2s',
+                }}
+              >
+                {g.title}
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+                <Icon
+                  name="arrow-right"
+                  size={16}
+                  color={isHov ? '#fff' : 'var(--bi-primary)'}
+                />
+              </div>
+            </a>
+          );
+        })}
       </div>
     </Section>
   );
