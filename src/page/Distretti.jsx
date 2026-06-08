@@ -20,7 +20,7 @@ function DistrettoCard({ distretto }) {
         flexDirection: 'column',
         background: 'var(--bi-surface)',
         border: '1px solid var(--bi-border)',
-        borderTop: `3px solid ${distretto.colore}`,
+        borderTop: '3px solid var(--bi-primary)',
         borderRadius: 'var(--r-md)',
         overflow: 'hidden',
         textDecoration: 'none',

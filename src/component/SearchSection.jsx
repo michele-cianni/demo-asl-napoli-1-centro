@@ -23,7 +23,7 @@ const SearchSection = () => {
 
   return (
     <Section
-      bg="var(--bi-bg)"
+      bg="#ffffff"
       pad={{ desktop: '20px 0 16px', compact: '16px 0 12px', mobile: '14px 0 10px' }}
     >
       <div>

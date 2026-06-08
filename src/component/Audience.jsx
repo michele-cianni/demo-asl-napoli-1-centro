@@ -51,11 +51,14 @@ const AudienceGrid = () => {
   ];
 
   return (
-    <Section bg="var(--bi-bg-alt)" id="tutto-per">
+    <Section
+      style={{ backgroundColor: 'var(--bi-bg-alt)' }}
+      bgImage={`url('${import.meta.env.BASE_URL}images/background/asl1napoli.png')`}
+      id="tutto-per"
+    >
       <SectionHeading
-        eyebrow="Tutto per"
-        title="Informazioni pensate per te"
-        subtitle="Percorsi e contenuti organizzati per categoria di utente, così trovi subito ciò che riguarda la tua situazione."
+        title="Tutto per"
+        subtitle="Scopri i servizi, le strutture e le novità per tipologia di utente"
       />
 
       <div

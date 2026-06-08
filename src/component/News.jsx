@@ -61,14 +61,11 @@ const News = () => {
   return (
     <Section
       pad={{ desktop: '28px 0 40px', compact: '24px 0 32px', mobile: '20px 0 28px' }}
-      style={{ backgroundColor: 'var(--bi-bg-alt)' }}
-      bgImage={`url('${import.meta.env.BASE_URL}images/background/asl1napoli.png')`}
+      bg="#ffffff"
       id="news"
     >
       <SectionHeading
-        eyebrow="ASL comunica"
         title="In evidenza"
-        subtitle="Avvisi, notizie, campagne e bandi dell'azienda sanitaria."
         action={<ArrowLink>Tutte le notizie</ArrowLink>}
       />
 

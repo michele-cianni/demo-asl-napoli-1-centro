@@ -271,7 +271,7 @@ const MapView = ({ ospedali }) => {
               eventHandlers={{ click: () => handleMarkerClick(osp.id) }}
             >
               <Popup maxWidth={260}>
-                <div style={{ minWidth: 190, fontFamily: 'Titillium Web, sans-serif' }}>
+                <div style={{ minWidth: 190, fontFamily: 'var(--ff-sans)' }}>
                   <span
                     style={{
                       display: 'inline-block',

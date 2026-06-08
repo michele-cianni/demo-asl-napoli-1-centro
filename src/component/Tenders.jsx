@@ -34,21 +34,21 @@ const Tenders = () => {
   const concorsi = [
     {
       type: 'Concorso pubblico',
-      tone: 'teal',
+      tone: 'primary',
       date: 'Scade il 30 maggio 2026',
       title: 'Concorso per 24 posti di Collaboratore Professionale Sanitario — Infermiere (cat. D)',
       tag: 'Infermieristica',
     },
     {
       type: 'Avviso di mobilità',
-      tone: 'teal',
+      tone: 'primary',
       date: 'Scade il 20 maggio 2026',
       title: 'Mobilità volontaria per n. 4 posti di Assistente Amministrativo (cat. C)',
       tag: 'Amministrativo',
     },
     {
       type: 'Concorso pubblico',
-      tone: 'teal',
+      tone: 'primary',
       date: 'Scade il 10 giugno 2026',
       title: 'Selezione pubblica per 6 posti di Dirigente Medico — disciplina Medicina Interna',
       tag: 'Dirigenza Medica',
