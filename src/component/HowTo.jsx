@@ -80,9 +80,8 @@ const HowToGrid = () => {
       id="servizi"
     >
       <SectionHeading
-        eyebrow="Come fare per"
-        title="Percorsi guidati, passo dopo passo."
-        subtitle="Scopri come svolgere le pratiche più comuni con l'ASL."
+        title="Come fare per"
+        subtitle="Scopri e approfondisci tutte le procedure offerte dall'ASL Napoli 1 Centro"
         action={<ArrowLink href="page-servizi.html">Vai a tutte le guide</ArrowLink>}
       />
 

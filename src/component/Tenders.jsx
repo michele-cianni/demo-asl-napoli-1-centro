@@ -142,7 +142,6 @@ const Tenders = () => {
   return (
     <Section style={{ backgroundColor: 'var(--bi-surface)' }} id="bandi-concorsi">
       <SectionHeading
-        eyebrow="ASL Comunica"
         title="Bandi e concorsi"
         subtitle="Ultimi avvisi pubblicati dall'ASL Napoli 1 Centro."
       />
