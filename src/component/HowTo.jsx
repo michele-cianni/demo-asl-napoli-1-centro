@@ -73,12 +73,7 @@ const HowToGrid = () => {
   };
 
   return (
-    <Section
-      style={{ backgroundColor: 'var(--bi-surface)' }}
-      bgImage={`url('${import.meta.env.BASE_URL}images/background/asl1.png')`}
-      bgOverlay="rgba(255,255,255,0.82)"
-      id="servizi"
-    >
+    <Section style={{ backgroundColor: 'var(--bi-surface)' }} id="servizi">
       <SectionHeading
         title="Come fare per"
         subtitle="Scopri e approfondisci tutte le procedure offerte dall'ASL Napoli 1 Centro"

@@ -1,6 +1,7 @@
 import { TopBar, BrandRow, StickyHeader } from '../component/Header.jsx';
 import { HowToGrid } from '../component/HowTo.jsx';
 import { News } from '../component/News.jsx';
+import { ServicesGrid } from '../component/ServicesGrid.jsx';
 import { SearchSection } from '../component/SearchSection.jsx';
 import { AudienceGrid } from '../component/Audience.jsx';
 import { Tenders } from '../component/Tenders.jsx';
@@ -17,8 +18,9 @@ function App() {
       <StickyHeader />
       <SearchSection />
       <News />
-      <HowToGrid />
+      <ServicesGrid />
       <FSEBand />
+      <HowToGrid />
       <AudienceGrid />
       <Tenders />
       <FeedbackWidget />
