@@ -1079,6 +1079,7 @@ const GalleriaBlock = () => {
           display: 'grid',
           gridTemplateColumns: isMobile ? '1fr' : isCompact ? 'repeat(2, 1fr)' : 'repeat(3, 1fr)',
           gap: 12,
+          alignItems: 'start',
         }}
       >
         {GALLERIA.map((g, i) => (
@@ -1086,8 +1087,12 @@ const GalleriaBlock = () => {
             key={i}
             className="placeholder-img"
             style={{
-              gridColumn: isMobile ? 'span 1' : `span ${Math.min(g.span, 3)}`,
-              aspectRatio: !isMobile && g.span === 2 ? '16/7' : '16/9',
+              gridColumn: isMobile
+                ? 'span 1'
+                : isCompact
+                ? `span ${Math.min(g.span, 2)}`
+                : `span ${Math.min(g.span, 3)}`,
+              aspectRatio: !isMobile && !isCompact && g.span === 2 ? '16/7' : '16/9',
               borderRadius: 10,
               fontSize: 11,
               color: 'var(--bi-primary-800)',
