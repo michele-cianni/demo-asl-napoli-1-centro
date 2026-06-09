@@ -328,7 +328,7 @@ const MainNav = ({ activeItem, active }) => {
   const items = [
     { id: 'home', label: 'Home', href: 'index.html' },
     { id: 'servizi', label: 'Servizi e prestazioni', href: 'page-servizi.html' },
-    { id: 'come-fare-per', label: 'Come fare per', href: '#' },
+    { id: 'come-fare-per', label: 'Come fare per', href: 'page-come-fare-per.html' },
     {
       id: 'strutture',
       label: 'Strutture',

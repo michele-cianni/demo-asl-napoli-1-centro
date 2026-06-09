@@ -19,6 +19,194 @@ const useWindowWidth = () => {
   return w;
 };
 
+// ── Video player placeholder ──
+const VideoPlayer = () => {
+  const [playing, setPlaying] = React.useState(false);
+
+  return (
+    <div style={{ marginBottom: 40 }}>
+      {/* Player */}
+      <div
+        onClick={() => setPlaying((p) => !p)}
+        style={{
+          position: 'relative',
+          width: '100%',
+          paddingBottom: '56.25%',
+          background: '#001a2e',
+          borderRadius: 10,
+          overflow: 'hidden',
+          cursor: 'pointer',
+          boxShadow: '0 8px 32px rgba(0,0,0,0.25)',
+        }}
+      >
+        <div
+          style={{
+            position: 'absolute',
+            inset: 0,
+            background: 'linear-gradient(135deg, #001a2e 0%, #003d5c 50%, #005f73 100%)',
+            opacity: playing ? 0.6 : 1,
+            transition: 'opacity 0.3s',
+          }}
+        />
+        <div
+          style={{
+            position: 'absolute',
+            inset: 0,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            flexDirection: 'column',
+            gap: 16,
+          }}
+        >
+          <div
+            style={{
+              width: 72,
+              height: 72,
+              borderRadius: '50%',
+              background: playing ? 'rgba(255,255,255,0.15)' : 'rgba(255,255,255,0.92)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              boxShadow: '0 4px 16px rgba(0,0,0,0.3)',
+              transition: 'all 0.2s',
+            }}
+          >
+            {playing ? (
+              <div
+                style={{
+                  width: 20,
+                  height: 20,
+                  border: '4px solid #fff',
+                  borderLeft: 'none',
+                  borderRight: 'none',
+                }}
+              />
+            ) : (
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="var(--bi-primary)">
+                <path d="M7 4v16l13-8z" />
+              </svg>
+            )}
+          </div>
+          <div
+            style={{
+              color: 'rgba(255,255,255,0.9)',
+              fontSize: 15,
+              fontWeight: 600,
+            }}
+          >
+            {playing ? 'In riproduzione…' : 'Come prenotare una visita specialistica'}
+          </div>
+        </div>
+        {/* Badge durata */}
+        <div
+          style={{
+            position: 'absolute',
+            bottom: 12,
+            right: 12,
+            background: 'rgba(0,0,0,0.7)',
+            color: '#fff',
+            padding: '3px 9px',
+            borderRadius: 4,
+            fontSize: 12,
+            fontWeight: 700,
+          }}
+        >
+          4:30
+        </div>
+        {/* Badge sottotitoli */}
+        <div
+          style={{
+            position: 'absolute',
+            bottom: 12,
+            left: 12,
+            background: 'rgba(0,0,0,0.7)',
+            color: '#fff',
+            padding: '3px 9px',
+            borderRadius: 4,
+            fontSize: 12,
+            display: 'flex',
+            alignItems: 'center',
+            gap: 4,
+          }}
+        >
+          <Icon name="accessibility" size={12} color="#fff" />
+          CC
+        </div>
+      </div>
+      {/* Meta row sotto il video */}
+      <div
+        style={{
+          display: 'flex',
+          flexWrap: 'wrap',
+          alignItems: 'center',
+          gap: 20,
+          marginTop: 14,
+          padding: '10px 0',
+          borderBottom: '1px solid var(--bi-border)',
+          fontSize: 13,
+          color: 'var(--bi-ink-500)',
+        }}
+      >
+        <span style={{ display: 'flex', alignItems: 'center', gap: 5 }}>
+          <Icon name="clock" size={14} /> 4 min 30 sec
+        </span>
+        <span style={{ display: 'flex', alignItems: 'center', gap: 5 }}>
+          <Icon name="calendar" size={14} /> Aggiornato il 15 marzo 2026
+        </span>
+        <span style={{ color: 'var(--bi-primary)', fontWeight: 600 }}>
+          Trascrizione disponibile ↓
+        </span>
+        <span
+          style={{
+            marginLeft: 'auto',
+            display: 'flex',
+            alignItems: 'center',
+            gap: 12,
+          }}
+        >
+          <a
+            href="#"
+            style={{
+              color: 'var(--bi-ink-400)',
+              display: 'flex',
+              alignItems: 'center',
+              gap: 4,
+              textDecoration: 'none',
+            }}
+          >
+            <Icon name="facebook" size={16} /> Condividi
+          </a>
+          <a
+            href="#"
+            style={{
+              color: 'var(--bi-ink-400)',
+              display: 'flex',
+              alignItems: 'center',
+              gap: 4,
+              textDecoration: 'none',
+            }}
+          >
+            <Icon name="x" size={16} />
+          </a>
+          <a
+            href="#"
+            style={{
+              color: 'var(--bi-ink-400)',
+              display: 'flex',
+              alignItems: 'center',
+              gap: 4,
+              textDecoration: 'none',
+            }}
+          >
+            <Icon name="mail" size={16} />
+          </a>
+        </span>
+      </div>
+    </div>
+  );
+};
+
 // ── Accordion FAQ ──
 const Accordion = ({ items }) => {
   const [open, setOpen] = React.useState(null);
@@ -239,6 +427,7 @@ const PageComeFarePer = () => {
   ];
 
   const indiceItems = [
+    { id: 'panoramica', label: 'Panoramica' },
     { id: 'a-chi-e-rivolto', label: 'A chi è rivolto' },
     { id: 'cosa-serve', label: 'Cosa serve' },
     { id: 'come-si-fa', label: 'Come si fa' },
@@ -325,6 +514,11 @@ const PageComeFarePer = () => {
 
             {/* ── Main content ── */}
             <main style={{ flex: 1, minWidth: 0 }}>
+              {/* ── Panoramica (video) ── */}
+              <section id="panoramica" style={{ marginBottom: 48, scrollMarginTop: 96 }}>
+                <VideoPlayer />
+              </section>
+
               {/* ── A chi è rivolto ── */}
               <section id="a-chi-e-rivolto" style={{ marginBottom: 48, scrollMarginTop: 96 }}>
                 <SectionH2>A chi è rivolto</SectionH2>
