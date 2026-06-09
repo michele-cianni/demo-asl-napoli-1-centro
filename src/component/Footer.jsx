@@ -44,7 +44,7 @@ const Footer = () => {
             {
               title: 'Area Istituzionale',
               links: [
-                'Organizzazione',
+                'Organigramma',
                 { label: 'Distretti sanitari', href: '#' },
                 'Documenti',
                 'Personale',
