@@ -13,7 +13,7 @@ const HowToGrid = () => {
       title: 'Prenotare una visita',
       desc: 'CUP online, Farmacup e CUP distrettuali ASL',
       tone: 'primary',
-      href: '#',
+      href: 'page-come-fare-per.html',
     },
     {
       icon: 'document',
