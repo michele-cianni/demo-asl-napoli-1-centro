@@ -187,18 +187,6 @@ const VideoPlayer = () => {
               textDecoration: 'none',
             }}
           >
-            <Icon name="x" size={16} />
-          </a>
-          <a
-            href="#"
-            style={{
-              color: 'var(--bi-ink-400)',
-              display: 'flex',
-              alignItems: 'center',
-              gap: 4,
-              textDecoration: 'none',
-            }}
-          >
             <Icon name="mail" size={16} />
           </a>
         </span>
@@ -1263,7 +1251,6 @@ const PageComeFarePer = () => {
           <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
             {[
               { icon: 'facebook', label: 'Facebook' },
-              { icon: 'x', label: 'X' },
               { icon: 'mail', label: 'Email' },
             ].map(({ icon, label }) => (
               <a
