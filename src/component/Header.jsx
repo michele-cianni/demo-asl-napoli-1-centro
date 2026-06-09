@@ -9,11 +9,7 @@ const cx = (...parts) => parts.filter(Boolean).join(' ');
 const SOCIAL_LINKS = [
   { name: 'facebook', label: 'Facebook' },
   { name: 'instagram', label: 'Instagram' },
-  { name: 'x', label: 'X (Twitter)' },
   { name: 'youtube', label: 'YouTube' },
-  { name: 'linkedin', label: 'LinkedIn' },
-  { name: 'whatsapp', label: 'WhatsApp' },
-  { name: 'rss', label: 'RSS' },
 ];
 
 // ─── TopBar ───
