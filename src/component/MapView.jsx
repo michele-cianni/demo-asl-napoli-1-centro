@@ -4,7 +4,6 @@ import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 import { useEffect, useRef, useState } from 'react';
 import { useResponsive } from '../hooks/useResponsive.js';
 import { Icon } from '../icons.jsx';
-import { BoundaryLayer } from './BoundaryLayer.jsx';
 import { BRAND_PRIMARY } from '../theme.js';
 
 const INITIAL_CENTER = [40.853, 14.268];
@@ -224,21 +223,6 @@ const MapView = ({ ospedali }) => {
             </span>
             Presidio Ospedaliero
           </div>
-          <div style={{ borderTop: '1px solid rgba(0,0,0,0.1)', marginTop: 4, paddingTop: 4 }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 7 }}>
-              <span
-                style={{
-                  width: 14,
-                  height: 3,
-                  background: 'var(--brand-primary)',
-                  flexShrink: 0,
-                  display: 'inline-block',
-                  borderRadius: 1,
-                }}
-              />
-              ASL Napoli 1 Centro
-            </div>
-          </div>
         </div>
         <MapContainer
           center={INITIAL_CENTER}
@@ -252,7 +236,6 @@ const MapView = ({ ospedali }) => {
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
-          <BoundaryLayer />
           <MapInitializer />
           <BoundsController ospedali={ospedali} />
           <SelectionController selectedId={selectedId} ospedali={ospedali} />
