@@ -90,7 +90,7 @@ const BrandRow = () => {
             <a href="index.html" className={cx(styles.brand, styles['brand--mobile'])}>
               <div className={styles.brand__logoWrap}>
                 <img
-                  src={`${import.meta.env.BASE_URL}images/logos/nuovologoasl1.png`}
+                  src={`${import.meta.env.BASE_URL}images/logos/logo-header.png`}
                   alt=""
                   className={cx(styles.brand__logo, styles['brand__logo--mobile'])}
                 />
@@ -128,7 +128,7 @@ const BrandRow = () => {
         <a href="index.html" className={cx(styles.brand, isCompact && styles['brand--compact'])}>
           <div className={styles.brand__logoWrap}>
             <img
-              src={`${import.meta.env.BASE_URL}images/logos/nuovologoasl1.png`}
+              src={`${import.meta.env.BASE_URL}images/logos/logo-header.png`}
               alt=""
               className={cx(styles.brand__logo, isCompact && styles['brand__logo--compact'])}
             />
