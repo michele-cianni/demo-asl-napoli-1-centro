@@ -311,18 +311,6 @@ const MobileMainNav = ({ items, activeItem }) => {
                 <span>Prenota una visita</span>
                 <span className={styles.quickCta__tag}>CUP</span>
               </a>
-              <a
-                href="#"
-                className={cx(
-                  styles.quickCta,
-                  styles['quickCta--navOutline'],
-                  styles['quickCta--full']
-                )}
-              >
-                <Icon name="mail" size={16} />
-                <span>Segnala un problema del sito</span>
-                {/* <span className={styles.quickCta__tag}>WEB</span> */}
-              </a>
             </div>
           </nav>,
           document.body
@@ -457,14 +445,6 @@ const MainNav = ({ activeItem, active }) => {
                 <span>Prenota una visita</span>
                 <span className={styles.quickCta__tag}>CUP</span>
               </a>
-              <a
-                href="#"
-                className={cx(styles.quickCta, styles['quickCta--navOutline'])}
-              >
-                <Icon name="mail" size={15} />
-                <span>Segnala un problema del sito</span>
-                {/* <span className={styles.quickCta__tag}>WEB</span> */}
-              </a>
             </div>
           </>
         )}
@@ -498,18 +478,6 @@ const QuickActions = () => {
           <Icon name="calendar" size={16} />
           <span>Prenota una visita</span>
           <span className={styles.quickCta__tag}>CUP</span>
-        </a>
-        <a
-          href="#"
-          className={cx(
-            styles.quickCta,
-            styles['quickCta--outline'],
-            isMobile && styles['quickCta--full']
-          )}
-        >
-          <Icon name="mail" size={16} />
-          <span>Segnala un problema del sito</span>
-          {/* <span className={styles.quickCta__tag}>WEB</span> */}
         </a>
       </div>
     </div>
