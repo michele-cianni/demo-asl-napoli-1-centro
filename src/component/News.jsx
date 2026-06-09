@@ -10,16 +10,6 @@ const cx = (...parts) => parts.filter(Boolean).join(' ');
 const News = () => {
   const items = [
     {
-      badge: 'Salute',
-      badgeTone: 'primary',
-      date: '5 giugno 2026',
-      title: 'In aumento i casi di Epatite A',
-      desc: 'La ASL Napoli 1 Centro invita la cittadinanza a seguire le norme igieniche di base. Disponibile la vaccinazione nei centri vaccinali del territorio.',
-      readTime: '2 min',
-      imgLabel: 'Epatite A',
-      img: `${import.meta.env.BASE_URL}images/epatite.png`,
-    },
-    {
       badge: 'Notizie',
       badgeTone: 'primary',
       date: '1 giugno 2026',
@@ -38,6 +28,16 @@ const News = () => {
       readTime: '1 min',
       imgLabel: 'Donazione sangue',
       img: `${import.meta.env.BASE_URL}images/dona-sangue.png`,
+    },
+    {
+      badge: 'Salute',
+      badgeTone: 'primary',
+      date: '5 giugno 2026',
+      title: 'In aumento i casi di Epatite A',
+      desc: 'La ASL Napoli 1 Centro invita la cittadinanza a seguire le norme igieniche di base. Disponibile la vaccinazione nei centri vaccinali del territorio.',
+      readTime: '2 min',
+      imgLabel: 'Epatite A',
+      img: `${import.meta.env.BASE_URL}images/epatite.png`,
     },
   ];
 
