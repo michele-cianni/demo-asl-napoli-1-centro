@@ -6,7 +6,6 @@ import { SearchSection } from '../component/SearchSection.jsx';
 import { AudienceGrid } from '../component/Audience.jsx';
 import { Tenders } from '../component/Tenders.jsx';
 import { Footer } from '../component/Footer.jsx';
-import { FSEBand } from '../component/FSEBand.jsx';
 import { FeedbackWidget } from '../component/Feedback.jsx';
 import { Chatbot } from '../component/Chatbot.jsx';
 
@@ -19,7 +18,6 @@ function App() {
       <SearchSection />
       <News />
       <ServicesGrid />
-      <FSEBand />
       <HowToGrid />
       <AudienceGrid />
       <Tenders />
