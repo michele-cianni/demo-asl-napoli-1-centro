@@ -70,7 +70,7 @@ const AudienceGrid = () => {
       id="tutto-per"
     >
       <SectionHeading
-        title="Tutto per"
+        title="Dedicato a"
         subtitle="Scopri i servizi, le strutture e le novità per tipologia di utente"
         subtitleStyle={{ color: 'var(--bi-ink-700)' }}
       />
