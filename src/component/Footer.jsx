@@ -15,9 +15,9 @@ const Footer = () => {
         <div className={styles.footer__logos}>
           <div className={styles.footer__brand}>
             <img
-              src={`${import.meta.env.BASE_URL}images/logos/nuovologoasl1.png`}
+              src={`${import.meta.env.BASE_URL}images/logos/logo-footer.png`}
               alt=""
-              style={{ height: 48, width: 'auto', objectFit: 'contain', background: 'white', borderRadius: 6, padding: '4px 8px' }}
+              style={{ height: 48, width: 'auto', objectFit: 'contain' }}
             />
             <div className={styles.footer__brandTitle}>ASL Napoli 1 Centro</div>
           </div>
@@ -93,21 +93,14 @@ const Footer = () => {
             <a href="#" className={styles.footer__contactLink}>
               Segnala un problema del sito
             </a>
-            <p
-              style={{
-                margin: '12px 0 0',
-                fontSize: 13,
-                lineHeight: 1.6,
-                color: 'rgba(255,255,255,0.78)',
-              }}
-            >
+            <p className={styles.footer__urpNote}>
               Per reclami, orientamento ai servizi e richieste generali resta attivo l&apos;URP.
             </p>
           </div>
           <div>
             <div className={styles.footer__colTitle}>Seguici su</div>
             <div className={styles.footer__social}>
-              {['facebook', 'instagram', 'x', 'youtube', 'linkedin', 'whatsapp', 'rss'].map((n) => (
+              {['facebook', 'instagram', 'youtube'].map((n) => (
                 <a key={n} href="#" className={styles.footer__socialLink}>
                   <Icon name={n} size={18} />
                 </a>
